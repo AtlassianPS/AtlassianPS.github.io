@@ -1,4 +1,4 @@
-[submodule "modules/ConfluencePS"]
-	path = modules/ConfluencePS
-	url = https://github.com/lipkau/ConfluencePS
-	branch = feature/migrateToExternalHelp
+[submodule "module/ConfluencePS"]
+	path = module/ConfluencePS
+	url = https://github.com/AtlassianPS/ConfluencePS.git
+	branch = develop
