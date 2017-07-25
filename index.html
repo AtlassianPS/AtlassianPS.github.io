@@ -1,0 +1,25 @@
+---
+layout: default
+title: AtlassianPS
+description: documentation and such
+hide: true
+---
+<h1 id="overview" class="page-header">Modules</h1>
+
+{% for module in site.data.modules %}
+	<h2>{{ module.name }}</h2>
+	<p>{{ module.description }}</p>
+	<p><a href="{{ module.github }}">GitHub</a> &middot; <a href="{{ site.github.url }}{{ module.path }}/README">README</a></p>
+{% endfor %}
+
+<!-- ToDo
+  Add content teaser for articles
+=========================================== -->
+
+<!-- ToDo
+  Add content teaser for people
+=========================================== -->
+
+<!-- ToDo
+  Add content teaser for documents
+=========================================== -->

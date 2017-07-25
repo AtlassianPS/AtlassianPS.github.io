@@ -1,0 +1,62 @@
+---
+layout: main
+---
+<!-- Header
+=========================================== -->
+
+{% for module in site.data.modules %}
+  {% assign module_path_size = module.path | size %}
+  {% assign result = page.url | slice: 0, module_path_size %}
+  {% if result == module.path %}
+    {% assign current_module = module %}
+  {% endif %}
+{% endfor %}
+
+{% if current_module %}
+  
+  <div class="bs-docs-masthead" id="content">
+    <div class="container">
+      <h1 class="home-title">{{current_module.name}}</h1>
+      <p class="lead">{{current_module.description}}</p>
+      {% if page.download %}
+        <p class="lead">
+          {% if site.download.popup %}
+          <a data-bootbox="download-popup" data-bootbox-size="large" class="btn btn-outline-inverse btn-lg">Download</a>
+          {% else %}
+          <a target="_blank" href="{{page.download}}" class="btn btn-outline-inverse btn-lg">Download</a>
+          {% endif %}
+        </p>
+        {% if page.version %}
+          <p class="version">Currently v{{page.version}}{% if current_module.github %} on <a target="_blank" href="{{current_module.github}}">GitHub</a>{% endif %}</p>
+        {% endif %}
+      {% else %}
+        {% if current_module.github %}<p class="version">Source available on <a target="_blank" href="{{current_module.github}}">GitHub</a></p>{% endif %}
+      {% endif %}
+    </div>
+  </div>
+  {% if site.download.popup %}
+    <div id="download-popup" title="Download {{site.name}} {{site.version}}" class="hidden">
+      {% include download-popup.html %}
+    </div>
+  {% endif %}
+{% else %}
+<div class="bs-docs-header" id="content">
+  <div class="container">
+    <h1>{{page.title}}</h1>
+    <p>{{page.description}}</p>
+  </div>
+</div>
+{% endif %}
+
+<div class="container bs-docs-container">
+  <div class="row">
+    <!-- Content
+    =========================================== -->
+    <div class="col-md-9" role="main">
+      {{content}}
+    </div>
+
+    {% include pagenav.html %}
+
+  </div>
+</div>
