@@ -1,0 +1,4 @@
+[submodule "ConfluencePS"]
+	path = ConfluencePS
+	url = https://github.com/lipkau/ConfluencePS
+	branch = feature/migrateToExternalHelp
