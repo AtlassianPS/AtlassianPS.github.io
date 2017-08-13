@@ -1,0 +1,19 @@
+# index page sections
+# custom following lines to edit your index page
+- id: modules
+  name: Modules
+  tpl: modules.html
+  preTitle: These are our
+  title: Modules
+  postTitle: 
+  classes:
+
+- id: people
+  name: People
+  tpl: people.html
+  classes: 
+
+- id: posts
+  name: Posts
+  tpl: posts.html
+  classes: 

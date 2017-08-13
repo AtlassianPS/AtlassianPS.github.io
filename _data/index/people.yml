@@ -1,0 +1,98 @@
+# projects section data
+# If you don't have language feature(language.yml is empty), ignore "i18n" items
+# Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
+- name: Oliver Lipkau
+  role: Maintainer
+  gh_user: lipkau
+  short_desc: Some think he is a nice guy. We are still waiting for evidence.
+  long_desc: A long descr.
+
+- name: replicaJunction
+  role: Maintainer
+  gh_user: replicaJunction
+  short_desc: 
+  long_desc: 
+
+- name: brianbunke
+  role: Maintainer
+  gh_user: brianbunke
+  short_desc: 
+  long_desc: 
+
+- name: beaudryj
+  role: Reviewer
+  gh_user: beaudryj
+  short_desc: 
+  long_desc: 
+
+- name: Dejulia489
+  role: Reviewer
+  gh_user: Dejulia489
+  short_desc: 
+  long_desc: 
+
+- name: axxelG
+  role: Contributer
+  gh_user: axxelG
+  short_desc: 
+  long_desc: 
+
+- name: jkknorr
+  role: Contributer
+  gh_user: jkknorr
+  short_desc: 
+  long_desc: 
+
+- name: jkknorr
+  role: Contributer
+  gh_user: jkknorr
+  short_desc: 
+  long_desc: 
+
+- name: padgers
+  role: Contributer
+  gh_user: padgers
+  short_desc: 
+  long_desc: 
+
+- name: colhal
+  role: Contributer
+  gh_user: colhal
+  short_desc: 
+  long_desc: 
+  long_desc: 
+
+- name: kittholland
+  role: Contributer
+  gh_user: kittholland
+  short_desc: 
+  long_desc: 
+  long_desc: 
+
+- name: lukhase
+  role: Contributer
+  gh_user: lukhase
+  short_desc: 
+  long_desc: 
+  long_desc: 
+
+- name: alexsuslin
+  role: Contributer
+  gh_user: alexsuslin
+  short_desc: 
+  long_desc: 
+  long_desc: 
+
+- name: ThePSAdmin
+  role: Contributer
+  gh_user: ThePSAdmin
+  short_desc: 
+  long_desc: 
+  long_desc: 
+
+- name: LiamLeane
+  role: Contributer
+  gh_user: LiamLeane
+  short_desc: 
+  long_desc: 
+  long_desc: 

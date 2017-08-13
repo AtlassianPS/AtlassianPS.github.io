@@ -1,0 +1,7 @@
+- name: Modules
+  childs:
+    - name: JiraPS
+      path: module/JiraPS
+    - name: ConfluencePS
+      path: module/ConfluencePS
+- name: foo
