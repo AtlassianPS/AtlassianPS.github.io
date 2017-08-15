@@ -25,13 +25,12 @@
                     </li>
                     {% else %}
                     <li class="menu-item">
-                        {% if section.page %}
-                        <a href=" {{ section.page}} ">
-                            {% else %}
-                        <a href="# ">
-                            {% endif %}
-
-                            {{ section.name }}
+                        {% if section.path %}
+                        <a href="{{ section.path}}">
+                        {% else %}
+                        <a href="#">
+                        {% endif %}
+                        {{ section.name }}
                         </a>
                     </li>
                     {% endif %}
