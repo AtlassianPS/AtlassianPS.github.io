@@ -11,9 +11,15 @@
 - id: people
   name: People
   tpl: people.html
+  preTitle: 
+  title: People
+  postTitle: Who built this
   classes: 
 
 - id: posts
   name: Posts
   tpl: posts.html
+  preTitle: 
+  title: Posts
+  postTitle: 
   classes: 

@@ -1,37 +1,29 @@
-<div class="container" id="i18_people">
-    <div class="row m-b-lg section-header">
-        <div class="col-lg-12 text-center">
-            <div class="navy-line"></div>
-            <h2 class="section-title"><span data-i18n="people.title1">Who we are</span></h2>
-        </div>
-    </div>
-    <div class="row people-wrapper">
-        {% for person in site.data.index.people %}
-        <script>
-            $(document).ready(function() {
-                if ("{{ person.gh_user }}" !== "") {
-                    if (avatar_url = localStorage["{{ person.gh_user }}"]) { // use cache
-                        console.debug("using cache for {{ forloop.index }}:", avatar_url);
-                        $('.img-{{ forloop.index }}').attr('src', avatar_url);
-                    } else {
-                        $.get("https://api.github.com/users/{{ person.gh_user }}", function(data) {
-                            localStorage["{{ person.gh_user }}"] = data.avatar_url // store cache
-                            $('.img-{{ forloop.index }}').attr('src', data.avatar_url);
-                        });
-                    }
+<div class="row people-wrapper">
+    {% for person in site.data.index.people %}
+    <script>
+        $(document).ready(function() {
+            if ("{{ person.gh_user }}" !== "") {
+                if (avatar_url = localStorage["{{ person.gh_user }}"]) { // use cache
+                    console.debug("using cache for {{ forloop.index }}:", avatar_url);
+                    $('.img-{{ forloop.index }}').attr('src', avatar_url);
+                } else {
+                    $.get("https://api.github.com/users/{{ person.gh_user }}", function(data) {
+                        localStorage["{{ person.gh_user }}"] = data.avatar_url // store cache
+                        $('.img-{{ forloop.index }}').attr('src', data.avatar_url);
+                    });
                 }
-            });
-        </script>
-        {% assign loopindex = forloop.index | modulo: 3 %}
-        <div class="person item col-sm-3 wow {% if loopindex == 1 %} col-sm-offset-1 fadeInLeft {% else %} col-sm-offset-1 fadeInRight {% endif %}">
-            <div class="person-item">
-                <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" class="img-responsive img-circle img-small img-{{ forloop.index }}" alt="">
-                <h3> <span class="navy">{{ person.name }}</span> </h3>
-                {% if person.role %}
-                <h5>{{ person.role }}</h5>{% endif %} {% if person.short_desc %}
-                <p>{{ person.short_desc }}</p>{% endif %}
-            </div>
+            }
+        });
+    </script>
+    <div class="person item col-sm-3 col-sm-offset-1">
+        <div class="person-item">
+            <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" class="img-responsive img-circle img-md img-{{ forloop.index }}" alt="">
+            <h3 class="item-title">
+                <a class="link" href="https://github.com/{{ person.gh_user }}" target="_blank">{{ person.name }}</a>
+            </h3>
+            {% if person.role %}<h5>{{ person.role }}</h5>{% endif %}
+            {% if person.short_desc %}<p>{{ person.short_desc }}</p>{% endif %}
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
