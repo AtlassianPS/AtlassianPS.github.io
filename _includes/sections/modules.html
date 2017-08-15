@@ -3,33 +3,29 @@
         {% assign loopindex = forloop.index | modulo: 2 %}
         {% if forloop.last %}
             {% if forloop.last == forloop.first %}
-    <div class="module item col-sm-4 wow col-sm-offset-4 zoomIn">
+    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-sm-4 wow col-sm-offset-4 zoomIn">
             {% else %}
-        <div class="module item col-sm-4 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-4 {% else %} col-sm-offset-2 fadeInRight {% endif %}">
+    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-sm-4 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-4 {% else %} col-sm-offset-2 fadeInRight {% endif %}">
             {% endif %}
         {% else %}
-            <div class="module item col-sm-4 wow {% if loopindex == 1 %} col-sm-offset-1 fadeInLeft {% else %} col-sm-offset-2 fadeInRight {% endif %}">
+    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-sm-4 wow {% if loopindex == 1 %} col-sm-offset-1 fadeInLeft {% else %} col-sm-offset-2 fadeInRight {% endif %}">
         {% endif %}
-                <div class="module-item">
-                    <img src="{{ module.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                    <h3>
-                        {% if module.repo %}
-                        <a href="https://github.com/{{ module.gh_user }}/{{ module.repo }}" target="_blank"><span class="navy">{{ module.name }}</span></a>
-                        {% else %}
-                        <span class="navy">{{ module.name }}</span>
-                        {% endif %}
-                    </h3>
-                    <p><span>{{ module.desc }}</span></p>
-                    {% if module.repo %}
-                    <div user="{{ module.gh_user }}" repo="{{ module.repo }}" class="ghbtn">
-                        <a target="_blank" style="width: 65px;" href="https://github.com/{{ module.gh_user }}/{{ module.repo }}/stargazers" class="btn btn-white btn-xs star"><i class="fa fa-star"></i> ...</a>&emsp;&emsp;
-                        <a target="_blank" style="width: 65px;" href="https://github.com/{{ module.gh_user }}/{{ module.repo }}/network" class="btn btn-white btn-xs fork"><i class="fa fa-code-fork"></i> ...</a>
-                        <div style="height: 10px;"></div>
-                    </div>
-                    {% endif %}
-                </div>
+        <div class="module-item">
+            <img src="" class="hide logo img-responsive" alt="">
+            <h3 class="item-title">
+                <a class="link" href="/module/{{ module.name }}" target="_blank">{{ module.name }}</a>
+            </h3>
+            <p class="item-description"></p>
+            <div class="ghbtn">
+                <a target="_blank" href="#" class="btn btn-xs btn-white html_url" alt="Repository"><i class="fa fa-github"></i></a>
+                <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/issues/new" class="btn btn-xs btn-white repo" alt="Report Issue"><i class="fa fa-bug"></i></a>
+                <br/>
+                <a target="_blank" href="https://www.powershellgallery.com/packages/{{ module.name }}" class="btn btn-xs btn-white gallery" alt="Gallery Downloads"><i class="fa fa-cloud-download"></i> ...</a>
+                <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/stargazers" class="btn btn-xs btn-white star"><i class="fa fa-star"></i> ...</a>
+                <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/network" class="btn btn-xs btn-white fork"><i class="fa fa-code-fork"></i> ...</a>
+                <div style="height: 10px;"></div>
             </div>
-            {% endfor %}
         </div>
     </div>
+    {% endfor %}
 </div>
