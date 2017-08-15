@@ -1,7 +1,11 @@
 - name: Modules
   childs:
-    - name: JiraPS
-      path: module/JiraPS
+    - name: BitbucketPS
+      path: module/BitbucketPS
     - name: ConfluencePS
       path: module/ConfluencePS
+    - name: HipChatPS
+      path: module/HipChatPS
+    - name: JiraPS
+      path: module/JiraPS
 - name: foo
