@@ -1,0 +1,25 @@
+- name: Modules
+  childs:
+    - name: BitbucketPS
+      path: module/BitbucketPS
+    - name: ConfluencePS
+      path: module/ConfluencePS
+    - name: HipChatPS
+      path: module/HipChatPS
+    - name: JiraPS
+      path: module/JiraPS
+- name: Documentation
+  path: docs
+  childs:
+    - name: BitbucketPS
+      path: docs/BitbucketPS
+    - name: ConfluencePS
+      path: docs/ConfluencePS
+    - name: HipChatPS
+      path: docs/HipChatPS
+    - name: JiraPS
+      path: docs/JiraPS
+- name: Join us on Slack
+  path: slack
+- name: Contact
+  path: contact

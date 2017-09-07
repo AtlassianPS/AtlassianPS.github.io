@@ -1,0 +1,12 @@
+# projects section data
+- name: BitbucketPS
+  gh_user: AtlassianPS
+
+- name: ConfluencePS
+  gh_user: AtlassianPS
+
+- name: HipChatPS
+  gh_user: AtlassianPS
+
+- name: JiraPS
+  gh_user: AtlassianPS

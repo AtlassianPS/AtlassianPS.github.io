@@ -1,0 +1,25 @@
+# Welcome to Jekyll!
+
+# Website settings
+title: AtlassianPS
+description: A PowerShell community for Atlassian products
+# description: A community for PowerShell lovers that use Atlassian products
+keywords: Atlassian,AtlassianPS,jira,confluence,bitbucket,hipchat,jiraps,confluenceps,bitbucketps,hipchatps,github,gh-pages
+baseurl: ""
+url: "https://atlassianps.github.io"
+img_path: /static/assets/img
+
+# analytics
+## google analytics
+ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+  # id:
+
+# Build settings
+encoding: utf-8
+
+# other settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
