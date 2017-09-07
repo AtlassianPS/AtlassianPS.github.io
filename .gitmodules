@@ -1,4 +1,0 @@
-[submodule "module/ConfluencePS"]
-	path = module/ConfluencePS
-	url = https://github.com/AtlassianPS/ConfluencePS.git
-	branch = develop
