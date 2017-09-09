@@ -1,0 +1,58 @@
+
+{% if include.show == "true" %}
+<div class="col-12 col-md-3 col-xl-2 bd-sidebar" id="sidebar">
+    <nav class="collapse bd-links" id="bd-docs-nav">
+        <div class="bd-toc-item active">
+            <a class="bd-toc-link" href="#">Getting started</a>
+            <ul class="nav bd-sidenav">
+                <li class="active bd-sidenav-active">
+                    <a href="/docs/4.0/getting-started/introduction/">Introduction</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/download/">Download</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/contents/">Contents</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/browsers-devices/">Browsers &amp; devices</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/javascript/">JavaScript</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/options/">Options</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/build-tools/">Build tools</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/webpack/">Webpack</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/getting-started/accessibility/">Accessibility</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bd-toc-item">
+            <a class="bd-toc-link" href="/docs/4.0/layout/overview/">Layout</a>
+            <ul class="nav bd-sidenav">
+                <li class="">
+                    <a href="/docs/4.0/layout/overview/">Overview</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/layout/grid/">Grid</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/layout/media-object/">Media object</a>
+                </li>
+                <li class="">
+                    <a href="/docs/4.0/layout/utilities-for-layout/">Utilities for layout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+{% else %}
+<div class="col-offset-6 col-md-offset-2">foo</div>
+{% endif %}
