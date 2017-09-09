@@ -20,6 +20,7 @@
     - name: JiraPS
       path: docs/JiraPS
 - name: Join us on Slack
-  path: slack
+  path: https://join.slack.com/t/atlassianps/shared_invite/MjM3ODE0ODA4MDUzLTE1MDQ3OTc5OTQtZjk5ZDNlOWU4MA
+  target: _blank
 - name: Contact
   path: contact
