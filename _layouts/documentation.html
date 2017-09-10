@@ -2,32 +2,25 @@
 layout: default
 ---
 
+{% for module in site.data.modules %}
+    {% assign module_path_size = module.path | size %}
+    {% assign result = page.url | slice: 0, module_path_size %}
+    {% if result == module.path %}
+        {% assign current_module = module %}
+    {% endif %}
+{% endfor %}
+
 <div class="documentation">
 
     <div class="container-fluid">
         <div class="row flex-xl-nowrap">
- 
-        {% include sidebar.html show="true"%}
 
-        <div class="d-none d-xl-block col-xl-2 bd-toc">
-            <ul class="section-nav">
-                <li class="toc-entry toc-h2"><a href="#quick-start">Quick start</a></li>
-                <li class="toc-entry toc-h2"><a href="#starter-template">Starter template</a></li>
-                <li class="toc-entry toc-h2"><a href="#important-globals">Important globals</a>
-                    <ul>
-                        <li class="toc-entry toc-h3"><a href="#html5-doctype">HTML5 doctype</a></li>
-                        <li class="toc-entry toc-h3"><a href="#responsive-meta-tag">Responsive meta tag</a></li>
-                        <li class="toc-entry toc-h3"><a href="#box-sizing">Box-sizing</a></li>
-                        <li class="toc-entry toc-h3"><a href="#reboot">Reboot</a></li>
-                    </ul>
-                </li>
-                <li class="toc-entry toc-h2"><a href="#community">Community</a></li>
-            </ul>
+            {% include sidebar_left.html %}
+            
+            {% include sidebar_right.html %}
+
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+                {{ content }}
+            </main>
         </div>
-
-        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-            <h1 class="bd-title" id="content"><a class="anchorjs-link " href="#content" aria-label="Anchor link for: content" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Introduction</h1>
-            <p class="bd-lead">Get started with Bootstrap, the world's most popular framework for building responsive, mobile-first sites, with the Bootstrap CDN and a template starter page.</p>
-        </main>
     </div>
-</div>

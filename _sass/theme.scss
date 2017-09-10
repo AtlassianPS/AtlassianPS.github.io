@@ -51,12 +51,12 @@ textarea {
     font: inherit;
 }
 
-::-moz-selection {
+ ::-moz-selection {
     background: #000000;
     color: #FFFFFF;
 }
 
-::selection {
+ ::selection {
     background: #000000;
     color: #FFFFFF;
 }
@@ -1269,4 +1269,38 @@ h6 {
 
 .section-header {
     margin-bottom: 30px;
+}
+
+
+/* DOCUMENTATION */
+
+.documentation {
+    h1 {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        font-weight: 300;
+    }
+    p:first-of-type {
+        font-size: 1.125rem;
+        font-weight: 300;
+    }
+}
+
+@media (min-width:576px) {
+    .documentation {
+        h1 {
+            font-size: 3rem;
+        }
+        p:first-of-type {
+            max-width: 80%;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.language-powershell::before {
+    color: #009;
+    content: "PS> ";
+    user-select: none;
 }

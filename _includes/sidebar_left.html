@@ -1,0 +1,25 @@
+<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+    <nav class="collapse bd-links" id="bd-docs-nav">
+        <div class="bd-toc-item {% if page.path == "docs/index.md" %} active {% endif %}">
+            <a class="bd-toc-link" href="/docs/">Index</a>
+        </div>
+        {% for module in site.data.modules %}
+        <div class="bd-toc-item {% if page.path contains module.name %} active {% endif %}">
+            <a class="bd-toc-link" href="/docs/{{ module.name }}">{{ module.name }}</a>
+            <ul class="nav bd-sidenav">
+            {% capture module_dir %}/docs/{{ module.name }}/{% endcapture %}
+            {% for p in site.html_pages %}
+                {% if p.url contains module_dir %}
+                    {% assign result = p.url | remove: module_dir %}
+                    {% if p.hide != true %}
+                <li class="{% if result contains page.title %}active bd-sidenav-active{% endif %}">
+                    <a href="{{module_dir}}{{result}}">{{p.title}}</a>
+                </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </nav>
+</div>
