@@ -11,9 +11,11 @@
             {% for p in site.html_pages %}
                 {% if p.url contains module_dir %}
                     {% assign result = p.url | remove: module_dir %}
+                    {% assign currentPage = page.name | remove: ".md" %}
+                    {% assign loopPage = p.name | remove: ".md" %}
                     {% if p.hide != true %}
-                <li class="{% if result contains page.title %}active bd-sidenav-active{% endif %}">
-                    <a href="{{module_dir}}{{result}}">{{p.title}}</a>
+                <li class="{% if result contains currentPage %}active bd-sidenav-active{% endif %}">
+                    <a href="{{module_dir}}{{result}}">{{loopPage}}</a>
                 </li>
                     {% endif %}
                 {% endif %}
