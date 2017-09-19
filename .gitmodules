@@ -1,4 +1,4 @@
 [submodule "modules/ConfluencePS"]
 	path = modules/ConfluencePS
-	url = https://github.com/AtlassianPS/ConfluencePS.git
+	url = https://github.com/lipkau/ConfluencePS.git
 	branch = feature/documentationForWebsite
