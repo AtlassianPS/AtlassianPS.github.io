@@ -1,0 +1,4 @@
+[submodule "modules/ConfluencePS"]
+	path = modules/ConfluencePS
+	url = https://github.com/lipkau/ConfluencePS.git
+	branch = master

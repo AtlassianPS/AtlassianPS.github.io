@@ -1,0 +1,33 @@
+<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+    <form class="bd-search d-flex align-items-center">
+        <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-labelledby="search-input" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span>
+        <button class="btn-link bd-search-docs-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs avigation">
+        <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
+        </button>
+    </form>
+    <nav class="collapse bd-links" id="bd-docs-nav">
+        <div class="bd-toc-item {% if page.path == "docs/index.md" %} active {% endif %}">
+            <a class="bd-toc-link" href="/docs/">Index</a>
+        </div>
+        {% for module in site.data.modules %}
+        <div class="bd-toc-item {% if page.path contains module.name %} active {% endif %}">
+            <a class="bd-toc-link" href="/docs/{{ module.name }}">{{ module.name }}</a>
+            <ul class="nav bd-sidenav">
+            {% capture module_dir %}/docs/{{ module.name }}/{% endcapture %}
+            {% for p in site.html_pages %}
+                {% if p.url contains module_dir %}
+                    {% assign result = p.url | remove: module_dir %}
+                    {% assign currentPage = page.name | remove: ".md" %}
+                    {% assign loopPage = p.name | remove: ".md" %}
+                    {% if p.hide != true %}
+                <li class="{% if result contains currentPage %}active bd-sidenav-active{% endif %}">
+                    <a href="{{module_dir}}{{result}}">{{loopPage}}</a>
+                </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </nav>
+</div>

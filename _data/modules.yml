@@ -1,0 +1,16 @@
+# - name: BitbucketPS
+#   description: ToDo
+#   github: https://github.com/AtassianPS/BitbucketPS
+#   path: /module/BitbucketPS
+- name: ConfluencePS
+  description: A PowerShell module that interacts with Atlassian's Confluence wiki product.
+  github: https://github.com/AtassianPS/ConfluencePS
+  path: /module/ConfluencePS
+# - name: HipChatPS
+#   description: ToDo
+#   github: https://github.com/AtassianPS/HipChatPS
+#   path: /module/HipChatPS
+# - name: JiraPS
+#   description: ToDo
+#   github: https://github.com/AtassianPS/JiraPS
+#   path: /module/JiraPS

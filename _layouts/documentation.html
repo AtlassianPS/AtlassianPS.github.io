@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% for module in site.data.modules %}
+    {% assign module_path_size = module.path | size %}
+    {% assign result = page.url | slice: 0, module_path_size %}
+    {% if result == module.path %}
+        {% assign current_module = module %}
+    {% endif %}
+{% endfor %}
+
+<div class="documentation">
+
+    <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+
+            {% include sidebar_left.html %}
+            
+            {% include sidebar_right.html %}
+
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+                {{ content }}
+            </main>
+
+        </div>
+    </div>
+</div>
+<script src="https://getbootstrap.com/assets/js/docs.min.js"></script>
+<script src="/assets/js/docs.js"></script>
