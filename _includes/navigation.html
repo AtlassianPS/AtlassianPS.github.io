@@ -15,7 +15,7 @@
                     {% if section.childs %}
                     <li class="menu-item menu-item-has-children{% if page.path contains section.path %} active{% endif %}">
                         {% if section.path %}
-                        <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/{{ section.path }}">{{ section.name }}</a>
+                        <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}">{{ section.name }}</a>
                         {% else %}
                         <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="#">{{ section.name }}</a>
                         {% endif %}
@@ -28,7 +28,7 @@
                     {% else %}
                     <li class="menu-item">
                         {% if section.path %}
-                        <a href="/{{ section.path}}"{% if section.target %} target="{{ section.target }}" {% endif %}>
+                        <a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}"{% if section.target %} target="{{ section.target }}" {% endif %}>
                         {% else %}
                         <a href="#">
                         {% endif %}
