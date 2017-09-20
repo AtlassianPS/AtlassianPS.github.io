@@ -21,7 +21,6 @@ $(document).ready(function() {
         success: function(data) {
             $.each(data, function(index, data) {
                 let id = user + '/' + data.name;
-                console.log("foo", data);
                 $("div.module.item[repo='" + data.name + "']").find(".html_url").attr("href", data.html_url);
                 $("div.module.item[repo='" + data.name + "']").find(".item-description").html(data.description);
                 $("div.module.item[repo='" + data.name + "']").find(".img.logo").attr("alt", data.name);
@@ -41,8 +40,8 @@ $(document).ready(function() {
             });
         }
     }).done(function(data) {
-        if (console && console.log) {
-            console.log("Sample of data:", data.slice(0, 100));
-        }
+        // if (console && console.log) {
+        // console.log("Sample of data:", data.slice(0, 100));
+        // }
     });
 });
