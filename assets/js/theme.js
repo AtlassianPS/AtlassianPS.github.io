@@ -30,11 +30,17 @@ function _to_bool(v) {
 })();
 
 function buildScrollSpy() {
-    let h2 = $('.documentation main').find('h2[id]');
-    let html = '';
+    let h1 = $('.documentation main').find('h1[id]'),
+        h2 = $('.documentation main').find('h2[id]'),
+        relevantHeader = h2,
+        html = '';
 
-    if (h2.length) {
-        h2.each(function() {
+    if (h1.length > 1) {
+        relevantHeader = h1;
+    }
+
+    if (relevantHeader.length) {
+        relevantHeader.each(function() {
             html += `
     <li class="toc-entry toc-h2">
         <a href="#${ this.id }">
