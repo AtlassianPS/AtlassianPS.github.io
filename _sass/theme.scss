@@ -1192,9 +1192,11 @@ header.site-header {
                 .btn-lg {
                     padding: .75rem 1.5
                 }
-                .btn-outline:hover {
-                    color: #000;
-                    background: #fff;
+                .btn-outline {
+                    &:hover {
+                        color: #000;
+                        background: #fff;
+                    }
                 }
             }
         }
