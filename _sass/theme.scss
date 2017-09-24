@@ -781,7 +781,7 @@ header.site-header {
             font-size: 23px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: #000000;
+            color: $powershell-blue;
             display: initial;
             vertical-align: middle;
             font-weight: 600;
@@ -1327,6 +1327,13 @@ header.site-header {
     top: 80px;
 }
 
+.toc-entry a:hover,
+.bd-sidebar .nav>li>a:hover,
+.bd-sidebar .bd-toc-link a:hover {
+    color: $powershell-blue;
+    font-weight: 500;
+}
+
 @media screen and (max-width: 1140px) {
     .bd-toc,
     .bd-sidebar {
@@ -1335,6 +1342,10 @@ header.site-header {
 }
 
 .nav {
-    display: list-item;
     padding-left: 10px;
+}
+
+.bd-search-docs-toggle:hover,
+.bd-search-docs-toggle:focus {
+    color: $powershell-blue;
 }
