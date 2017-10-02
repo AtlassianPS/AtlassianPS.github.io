@@ -533,6 +533,37 @@ input[type="checkbox"] {
     clear: left;
 }
 
+.text-muted {
+    font-style: normal !important;
+}
+
+.breadcrumb {
+    background: rgba(245, 245, 245, 1);
+    border: 0px solid rgba(245, 245, 245, 1);
+    border-radius: 5px;
+    display: block;
+}
+
+// .breadcrumb li {
+//     font-size: 14px;
+// }
+.breadcrumb a {
+    color: $powershell-blue;
+}
+
+.breadcrumb a:hover {
+    color: $powershell-blue;
+}
+
+.breadcrumb>.active {
+    color: rgba(153, 153, 153, 1);
+}
+
+.breadcrumb>li+li:before {
+    color: rgba(204, 204, 204, 1);
+    content: "\2771\00a0";
+}
+
 .break,
 h1,
 h2,
@@ -1136,7 +1167,7 @@ header.site-header {
     .slideshow-wrapper {
         background-color: $powershell-blue;
         .container {
-            padding: 10% 0px;
+            padding: 7% 0px;
             position: relative;
             z-index: 80;
             .slideshow-content {
@@ -1195,12 +1226,19 @@ header.site-header {
                     padding: .75rem 1.5
                 }
                 .btn-outline {
+                    border: 1px solid #fff;
+                    color: #fff;
                     &:hover {
-                        color: #000;
+                        color: $powershell-blue;
                         background: #fff;
                     }
                 }
             }
+        }
+    }
+    section {
+        &.gray-section {
+            background-color: #f8f9f9;
         }
     }
     h2.section-title {
