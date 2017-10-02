@@ -15,6 +15,7 @@ tags:
 ---
 
 I am pleased to announce, that today we decided to bring **_AtlassianPS_** to life.
+<!--more-->
 
 # What it is all about
 When you find yourself repeating work over and over; and find out that there is an API with which you can automate stuff, it would be smart to do so.

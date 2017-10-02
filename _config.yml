@@ -15,6 +15,7 @@ ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get
 encoding: utf-8
 
 # other settings
+excerpt_separator: <!--more-->
 highlighter: rouge
 markdown: kramdown
 kramdown:

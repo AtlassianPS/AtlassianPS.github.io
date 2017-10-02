@@ -19,7 +19,7 @@
 - id: posts
   name: Posts
   tpl: posts.html
-  preTitle: 
+  preTitle: Latest
   title: Posts
   postTitle: 
   classes: 
