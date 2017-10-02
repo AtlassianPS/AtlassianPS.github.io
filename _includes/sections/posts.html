@@ -1,33 +1,36 @@
-<div class="container" id="i18_posts">
-<div class="row m-b-lg section-header">
-    <div class="col-lg-12 text-center">
-        <div class="navy-line"></div>
-        <h2 class="section-title"><span data-i18n="posts.title1">Lastest Posts</span></h2>
-    </div>
-</div>
 <div class="row posts-wrapper">
-    <div class="col-lg-8 col-lg-offset-2">
-        <!-- latest 10 blog -->
-        {% for post in site.posts limit:10 %} {% assign loopindex = forloop.index | modulo: 2 %}
-        <div class="post-wrapper wrapper wrapper-content animated {% if loopindex == 1 %} fadeInLeft {% else %} fadeInRight {% endif %}">
-            <div class="post item">
-                <div class="row">
-                    <div class="col-md-10">
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="post-title"> {{ post.title }} </a>
-                        <div class="post-info">
-                            <i class="fa fa-clock-o"></i> <a>{{ post.date | date: "%-d %b %Y" }}</a>
-                            <i class="fa fa-user"></i> <a>{{ site.author.name }}</a>
-                        </div>
-                    </div>
-                    <div class="col-md-2 ">
-                        <div class="post-icon">
-                            {% if post.icon %}<i class="fa {{ post.icon }}"> </i>{% endif %}
-                        </div>
+    <!-- latest 10 blog -->
+    {% for post in site.posts limit:10 %}
+        {% assign loopindex = forloop.index | modulo: 2 %}
+        {% for category in site.data.categories %}
+            {% if category.name == post.categories[0] %}
+                {% assign categoryIcon = category %}
+            {% endif %}
+        {% endfor %}
+    <article id="{{post.title}}" class="container post item col-10 ml-auto mr-auto">
+        <div class="row">
+            <div class="col-3 ml-auto article-thumb text-center">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <i class="fa {{categoryIcon.icon}} fa-5x {{categoryIcon.class}}"></i>
+                </a>
+            </div>
+            <div class="col-7 mr-auto">
+                <div class="article-meta row">
+                    <div>
+                        <i class="fa fa-clock-o meta-icon"></i> <a>{{ post.date | date: "%-d %b %Y" }}</a>
+                        <i class="fa fa-user meta-icon"></i> <a>{{ post.author }}</a>
                     </div>
                 </div>
+                <div class="article-content row">
+                    <h3 class="item-title article-title"><a href="{{ post.url | prepend: site.baseurl }}" class="link" rel="bookmark">{{ post.title }}</a></h3>
+                    <p class="item-description article-excerpt">{{ post.excerpt }}</p>
+                </div>
             </div>
-            {% endfor %}
         </div>
+    </article>
+    {% endfor %}
+    <div class="all-news col-12">
+        <a class="btn btn-square btn-outline" href="/archive/" role="button">All Articles</a>
     </div>
-
 </div>
+

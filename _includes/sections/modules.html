@@ -1,21 +1,12 @@
 <div class="row module-wrapper">
     {% for module in site.data.index.modules %}
-        {% assign loopindex = forloop.index | modulo: 2 %}
-        {% if forloop.last %}
-            {% if forloop.last == forloop.first %}
-    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-sm-4 wow col-sm-offset-4 zoomIn">
-            {% else %}
-    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-sm-4 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-4 {% else %} col-sm-offset-2 fadeInRight {% endif %}">
-            {% endif %}
-        {% else %}
-    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-sm-4 wow {% if loopindex == 1 %} col-sm-offset-1 fadeInLeft {% else %} col-sm-offset-2 fadeInRight {% endif %}">
-        {% endif %}
+    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-10 col-md-5 ml-auto mr-auto">
         <div class="module-item">
             <img src="" class="hide logo img-responsive" alt="">
-            <h3 class="item-title">
+            <h3 class="item-title text-center">
                 <a class="link" href="/module/{{ module.name }}" target="_blank">{{ module.name }}</a>
             </h3>
-            <p class="item-description"></p>
+            <p class="item-description text-center"></p>
             <div class="ghbtn">
                 <a target="_blank" href="#" class="btn btn-xs btn-white html_url" alt="Repository"><i class="fa fa-github"></i></a>
                 <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/issues/new" class="btn btn-xs btn-white repo" alt="Report Issue"><i class="fa fa-bug"></i></a>
