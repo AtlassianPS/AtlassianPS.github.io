@@ -7,24 +7,22 @@ layout: default
 
     {% include carousel.html %}
 
-    <div class="container">
-        {% for section in site.data.landing %}
-            {% assign loopindex = forloop.index | modulo: 2 %}
-        <section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.classes }}">
-            <div class="container">
-                <div class="row section-header">
-                    <div class="col-xs-12 mx-auto text-center">
-                        <div class="navy-line"></div>
-                        <h2 class="section-title">
-                            <small>{{ section.preTitle }}<br/></small>
-                            <span class="text-uppercase">{{ section.title }}</span>
-                            <small><br/>{{ section.postTitle }}</small>
-                        </h2>
-                    </div>
+    {% for section in site.data.landing %}
+    {% assign loopindex = forloop.index | modulo: 2 %}
+    <section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.classes }}">
+        <div class="container">
+            <div class="row section-header">
+                <div class="col-xs-12 mx-auto text-center">
+                    <div class="navy-line"></div>
+                    <h2 class="section-title">
+                        {% if section.preTitle %}<small>{{ section.preTitle }}<br/></small>{% endif %}
+                        <span class="text-uppercase">{{ section.title }}</span>
+                        {% if section.postTitle %}<small><br/>{{ section.postTitle }}</small>{% endif %}
+                    </h2>
                 </div>
-                {% include sections/{{section.tpl}} %}
             </div>
-        </section>
-        {% endfor %}
-    </div>
+            {% include sections/{{section.tpl}} %}
+        </div>
+    </section>
+    {% endfor %}
 </div>
