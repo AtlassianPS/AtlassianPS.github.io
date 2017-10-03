@@ -1,26 +1,25 @@
 - name: Modules
   childs:
-    - name: BitbucketPS
-      path: module/BitbucketPS
+    # - name: BitbucketPS
+    #   path: module/BitbucketPS
     - name: ConfluencePS
       path: module/ConfluencePS
-    - name: HipChatPS
-      path: module/HipChatPS
-    - name: JiraPS
-      path: module/JiraPS
+    # - name: HipChatPS
+    #   path: module/HipChatPS
+    # - name: JiraPS
+    #   path: module/JiraPS
 - name: Documentation
   path: docs
   childs:
-    - name: BitbucketPS
-      path: docs/BitbucketPS
+    # - name: BitbucketPS
+    #   path: docs/BitbucketPS
     - name: ConfluencePS
       path: docs/ConfluencePS
-    - name: HipChatPS
-      path: docs/HipChatPS
-    - name: JiraPS
-      path: docs/JiraPS
+    # - name: HipChatPS
+    #   path: docs/HipChatPS
+    # - name: JiraPS
+    #   path: docs/JiraPS
 - name: Join us on Slack
-  path: https://join.slack.com/t/atlassianps/shared_invite/MjM3ODE0ODA4MDUzLTE1MDQ3OTc5OTQtZjk5ZDNlOWU4MA
-  target: _blank
+  path: slack/
 - name: Contact
   path: contact

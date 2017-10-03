@@ -2,28 +2,28 @@
 layout: default
 ---
 
-{% for module in site.data.modules %}
+{% comment %} {% for module in site.data.modules %}
     {% assign module_path_size = module.path | size %}
     {% assign result = page.url | slice: 0, module_path_size %}
     {% if result == module.path %}
         {% assign current_module = module %}
     {% endif %}
-{% endfor %}
+{% endfor %} {% endcomment %}
 
-<div class="documentation">
+<div class="documentation container-fluid">
 
-    <div class="container-fluid">
-        <div class="row flex-xl-nowrap">
+    <div class="row flex-xl-nowrap">
 
-            {% include sidebar_left.html %}
-            
-            {% include sidebar_right.html %}
+        {% include sidebar_left.html %}
+        
+        {% include sidebar_right.html %}
 
-            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-                {{ content }}
-            </main>
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
-        </div>
+            {{ content }}
+
+        </main>
+
     </div>
 </div>
 <script src="/assets/js/docs.min.js"></script>

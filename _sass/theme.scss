@@ -537,33 +537,6 @@ input[type="checkbox"] {
     font-style: normal !important;
 }
 
-.breadcrumb {
-    background: rgba(245, 245, 245, 1);
-    border: 0px solid rgba(245, 245, 245, 1);
-    border-radius: 5px;
-    display: block;
-}
-
-// .breadcrumb li {
-//     font-size: 14px;
-// }
-.breadcrumb a {
-    color: $powershell-blue;
-}
-
-.breadcrumb a:hover {
-    color: $powershell-blue;
-}
-
-.breadcrumb>.active {
-    color: rgba(153, 153, 153, 1);
-}
-
-.breadcrumb>li+li:before {
-    color: rgba(204, 204, 204, 1);
-    content: "\2771\00a0";
-}
-
 .break,
 h1,
 h2,
@@ -1251,6 +1224,7 @@ header.site-header {
     .item {
         // height: 250px;
         margin-bottom: 30px;
+        text-align: center;
         h3.item-title,
         h3.item-title a {
             color: $powershell-blue;
@@ -1395,6 +1369,7 @@ header.site-header {
 .posts-wrapper {
     article {
         display: block;
+        text-align: left !important;
         &.post {
             margin-bottom: 0 !important;
             border-top: 1px solid #e9e9e9;
@@ -1423,7 +1398,7 @@ header.site-header {
 }
 
 footer {
-    margin-top: 30px;
+    margin-top: 50px;
     background: #111111;
     color: #BBBBBB;
     font-size: 14px;
@@ -1464,4 +1439,9 @@ footer {
             color: #dddddd;
         }
     }
+}
+
+body > .page {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
