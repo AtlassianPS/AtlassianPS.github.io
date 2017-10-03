@@ -570,7 +570,8 @@ img.img-md {
     background-color: transparent;
     transition: all .5s;
     border: 1px solid $powershell-blue;
-    &:hover {
+    &:hover,
+    &:active {
         color: #fff;
         background-color: $powershell-blue;
     }
@@ -1194,6 +1195,12 @@ header.site-header {
                     color: #fff;
                     text-transform: uppercase;
                     text-shadow: none;
+                    border: 1px solid transparent;
+                    &:focus,
+                    &:active {
+                        box-shadow: none;
+                        border: 1px solid transparent;
+                    }
                 }
                 .btn-lg {
                     padding: .75rem 1.5
@@ -1201,7 +1208,9 @@ header.site-header {
                 .btn-outline {
                     border: 1px solid #fff;
                     color: #fff;
-                    &:hover {
+                    &:hover,
+                    &:focus,
+                    &:active {
                         color: $powershell-blue;
                         background: #fff;
                     }
@@ -1444,6 +1453,7 @@ footer {
 body>.page {
     margin-top: 30px;
     margin-bottom: 30px;
+    min-height: 65.7%;
     h2 {
         margin-top: 40px;
     }

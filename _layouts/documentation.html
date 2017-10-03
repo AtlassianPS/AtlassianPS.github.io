@@ -2,15 +2,7 @@
 layout: default
 ---
 
-{% comment %} {% for module in site.data.modules %}
-    {% assign module_path_size = module.path | size %}
-    {% assign result = page.url | slice: 0, module_path_size %}
-    {% if result == module.path %}
-        {% assign current_module = module %}
-    {% endif %}
-{% endfor %} {% endcomment %}
-
-<div class="documentation container-fluid">
+<div class="documentation container-fluid page">
 
     <div class="row flex-xl-nowrap">
 
