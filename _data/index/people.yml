@@ -31,15 +31,15 @@
   short_desc: 
   long_desc: 
 
-- name: axxelG
-  role: Contributer
-  gh_user: axxelG
+- name: markwragg
+  role: Reviewer
+  gh_user: markwragg
   short_desc: 
   long_desc: 
 
-- name: jkknorr
+- name: axxelG
   role: Contributer
-  gh_user: jkknorr
+  gh_user: axxelG
   short_desc: 
   long_desc: 
 
@@ -60,13 +60,11 @@
   gh_user: colhal
   short_desc: 
   long_desc: 
-  long_desc: 
 
 - name: kittholland
   role: Contributer
   gh_user: kittholland
   short_desc: 
-  long_desc: 
   long_desc: 
 
 - name: lukhase
@@ -74,13 +72,11 @@
   gh_user: lukhase
   short_desc: 
   long_desc: 
-  long_desc: 
 
 - name: alexsuslin
   role: Contributer
   gh_user: alexsuslin
   short_desc: 
-  long_desc: 
   long_desc: 
 
 - name: ThePSAdmin
@@ -88,11 +84,27 @@
   gh_user: ThePSAdmin
   short_desc: 
   long_desc: 
-  long_desc: 
 
 - name: LiamLeane
   role: Contributer
   gh_user: LiamLeane
   short_desc: 
   long_desc: 
+
+- name: TomasDeceuninck
+  role: Contributer
+  gh_user: TomasDeceuninck
+  short_desc: 
+  long_desc: 
+
+- name: MrAusnadian
+  role: Contributer
+  gh_user: MrAusnadian
+  short_desc: 
+  long_desc: 
+
+- name: vzabauski
+  role: Contributer
+  gh_user: vzabauski
+  short_desc: 
   long_desc: 
