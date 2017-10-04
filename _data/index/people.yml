@@ -38,73 +38,79 @@
   long_desc: 
 
 - name: axxelG
-  role: Contributer
+  role: Contributor
   gh_user: axxelG
   short_desc: 
   long_desc: 
 
 - name: jkknorr
-  role: Contributer
+  role: Contributor
   gh_user: jkknorr
   short_desc: 
   long_desc: 
 
 - name: padgers
-  role: Contributer
+  role: Contributor
   gh_user: padgers
   short_desc: 
   long_desc: 
 
 - name: colhal
-  role: Contributer
+  role: Contributor
   gh_user: colhal
   short_desc: 
   long_desc: 
 
 - name: kittholland
-  role: Contributer
+  role: Contributor
   gh_user: kittholland
   short_desc: 
   long_desc: 
 
 - name: lukhase
-  role: Contributer
+  role: Contributor
   gh_user: lukhase
   short_desc: 
   long_desc: 
 
 - name: alexsuslin
-  role: Contributer
+  role: Contributor
   gh_user: alexsuslin
   short_desc: 
   long_desc: 
 
 - name: ThePSAdmin
-  role: Contributer
+  role: Contributor
   gh_user: ThePSAdmin
   short_desc: 
   long_desc: 
 
 - name: LiamLeane
-  role: Contributer
+  role: Contributor
   gh_user: LiamLeane
   short_desc: 
   long_desc: 
 
 - name: TomasDeceuninck
-  role: Contributer
+  role: Contributor
   gh_user: TomasDeceuninck
   short_desc: 
   long_desc: 
 
 - name: MrAusnadian
-  role: Contributer
+  role: Contributor
   gh_user: MrAusnadian
   short_desc: 
   long_desc: 
 
 - name: vzabauski
-  role: Contributer
+  role: Contributor
   gh_user: vzabauski
   short_desc: 
+  long_desc: 
+
+- name: ebekker
+  role: Contributor
+  gh_user: ebekker
+  short_desc: [One man can make a difference.](https://www.youtube.com/watch?v=otzJszJ9MnA)
   long_desc: 
