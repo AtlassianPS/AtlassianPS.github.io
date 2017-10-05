@@ -2,3 +2,6 @@
 	path = modules/ConfluencePS
 	url = https://github.com/AtlassianPS/ConfluencePS.git
 	branch = master
+[submodule "modules/JiraPS"]
+	path = modules/JiraPS
+	url = https://github.com/AtlassianPS/JiraPS.git
