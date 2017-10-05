@@ -6,8 +6,8 @@
       path: module/ConfluencePS
     # - name: HipChatPS
     #   path: module/HipChatPS
-    # - name: JiraPS
-    #   path: module/JiraPS
+    - name: JiraPS
+      path: module/JiraPS
 - name: Documentation
   path: docs
   childs:
