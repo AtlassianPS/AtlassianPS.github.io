@@ -5,3 +5,12 @@
 [submodule "modules/JiraPS"]
 	path = modules/JiraPS
 	url = https://github.com/AtlassianPS/JiraPS.git
+[submodule "modules/HipChatPS"]
+	path = modules/HipChatPS
+	url = https://github.com/AtlassianPS/HipChatPS.git
+[submodule "modules/BitbucketPS"]
+	path = modules/BitbucketPS
+	url = https://github.com/AtlassianPS/BitbucketPS.git
+[submodule "modules/AtlassianPS"]
+	path = modules/AtlassianPS
+	url = https://github.com/AtlassianPS/AtlassianPS.git
