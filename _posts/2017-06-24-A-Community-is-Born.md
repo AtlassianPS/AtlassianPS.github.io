@@ -3,7 +3,6 @@ layout:     article
 permalink:  /article/:categories/:title
 title:      A Community is Born
 date:       2017-06-24 12:00:00
-summary:    I am pleased to announce, that today we decided to bring AtlassianPS into life.
 categories: Announcement
 thumbnail:  
 author:     lipkau
