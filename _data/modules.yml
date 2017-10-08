@@ -10,7 +10,7 @@
 #   description: ToDo
 #   github: https://github.com/AtassianPS/HipChatPS
 #   path: /module/HipChatPS
-- name: JiraPS
-  description: PowerShell module to interact with Atlassian JIRA
-  github: https://github.com/AtassianPS/JiraPS
-  path: /module/JiraPS
+# - name: JiraPS
+#   description: PowerShell module to interact with Atlassian JIRA
+#   github: https://github.com/AtassianPS/JiraPS
+#   path: /module/JiraPS
