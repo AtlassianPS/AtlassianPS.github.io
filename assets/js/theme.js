@@ -61,11 +61,6 @@ function buildScrollSpy() {
         $('.documentation main').scrollspy({ target: '#scrollSpyNav' });
     }
 }
-// $(window).load(function () {
-//     debugger;
-//     let urlCurrent = $(location.hash);
-//     smoothScroll(urlCurrent);
-// });
 
 $(document).ready(function() {
     if ($(location.hash) > 0) {

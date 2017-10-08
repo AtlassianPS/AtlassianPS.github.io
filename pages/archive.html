@@ -1,0 +1,38 @@
+---
+layout: default
+permalink: /archive/
+---
+
+<div class="row posts-wrapper">
+    {% for post in site.posts %}
+        {% assign loopindex = forloop.index | modulo: 2 %}
+        {% for category in site.data.categories %}
+            {% if category.name == post.categories[0] %}
+                {% assign categoryIcon = category %}
+            {% endif %}
+        {% endfor %}
+    <article id="{{post.title}}" class="container post item col-10 ml-auto mr-auto">
+        <div class="row">
+            <div class="col-3 ml-auto article-thumb text-center">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <i class="fa {{categoryIcon.icon}} fa-5x {{categoryIcon.class}}"></i>
+                </a>
+            </div>
+            <div class="col-7 mr-auto">
+                <div class="article-meta row">
+                    <div>
+                        <i class="fa fa-clock-o meta-icon"></i> <a>{{ post.date | date: "%-d %b %Y" }}</a>
+                        <i class="fa fa-user meta-icon"></i> <a>{{ post.author }}</a>
+                    </div>
+                </div>
+                <div class="article-content row">
+                    <div class="container">
+                        <h3 class="item-title article-title"><a href="{{ post.url | prepend: site.baseurl }}" class="link" rel="bookmark">{{ post.title }}</a></h3>
+                        {{ post.excerpt }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</div>
