@@ -29,12 +29,12 @@
                         {% else %}
                         <li class="menu-item">
                             {% if section.path %}
-                            <a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}"{% if section.target %} target="{{ section.target }}" {% endif %}>
-                        {% else %}
-                        <a href="#">
-                        {% endif %}
-                        {{ section.name }}
-                        </a>
+                            <a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}" {% if section.target %} target="{{ section.target }}" {% endif %}>
+                            {% else %}
+                            <a href="#">
+                            {% endif %}
+                                {{ section.name }}
+                            </a>
                         </li>
                         {% endif %}
                     {% endfor %}

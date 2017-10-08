@@ -1,8 +1,18 @@
 $powershell-blue: rgb(1, 36, 86);
 $header-bg: #eaeaea;
 $navitem-bg: #ffffff;
-$normal-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$code-font: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$normal-font: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+sans-serif;
+$code-font: Monaco,
+Consolas,
+"Andale Mono",
+"DejaVu Sans Mono",
+monospace;
 
 /* */
 
@@ -259,7 +269,7 @@ pre {
     white-space: pre-wrap;
     max-width: 100%;
     line-height: 1.7;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     padding: 20px;
 }
 
@@ -358,7 +368,6 @@ fieldset {
 }
 
 input[type="reset"],
-input[type="submit"],
 input[type="submit"] {
     cursor: pointer;
     background: $powershell-blue;
@@ -381,7 +390,6 @@ input[type="submit"] {
 }
 
 input[type="reset"]:hover,
-input[type="submit"]:hover,
 input[type="submit"]:hover {
     opacity: 0.8;
 }
@@ -780,6 +788,16 @@ header.site-header {
     z-index: 99;
     -webkit-transition: all 1s ease-out;
     transition: all .5s ease-out;
+    input,
+    input:focus {
+        border: $powershell-blue solid 1px;
+        box-shadow: 0 0 7px $powershell-blue;
+        color: $powershell-blue;
+        font-weight: 600;
+        &::placeholder {
+            color: $powershell-blue;
+        }
+    }
     .site-branding {
         float: left;
         .site-title,
@@ -958,7 +976,6 @@ header.site-header {
             -webkit-transition: background .2s;
             transition: background .2s;
             position: relative;
-            border-bottom: 3px solid $header-bg;
             &:hover,
             &.sfHover {
                 -webkit-transition: none;
@@ -968,7 +985,10 @@ header.site-header {
                 }
             }
             &.active {
-                border-bottom: 3px solid $powershell-blue !important;
+                background: $powershell-blue !important;
+                &>a {
+                    color: #ffffff;
+                }
             }
         }
         >li:last-child {
@@ -991,6 +1011,21 @@ header.site-header {
             &:hover {
                 color: $powershell-blue;
             }
+        }
+        li.search {
+            margin-left: 20px;
+            .ds-dropdown-menu {
+                line-height: 35px;
+            }
+            .algolia-docsearch-footer {
+                display: none;
+            }
+        }
+        input {
+            height: 40px;
+            margin: 15px 0;
+            padding: 10px;
+            width: 140px;
         }
         ul,
         ul li,
@@ -1096,6 +1131,21 @@ header.site-header {
                     color: #777777;
                     &:hover {
                         color: #000000;
+                    }
+                }
+                li.search {
+                    display: block;
+                    margin-left: 0;
+                    .algolia-autocomplete {
+                        margin: 0px;
+                        display: flex !important;
+                        input {
+                            width: 100%;
+                            margin: 10px 20px;
+                        }
+                    }
+                    .ds-dropdown-menu {
+                        // position: relative !important;
                     }
                 }
                 .nav-toggle-subarrow {
@@ -1337,12 +1387,11 @@ header.site-header {
     }
 }
 
-.language-powershell::before {
-    color: #009;
-    content: "PS> ";
-    user-select: none;
-}
-
+// .language-powershell::before {
+//     color: #009;
+//     content: "PS> ";
+//     user-select: none;
+// }
 .bd-toc,
 .bd-sidebar {
     z-index: 90;
@@ -1511,4 +1560,76 @@ blockquote:before {
 
 blockquote p {
     display: inline;
+}
+
+.code_block {
+    .code_head {
+        background-color: #f5f5f5;
+        color: #707070;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        font-size: .8rem;
+        border: 1px solid $powershell-blue;
+        border-bottom: 0;
+        margin-top: 16px;
+        min-height: 30px;
+        span {
+            padding: 2px 16px;
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            color: $powershell-blue;
+            font-weight: 600;
+        }
+        button {
+            padding: 2px 10px;
+            background: transparent;
+            border: 0 solid #e0e0e0;
+            color: #707070;
+            cursor: pointer;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            line-height: normal;
+            border-left-width: 1px;
+            &:hover {
+                background-color: $powershell-blue;
+                color: #fff;
+                font-weight: 666;
+            }
+        }
+        .action.copy:before {
+            content: '\f24d ';
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            padding-right: 0.5em;
+        }
+    }
+    pre {
+        // border: 1px solid #d3d6db;
+        background-color: #f9f9f9;
+        font-size: .875rem;
+        border-radius: 0;
+        border: $powershell-blue 1px solid;
+    }
+    .language-powershell pre {
+        background-color: $powershell-blue;
+        color: #ffffff;
+        font-weight: 500;
+    }
 }

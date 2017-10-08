@@ -11,6 +11,14 @@ function _to_bool(v) {
     return false;
 }
 
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
 (function() {
     var is_webkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
         is_opera = navigator.userAgent.toLowerCase().indexOf('opera') > -1,
@@ -53,8 +61,18 @@ function buildScrollSpy() {
         $('.documentation main').scrollspy({ target: '#scrollSpyNav' });
     }
 }
+// $(window).load(function () {
+//     debugger;
+//     let urlCurrent = $(location.hash);
+//     smoothScroll(urlCurrent);
+// });
 
-$(document).ready(function($) {
+$(document).ready(function() {
+    if ($(location.hash) > 0) {
+        window.scrollTo(0, 0);
+        smoothScroll($(location.hash));
+    }
+    // debugger;
     var isMobile = { Android: function() { return navigator.userAgent.match(/Android/i); }, BlackBerry: function() { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function() { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function() { return navigator.userAgent.match(/IEMobile/i); }, any: function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
 
     var is_top_header = $('.site-header').length ? true : false;
@@ -136,9 +154,11 @@ $(document).ready(function($) {
     });
 
     function smoothScroll(element) {
+        let headerSize = $('header#masthead').height();
         if (element.length <= 0) { return false; }
+        debugger;
         $("html, body").animate({
-            scrollTop: $(element).offset().top + "px"
+            scrollTop: ($(element).offset().top - headerSize) + "px"
         }, {
             duration: 800,
             easing: "swing",
@@ -154,5 +174,33 @@ $(document).ready(function($) {
     if ($('.documentation')) {
         buildScrollSpy();
     }
+
+    $('[data-toggle="slide-collapse"]').on('click', function() {
+        $navMenuCont = $($(this).data('target'));
+        $navMenuCont.animate({ 'width': 'toggle' }, 350);
+    });
+
+    let wrapper = $('pre code').parent().parent().wrap('<div class="code_block"></div>');
+    wrapper.each(function(k, v) {
+        let language = "";
+        if ($(v).hasClass('language-powershell')) {
+            language = "PowerShell";
+        } else if ($(v).hasClass('language-yaml')) {
+            language = "YAML";
+        }
+
+        if (language) {
+            $(v).before(`
+                <div class="code_head">
+                    <span class="">${language}</span>
+                    <button class="action copy"> Copy</button>
+                </div>
+            `);
+        }    
+    });
+
+    $('button.action.copy').on('click', function() {
+        copyToClipboard($(this).parents('.code_block').find('code'))
+    });
 
 });
