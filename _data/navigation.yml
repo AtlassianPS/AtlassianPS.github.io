@@ -19,7 +19,8 @@
     #   path: docs/HipChatPS
     # - name: JiraPS
     #   path: docs/JiraPS
-- name: Join us on Slack
-  path: slack/
+- name: Donate
+  path: https://paypal.me/AtlassianPS
+  target: _blank
 - name: Contact
-  path: contact
+  path: contact/
