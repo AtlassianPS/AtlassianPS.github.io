@@ -11,10 +11,14 @@ tags:
  - Release
 ---
 
-We have just uploaded a new version of the **ConfluencePS** module to the [Gallery](https://www.powershellgallery.com/packages/ConfluencePS/2.0.0) and to [GitHub](https://github.com/AtlassianPS/ConfluencePS/releases/tag/v2.0.0).
+We have just published a new major version of the **ConfluencePS** module to the [Gallery](https://www.powershellgallery.com/packages/ConfluencePS/2.0.0) and to [GitHub](https://github.com/AtlassianPS/ConfluencePS/releases/tag/v2.0.0)!
 <!--more-->
 
-# Description
+There's also a short announcement [on Reddit](https://www.reddit.com/r/PowerShell/comments/6ua676/confluenceps_v2_released/). All details can be found in the [changelog](https://github.com/AtlassianPS/ConfluencePS/blob/master/CHANGELOG.md), but the biggest changes are copied below for your convenience:
+
+---
+
+### Description
 A new major version! ConfluencePS has been totally refactored to introduce new features and greatly improve efficiency.
 
 "A new major version" means limited older functionality was intentionally broken. In addition, there are a ton of good changes, so some big picture notes first:
@@ -42,68 +46,5 @@ A new major version! ConfluencePS has been totally refactored to introduce new f
 - Private functions are leveraged heavily to reduce repeat code
   - `Invoke-Method` is the most prominent example
 
-_If you like drinking from the firehose, here's [everything we closed for 2.0], because we probably forgot to list something here. Otherwise, read on for summarized details._
-
-### Added
-- All `Get-*` functions now support paging
-- `-ApiUri` and `-Credential` parameters added to functions
-  - `Set-ConfluenceInfo` behavior is mostly unchanged (see below)
-- Objects returned are now custom typed, like `[ConfluencePS.Page]`
-  - Try piping ConfluencePS objects into `Format-List *` to see all properties
-
-### Changed
-- Function prefix defaults to "Confluence" instead of "Wiki" (`Get-ConfluenceSpace`)
-  - If you like "Wiki", you can `Import-Module ConfluencePS -Prefix Wiki`
-- `Add-ConfluenceLabel`
-  - Name used to be `New-WikiLabel`
-  - The "Add" verb better reflects the function's behavior
-- `Get-ConfluenceChildPage`
-  - Default behavior returns only immediate child pages. Which also means...
-  - Added `-Recurse` to return all pages below the given page, not just immediate child objects
-    - NOTE: Recurse is not available in on-prem installs right now, only Atlassian cloud instances
-  - `-ParentID` > `-PageID`
-- `Get-ConfluenceLabel`
-  - Name used to be `Get-WikiPageLabel`
-  - Now returns `[ConfluencePS.ContentLabelSet]` objects
-    - Which are relationships of `[ConfluencePS.Label]` & `[ConfluencePS.Page]` objects
-- `Get-ConfluencePage`
-  - `Get-ConfluencePage` (with no parameters) doesn't work anymore
-    - With paging supported, this would be a ton of pages
-    - `Get-ConfluenceSpace | Get-ConfluencePage` still works, if you really need it
-  - Now returns `[ConfluencePS.Page]` objects
-  - New `-Label` parameter filters returned pages by applied label(s)
-  - New `-Space` parameter accepts Space objects
-- `Get-ConfluenceSpace`
-  - Now returns `[ConfluencePS.Space]` objects
-  - `-Key` renamed to `-SpaceKey` ("Key" still works as an alias)
-  - `-Name` parameter removed
-- `New-ConfluencePage`
-  - New `-Parent` parameter accepts Page objects
-  - New `-Space` parameter accepts Space objects
-- `New-ConfluenceSpace`
-  - `-Key` renamed to `-SpaceKey` ("Key" still works as an alias)
-- `Set-ConfluenceInfo`
-  - Now adds the URI/Credential to `$PSDefaultParameterValues`
-    - `-ApiUri` & `-Credential` parameters now exist on every function
-    - `Set-ConfluenceInfo` defines their defaults for the current session
-    - Meaning they could still be overwritten on any single command
-  - No longer automatically prompts for credentials if `-Credential` is absent
-    - Allows for anonymous authentication to public instances
-  - New `-PromptCredentials` parameter displays a `Get-Credential` dialog while connecting
-  - New `-PageSize` parameter optionally defines default page size for the session
-- `Set-ConfluencePage`
-  - Now returns `[ConfluencePS.Page]` objects
-  - `-CurrentVersion` parameter removed (determined and incremented automatically now)
-  - New `-Parent` parameter accepts Page objects
-
-### Removed
-- `-Limit` and `-Expand` parameters
-  - `Get-*` function paging removes the need for fiddling with returned object limits
-  - Custom object types hold relevant properties, removing the need to manually "expand" results
-- `Get-WikiLabelApplied`
-  - Functionality replaced with `Get-ConfluencePage -Label foo`
-
 ### Much ❤
 [@lipkau](https://github.com/lipkau) refactored the entire module, and is the only reason `2.0` is a reality. In short, he is amazing. Thank you!
-
-[everything we closed for 2.0]: https://github.com/AtlassianPS/ConfluencePS/issues?utf8=%E2%9C%93&q=closed%3A2017-04-01..2017-08-17
