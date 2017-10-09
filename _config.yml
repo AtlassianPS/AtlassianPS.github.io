@@ -4,12 +4,11 @@ description: A PowerShell community for Atlassian products
 # description: A community for PowerShell lovers that use Atlassian products
 keywords: Atlassian,AtlassianPS,jira,confluence,bitbucket,hipchat,jiraps,confluenceps,bitbucketps,hipchatps,github,gh-pages
 baseurl: ""
-url: "https://atlassianps.github.io"
+url: "https://atlassianps.org"
 
 # analytics
 ## google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-  # id:
+ga: UA-101621732-1
 
 # Build settings
 encoding: utf-8
