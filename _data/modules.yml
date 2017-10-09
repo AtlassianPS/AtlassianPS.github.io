@@ -6,6 +6,9 @@
   description: A PowerShell module that interacts with Atlassian's Confluence wiki product.
   github: https://github.com/AtassianPS/ConfluencePS
   path: /module/ConfluencePS
+  groups:
+    - Commands
+    - Classes
 # - name: HipChatPS
 #   description: ToDo
 #   github: https://github.com/AtassianPS/HipChatPS

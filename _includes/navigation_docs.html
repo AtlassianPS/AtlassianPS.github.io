@@ -1,4 +1,4 @@
-<div class="navbar-wrapper">
+<div class="navbar-wrapper doc-nav">
     <header id="masthead" class="site-header" role="banner" style="top: auto; height: auto;">
         <div class="container">
             <div class="site-branding">
@@ -16,20 +16,28 @@
                         <li class="menu-item menu-item-has-children{% if page.path contains module.name %} active{% endif %}">
                             <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/docs/{{module.name}}">{{ module.name }}</a>
                             <ul class="sub-menu">
-                            {% capture module_dir %}/docs/{{ module.name }}/{% endcapture %}
-                            {% for p in site.html_pages %}
-                                {% if p.url contains module_dir %}
-                                    {% assign result = p.url | remove: module_dir %}
-                                    {% assign currentPage = page.name | remove: ".md" %}
-                                    {% assign loopPage = p.name | remove: ".md" %}
-                                    {% if p.hide != true %}
-                                <li class="menu-item"><a href="{{module_dir}}{{result}}">{{loopPage}}</a></li>
-                                    {% endif %}
-                                {% endif %}
+                            {% for group in module.groups %}
+                                <li class="menu-item menu-item-has-children">
+                                    <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/docs/{{module.name}}/{{group | downcase}}">{{group}}</a>
+                                    <ul class="sub-menu">
+                                    {% capture module_dir %}/docs/{{ module.name }}/{{group | downcase}}{% endcapture %}
+                                    {% for p in site.html_pages %}
+                                        {% if p.url contains module_dir %}
+                                            {% assign result = p.url | remove: module_dir %}
+                                            {% assign currentPage = page.name | remove: ".md" %}
+                                            {% assign loopPage = p.name | remove: ".md" %}
+                                            {% if p.hide != true %}
+                                        <li class="menu-item"><a href="{{module_dir}}{{result}}">{{loopPage}}</a></li>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </li>
                             {% endfor %}
                             </ul>
                         </li>
-                        {% endfor %}
+                    {% endfor %}
+
                         <li class="menu-item search">
                             <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
                         </li>
