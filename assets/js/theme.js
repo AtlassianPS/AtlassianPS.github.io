@@ -69,8 +69,6 @@ $(document).ready(function() {
         let language = "";
         if ($(v).hasClass('language-powershell')) {
             language = "PowerShell";
-        } else if ($(v).hasClass('language-yaml')) {
-            language = "YAML";
         }
 
         if (language) {
@@ -80,11 +78,16 @@ $(document).ready(function() {
                     <button class="action copy"> Copy</button>
                 </div>
             `);
-        }    
+        }
     });
 
     $('button.action.copy').on('click', function() {
         copyToClipboard($(this).parents('.code_block').find('code'))
     });
 
+    anchors.add();
+
+    $('a[data-toggle="collapse"]').on('click', function () {
+        $(this).parent().parent().find('.panel-collapse').toggle();
+    });
 });
