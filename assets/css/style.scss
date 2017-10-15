@@ -1,4 +1,14 @@
 ---
 ---
 
+@charset "utf-8";
+
+@import "bootstrap-sass/bootstrap";
 @import "theme";
+@import "codeblock";
+@import "blockquote";
+@import "navigation";
+@import "landingpage";
+@import "documentationpage";
+@import "footer";
+@import "algolia";

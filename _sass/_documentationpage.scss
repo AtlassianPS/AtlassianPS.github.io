@@ -1,0 +1,60 @@
+.documentation {
+    main {
+        position: relative;
+    }
+    h1 {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        font-weight: 300;
+        @media (min-width: 576px) {
+            font-size: 3rem;
+        }
+    }
+    p:first-of-type {
+        font-size: 1.125rem;
+        font-weight: 300;
+        @media (min-width: 576px) {
+            max-width: 80%;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+    }
+    ul.bd-sidenav,
+    ul.bd-sidenav li {
+        margin: 0;
+    }
+}
+
+// .language-powershell::before {
+//     color: #009;
+//     content: "PS> ";
+//     user-select: none;
+// }
+.bd-toc,
+.bd-sidebar {
+    z-index: 90;
+    top: 80px;
+}
+
+.toc-entry a:hover,
+.bd-sidebar .nav>li>a:hover,
+.bd-sidebar .bd-toc-link a:hover {
+    color: $powershell-blue;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1140px) {
+    .bd-toc,
+    .bd-sidebar {
+        top: 0px;
+    }
+}
+
+.nav {
+    padding-left: 10px;
+}
+
+.bd-search-docs-toggle:hover,
+.bd-search-docs-toggle:focus {
+    color: $powershell-blue;
+}

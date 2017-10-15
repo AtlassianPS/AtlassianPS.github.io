@@ -1,0 +1,490 @@
+header.site-header {
+    line-height: 75px;
+    position: relative;
+    width: 100%;
+    background: $header-bg;
+    z-index: 99;
+    -webkit-transition: all 1s ease-out;
+    transition: all .5s ease-out;
+    input,
+    input:focus {
+        border: $powershell-blue solid 1px;
+        box-shadow: 0 0 7px $powershell-blue;
+        color: $powershell-blue;
+        font-weight: 600;
+        &::placeholder {
+            color: $powershell-blue;
+        }
+    }
+    @media screen and (max-width: 1140px) {
+        // .main-navigation {
+        //     position: static;
+        //     .onepress-menu {
+        //         width: 100%!important;
+        //         display: none;
+        //     }
+        // }
+    }
+    .site-branding {
+        float: left;
+        .site-title,
+        .site-text-logo {
+            margin: 0px;
+            line-height: 1;
+            font-size: 23px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: $powershell-blue;
+            display: initial;
+            vertical-align: middle;
+            font-weight: 600;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .site-title {
+            display: inline-block;
+        }
+        .site-image-logo {
+            display: block;
+        }
+        .site-logo-div {
+            line-height: 75px;
+        }
+        .no-logo-img.has-desc,
+        .has-logo-img {
+            line-height: 60px;
+        }
+        .no-logo-img.has-desc .site-title,
+        .has-logo-img .site-title {
+            margin-top: -5px;
+            position: relative;
+        }
+        .no-logo-img.has-desc .site-description,
+        .has-logo-img .site-description {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 0;
+            position: relative;
+            top: -15px;
+        }
+    }
+    #nav-toggle {
+        display: none;
+        margin-left: 15px;
+        float: right;
+        position: relative;
+        width: 35px;
+        overflow: hidden;
+        white-space: nowrap;
+        color: transparent;
+        span {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            margin-top: -2px;
+            -webkit-transition: rotate 0.2s, translate 0.2s;
+            -moz-transition: rotate 0.2s, translate 0.2s;
+            transition: rotate 0.2s, translate 0.2s;
+            display: inline-block;
+            height: 3px;
+            width: 24px;
+            background: #000000;
+            &:before {
+                top: -8px;
+            }
+            &:after {
+                top: 8px;
+            }
+            &:before,
+            &:after {
+                position: absolute;
+                display: inline-block;
+                height: 3px;
+                width: 24px;
+                background: #000000;
+                content: '';
+                right: 0;
+                -webkit-transform: translateZ(0);
+                -moz-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                -o-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-transform-origin: 0% 50%;
+                -moz-transform-origin: 0% 50%;
+                -ms-transform-origin: 0% 50%;
+                -o-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                -webkit-transition: -webkit-transform 0.2s;
+                -moz-transition: -moz-transform 0.2s;
+                transition: transform 0.2s;
+            }
+        }
+        &.nav-is-visible {
+            span {
+                background: transparent;
+                &:before {
+                    -webkit-transform: translateX(4px) translateY(-1px) rotate(45deg);
+                    -moz-transform: translateX(4px) translateY(-1px) rotate(45deg);
+                    -ms-transform: translateX(4px) translateY(-1px) rotate(45deg);
+                    -o-transform: translateX(4px) translateY(-1px) rotate(45deg);
+                    transform: translateX(4px) translateY(-1px) rotate(45deg);
+                }
+                &:after {
+                    -webkit-transform: translateX(4px) translateY(0px) rotate(-45deg);
+                    -moz-transform: translateX(4px) translateY(0px) rotate(-45deg);
+                    -ms-transform: translateX(4px) translateY(0px) rotate(-45deg);
+                    -o-transform: translateX(4px) translateY(0px) rotate(-45deg);
+                    transform: translateX(4px) translateY(0px) rotate(-45deg);
+                }
+                &:before,
+                &:after {
+                    background: #000000;
+                }
+            }
+        }
+        @media screen and (max-width: 1140px) {
+            display: block !important;
+        }
+        .doc-nav & {
+            display: block !important;
+        }
+    }
+    .onepress-menu,
+    .onepress-menu * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    ul.onepress-menu {
+        float: right;
+        @media screen and (max-width: 1140px) {
+            display: none;
+            position: absolute;
+            top: 75px;
+            right: 0;
+            width: 100%;
+            background: $navitem-bg;
+            z-index: 100;
+            border-bottom: 1px solid #e9e9e9;
+        }
+        .doc-nav & {
+            display: none;
+            width: 100%;
+            background: $navitem-bg;
+            z-index: 100;
+            border-bottom: 1px solid #e9e9e9;
+        }
+        >li {
+            float: left;
+            a.menu-actived {
+                color: $powershell-blue;
+            }
+            >ul {
+                position: absolute;
+            }
+            @media screen and (max-width: 1140px) {
+                >a {
+                    padding: 12px 20px;
+                }
+            }
+            .doc-nav & {
+                >a {
+                    padding: 12px 20px;
+                }
+            }
+            &:last-child {
+                >a {
+                    padding-right: 0px;
+                }
+            }
+        }
+        ul {
+            display: none;
+            top: 100%;
+            z-index: 99;
+            min-width: 18em;
+            *width: 18em;
+            border-top: none;
+            @media screen and (max-width: 1140px) {
+                box-shadow: none;
+                padding-bottom: 0;
+                border: none;
+                position: relative;
+                &.sub-menu {
+                    position: relative;
+                }
+            }
+            .doc-nav & {
+                box-shadow: none;
+                padding-bottom: 0;
+                border: none;
+                position: relative;
+                &.sub-menu {
+                    position: relative;
+                }
+            }
+            ul {
+                @media screen and (max-width: 1140px) {
+                    left: 0px;
+                }
+                .doc-nav & {
+                    left: 0px;
+                }
+                li {
+                    line-height: 10px !important;
+                    a {
+                        padding-left: 40px;
+                        font-size: smaller;
+                    }
+                }
+            }
+            li {
+                line-height: 26px;
+                a {
+                    border-top: 1px solid #e9e9e9;
+                    border-left: 1px solid #e9e9e9;
+                    border-right: 1px solid #e9e9e9;
+                    padding: 8px 18px;
+                    color: #999999;
+                    font-size: 13px;
+                    text-transform: none;
+                    background: $navitem-bg;
+                    letter-spacing: 0;
+                    &:first-of-type {
+                        border-top: 0;
+                    }
+                    &:hover {
+                        color: $powershell-blue;
+                    }
+                    @media screen and (max-width: 1140px) {
+                        padding: 12px 35px;
+                        border-top: none;
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                    .doc-nav & {
+                        padding: 12px 35px;
+                        border-top: none;
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                }
+                li {
+                    li {
+                        a {
+                            @media screen and (max-width: 1140px) {
+                                padding: 12px 105px;
+                            }
+                            .doc-nav & {
+                                padding: 12px 105px;
+                            }
+                        }
+                    }
+                    a {
+                        @media screen and (max-width: 1140px) {
+                            padding: 12px 70px;
+                            border-top: none;
+                        }
+                        .doc-nav & {
+                            padding: 12px 70px;
+                            border-top: none;
+                        }
+                    }
+                }
+                &:last-child {
+                    @media screen and (max-width: 1140px) {
+                        border-bottom: none;
+                    }
+                    .doc-nav & {
+                        border-bottom: none;
+                    }
+                }
+            }
+            >li {
+                &:last-child {
+                    a {
+                        border-bottom: 1px solid #e9e9e9;
+                    }
+                }
+            }
+        }
+        li {
+            white-space: nowrap;
+            *white-space: normal;
+            -webkit-transition: background .2s;
+            transition: background .2s;
+            @media screen and (max-width: 1140px) {
+                line-height: 20px;
+                background: #FFFFFF;
+                border-top: 1px solid #e9e9e9;
+                border-bottom: none;
+                width: 100%!important;
+            }
+            .doc-nav & {
+                line-height: 20px;
+                background: #FFFFFF;
+                border-top: 1px solid #e9e9e9;
+                border-bottom: none;
+                width: 100%!important;
+            }
+            &:hover,
+            &.sfHover {
+                -webkit-transition: none;
+                transition: none;
+                >ul {
+                    display: block;
+                }
+                @media screen and (max-width: 1140px) {
+                    ul {
+                        display: none;
+                    }
+                }
+                .doc-nav & {
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+            &.active {
+                background: $powershell-blue !important;
+                &>a {
+                    color: #ffffff;
+                }
+            }
+        }
+        a {
+            display: block;
+            position: relative;
+            color: #333333;
+            padding-left: 17px;
+            padding-right: 17px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            zoom: 1;
+            letter-spacing: 1px;
+            @media screen and (max-width: 1140px) {
+                color: #777777;
+            }
+            .doc-nav & {
+                color: #777777;
+            }
+            &:hover {
+                color: $powershell-blue;
+                // @media screen and (max-width: 1140px) {
+                //     color: #000000;
+                // }
+                // .doc-nav & {
+                //     color: #000000;
+                // }
+                .active & {
+                    color: #ffffff;
+                }
+            }
+        }
+        li.search {
+            margin-left: 20px;
+            @media screen and (max-width: 1140px) {
+                display: block;
+                margin-left: 0;
+                .algolia-autocomplete {
+                    margin: 0px;
+                    display: flex !important;
+                    input {
+                        width: 100%;
+                        margin: 10px 20px;
+                    }
+                }
+            }
+            .doc-nav & {
+                display: block;
+                margin-left: 0;
+                .algolia-autocomplete {
+                    margin: 0px;
+                    display: flex !important;
+                    input {
+                        width: 100%;
+                        margin: 10px 20px;
+                    }
+                }
+            }
+            .ds-dropdown-menu {
+                line-height: 35px;
+            }
+            .algolia-docsearch-footer {
+                display: none;
+            }
+        }
+        input {
+            height: 40px;
+            margin: 15px 0;
+            padding: 10px;
+            width: 140px;
+        }
+        ul,
+        ul li,
+        ul li.current-menu-item>a,
+        li.onepress-current-item>a {
+            color: $powershell-blue;
+        }
+        .nav-toggle-subarrow {
+            display: none;
+            @media screen and (max-width: 1140px) {
+                display: block !important;
+                color: #999999;
+                border-left: 1px solid #e9e9e9;
+                font-weight: normal;
+                position: relative;
+                float: right;
+                cursor: pointer;
+                text-align: center;
+                padding: 11px 20px;
+                z-index: 10;
+                font-size: 22px;
+            }
+            .doc-nav & {
+                display: block !important;
+                color: #999999;
+                border-left: 1px solid #e9e9e9;
+                font-weight: normal;
+                position: relative;
+                float: right;
+                cursor: pointer;
+                text-align: center;
+                padding: 11px 20px;
+                z-index: 10;
+                font-size: 22px;
+            }
+        }
+        .nav-toggle-dropdown {
+            >ul {
+                display: block !important;
+            }
+            >.nav-toggle-subarrow {
+                .fa-angle-down:before {
+                    content: "\f106"!important;
+                }
+            }
+        }
+        @media screen and (max-width: 1140px) {
+            &.nav-is-visible {
+                display: block !important;
+            }
+        }
+        .doc-nav & {
+            &.nav-is-visible {
+                display: block !important;
+            }
+        }
+    }
+}
+
+.site-header-wrapper {
+    display: block;
+}

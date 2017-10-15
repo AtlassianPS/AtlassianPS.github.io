@@ -1,4 +1,5 @@
 - name: Modules
+  path: module
   childs:
     # - name: BitbucketPS
     #   path: module/BitbucketPS
@@ -23,4 +24,4 @@
   path: https://paypal.me/AtlassianPS
   target: _blank
 - name: Contact
-  path: contact/
+  path: contact
