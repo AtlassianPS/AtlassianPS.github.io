@@ -1,0 +1,71 @@
+.code_block {
+    .code_head {
+        background-color: #f5f5f5;
+        color: #707070;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        font-size: .8rem;
+        border: 1px solid $powershell-blue;
+        border-bottom: 0;
+        margin-top: 16px;
+        min-height: 30px;
+        span {
+            padding: 2px 16px;
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            color: $powershell-blue;
+            font-weight: 600;
+        }
+        button {
+            padding: 2px 10px;
+            background: transparent;
+            border: 0 solid #e0e0e0;
+            color: #707070;
+            cursor: pointer;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            line-height: normal;
+            border-left-width: 1px;
+            &:hover {
+                background-color: $powershell-blue;
+                color: #fff;
+                font-weight: 666;
+            }
+        }
+        .action.copy:before {
+            content: '\f24d ';
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            padding-right: 0.5em;
+        }
+    }
+    pre {
+        // border: 1px solid #d3d6db;
+        background-color: #f9f9f9;
+        font-size: .875rem;
+        border-radius: 0;
+        border: $powershell-blue 1px solid;
+    }
+    .language-powershell pre {
+        background-color: $powershell-blue;
+        color: #ffffff;
+        font-weight: 500;
+    }
+}

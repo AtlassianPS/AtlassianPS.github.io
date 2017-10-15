@@ -1,0 +1,57 @@
+footer.site-footer {
+    margin-top: 50px;
+    background: #111111;
+    color: #BBBBBB;
+    font-size: 14px;
+    .site-info {
+        position: relative;
+        text-align: center;
+        padding: 35px 0px;
+        background: #222222;
+        font-weight: 500;
+        color: #bbbbbb;
+        .btt a {
+            border-radius: 0px 20px 0 0;
+            color: #999999;
+            background: #222222;
+            display: block;
+            font-size: 30px;
+            height: 50px;
+            line-height: 50px;
+            margin: auto;
+            position: absolute;
+            right: 60px;
+            top: -25px;
+            transition: all 0.2s linear 0s;
+            width: 50px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            i {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                margin-left: 3px;
+            }
+        }
+        a {
+            color: #dddddd;
+        }
+        ul {
+            list-style: none;
+            display: inline-flex;
+            li {
+                &:first-child:before {
+                    content: '';
+                    padding: 0;
+                }
+                &:before {
+                    content: "|";
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
