@@ -1,13 +1,13 @@
 ---
-layout: documentation
-Author: Jon Doe <Jon.Doe@corp.com>               # Name/email of the author
-AtlassianPS Modules:                             # List of module this entry uses
+layout: galleryItem
+author: Jon Doe <Jon.Doe@corp.com>               # Name/email of the author
+modules:                                         # List of module this entry uses
   - BitbucketPS
   - ConfluencePS
   - HipChatPS
   - JiraPS
-Type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
-Additional Resources:                            # List of other resources/modules needed in script
+type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
+extras:                                          # List of other resources/modules needed in script
   - ...
 ---
 
