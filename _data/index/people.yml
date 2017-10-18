@@ -37,6 +37,12 @@
   short_desc: 
   long_desc: 
 
+- name: Joel Bennett (@jaykul)
+  role: Architecture consultant
+  gh_user: jaykul
+  short_desc:
+  long_desc:
+
 - name: axxelG
   role: Contributor
   gh_user: axxelG
