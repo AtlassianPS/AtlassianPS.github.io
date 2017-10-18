@@ -668,6 +668,7 @@ img.img-md {
     clear: both;
 }
 
+
 /* POSTS */
 
 .posts-wrapper {
@@ -740,5 +741,16 @@ body>.page {
     }
     h3 {
         margin-top: 30px;
+    }
+}
+
+.card {
+    ul.list-group-flush {
+        &>li.list-group-item {
+            margin: 0;
+            &:not(:first-of-type) {
+                border-top: none;
+            }
+        }
     }
 }

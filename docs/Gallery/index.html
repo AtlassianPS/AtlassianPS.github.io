@@ -1,0 +1,67 @@
+---
+layout: gallery
+---
+
+<p>This is a collection of ideas, scripts and intricate uses of the <i>AtlassianPS</i> modules.</p>
+
+<h4>Contribute</h4>
+
+<p>This gallery can only be useful with as much input/collaboration as possible. So please consider submitting your ideas / code.</p>
+<p>To submit your code, you need to <a href="https://github.com/AtlassianPS/AtlassianPS.github.io/fork">fork this repository</a>, change <a href="https://github.com/AtlassianPS/AtlassianPS.github.io/blob/master/pages/gallery.md">this file</a> and <a href="https://github.com/AtlassianPS/AtlassianPS.github.io/compare">submit your changes as a Pull Request</a>.<br/>
+<i>You can find a detailed instruction <a href="about:blank">here - link broken for now</a>.</i></p>
+<blockquote>
+    <ol>
+        <li>Fork it ( https://github.com/AtlassianPS/AtlassianPS.github.io/fork )</li>
+        <li>Clone your fork (<code>git clone https://github.com/&lt;YOU&gt;/AtlassianPS.github.io</code>)</li>
+        <li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+        <li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+        <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+        <li>Create new Pull Request</li>
+    </ol>
+</blockquote>
+
+<h4>Disclaimer</h4>
+
+All the snippets in the gallery are licensed under the <a href="https://github.com/AtlassianPS/AtlassianPS.github.io/blob/master/LICENSE">MIT license</a>.
+<blockquote>By adding your code to this gallery, you agree to this license.</blockquote>
+
+<h2>The Entries</h2>
+
+<div class="row">
+{% for item in site.pages %}
+    {% if item.url contains '/docs/Gallery/' %}
+        {% if item.url contains '.html' %}
+            {% if item.url contains '_sample' %}{% else %}
+    <div class="col-10 col-sm-5 ml-auto mr-auto">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><a href="{{ item.url }}">{{ item.title }}</a></h4>
+                <p class="card-text">{{ item.synopsis}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Author</strong>: {{ item.author }}</li>
+                <li class="list-group-item"><strong>Type</strong>: {{ item.type }}</li>
+                <li class="list-group-item"><strong>Modules</strong>
+                <ul>
+                    {% for module in item.modules %}
+                    <li>{{ module }}</li>
+                    {% endfor %}
+                </ul>
+                </li>
+                {% if item.extras %}
+                <li class="list-group-item"><strong>Extras</strong>
+                <ul>
+                    {% for extra in item.extras %}
+                    <li>{{ extra }}</li>
+                    {% endfor %}
+                </ul>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</div>

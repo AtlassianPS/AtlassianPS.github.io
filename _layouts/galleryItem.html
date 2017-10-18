@@ -1,0 +1,43 @@
+---
+layout: gallery
+---
+
+<h2>{{ page.title }}</h2>
+
+<h5>Metadata</h5>
+<table>
+    <tr>
+        <th>Author</th>
+        <td>{{ page.author }}</td>
+    </tr>
+    <tr>
+        <th>Type</th>
+        <td>{{ page.type }}</td>
+    </tr>
+    <tr>
+        <th>Atlassian Modules</th>
+        <td>
+            <ul>
+                {% for module in page.modules %}
+                <li>{{ module }}</li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>Extras</th>
+        <td>
+            {% if item.extras %}
+            <ul>
+                {% for extra in page.extras %}
+                <li>{{ extra }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+
+<p class="text-center ml-auto mr-auto">{{ page.synopsis }}<p>
+
+{{ content }}
