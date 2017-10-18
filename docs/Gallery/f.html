@@ -1,0 +1,20 @@
+---
+layout: gallery
+author: Oliver Lipkau | https://github.com/lipkau
+AtlassianPS Modules:
+  - JiraPS
+type: Working Script
+title: Upload changes to Jira Issues
+synopsis: Mass upload changes from JSON
+---
+
+<h2>{{ page.title }}</h2>
+<h3>Description</h3>
+<p>I have a colleague at work who writes HTML apps for managing due dates and sprint assignment of issues.<br/>
+He was unable to figure out how to upload the data back into Jira, as the server does not allow for CORS ajax requests.<br/>
+So my workaround is: his HTML app dumps the results to JSON - and a scheduled job runs the following script that persists the changes to the issues on Jira.</p>
+
+![ScreenShot](/assets/img/gallery_upload-changes.png)
+
+<h3>Code</h3>
+{% gist lipkau/a9846f014af6a92f050fe39e18ab5869 %}
