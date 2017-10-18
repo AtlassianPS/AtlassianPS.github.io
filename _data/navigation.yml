@@ -12,6 +12,8 @@
 - name: Documentation
   path: docs
   childs:
+    - name: Gallery
+      path: docs/Gallery
     # - name: BitbucketPS
     #   path: docs/BitbucketPS
     - name: ConfluencePS
