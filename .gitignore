@@ -19,6 +19,7 @@ node_modules
 # Ignore local jekyll files
 .sass-cache
 .jekyll-metadata
+Gemfile.lock
 
 #######
 # Excerpts from https://www.gitignore.io
