@@ -67,6 +67,9 @@ header.site-header {
             margin-bottom: 0;
             position: relative;
             top: -15px;
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
         }
     }
     #nav-toggle {
@@ -262,6 +265,8 @@ header.site-header {
                     @media screen and (max-width: 1140px) {
                         padding: 12px 35px;
                         border-top: none;
+                        border-left: none;
+                        border-right: none;
                         &:hover {
                             background: transparent;
                         }
@@ -269,6 +274,8 @@ header.site-header {
                     .doc-nav & {
                         padding: 12px 35px;
                         border-top: none;
+                        border-left: none;
+                        border-right: none;
                         &:hover {
                             background: transparent;
                         }
