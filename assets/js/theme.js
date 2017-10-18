@@ -85,7 +85,7 @@ $(document).ready(function() {
         copyToClipboard($(this).parents('.code_block').find('code'))
     });
 
-    anchors.add();
+    anchors.add('.documentation .content h2, .documentation .content h3, .documentation .content h4, .documentation .content h5, .documentation .content h6');
 
     $('a[data-toggle="collapse"]').on('click', function () {
         $(this).parent().parent().find('.panel-collapse').toggle();

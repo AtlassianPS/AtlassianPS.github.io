@@ -10,7 +10,7 @@
             font-size: 3rem;
         }
     }
-    p:first-of-type {
+    .content > p:first-of-type {
         font-size: 1.125rem;
         font-weight: 300;
         @media (min-width: 576px) {
