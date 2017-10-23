@@ -20,7 +20,8 @@
                             <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/docs/{{module.name}}">{{ module.name }}</a>
                             <ul class="sub-menu">
                             {% for group in module.groups %}
-                                <li class="menu-item menu-item-has-children">
+                                {% capture groupName %}{{group | downcase}}{% endcapture %}
+                                <li class="menu-item menu-item-has-children{% if page.path contains groupName %} active{% endif %}">
                                     <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/docs/{{module.name}}/{{group | downcase}}">{{group}}</a>
                                     <ul class="sub-menu">
                                     {% capture module_dir %}/docs/{{ module.name }}/{{group | downcase}}{% endcapture %}

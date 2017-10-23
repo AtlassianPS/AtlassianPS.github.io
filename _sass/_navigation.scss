@@ -360,6 +360,7 @@ header.site-header {
             &.active {
                 background: $powershell-blue !important;
                 &>a {
+                    background: transparent;
                     color: #ffffff;
                 }
             }
