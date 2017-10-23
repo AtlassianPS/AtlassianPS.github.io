@@ -1,12 +1,14 @@
 ---
 layout: galleryItem
 author: Jon Doe <Jon.Doe@corp.com>               # Name/email of the author
+title: My Sample Title
+synopsis: A very short description - Tweet lenght
+type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
 modules:                                         # List of module this entry uses
   - BitbucketPS
   - ConfluencePS
   - HipChatPS
   - JiraPS
-type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
 extras:                                          # List of other resources/modules needed in script
   - ...
 ---
