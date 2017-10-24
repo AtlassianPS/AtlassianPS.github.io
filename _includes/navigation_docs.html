@@ -12,32 +12,39 @@
                 <a href="#0" id="nav-toggle" class="">Menu<span></span></a>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <ul class="onepress-menu">
-                        <li class="menu-item {% if page.url contains '/docs/Gallery' %} active{% endif %}">
-                            <a href="/docs/Gallery">Gallery</a>
-                        </li>
-                        {% for module in site.data.modules %}
-                        <li class="menu-item menu-item-has-children{% if page.url contains module.name %} active{% endif %}">
-                            <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/docs/{{module.name}}">{{ module.name }}</a>
+            {% for module in site.data.navigation %}
+                {% if module.name == "Documentation" %}
+                    {% for child in module.childs %}
+                        <li class="menu-item menu-item-has-children{% if page.url contains child.name %} active{% endif %}">
+                        {% if child.groups %}
+                            <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div>
+                        {% endif %}
+                            <a href="/{{ child.path }}">{{ child.name }}</a>
+                        {% if child.groups %}
                             <ul class="sub-menu">
-                            {% for group in module.groups %}
-                                {% capture groupName %}{{ module.name }}/{{ group | downcase }}{% endcapture %}
+                            {% for group in child.groups %}
+                                {% capture groupName %}{{ child.name }}/{{ group | downcase }}{% endcapture %}
                                 <li class="menu-item menu-item-has-children{% if page.url contains groupName %} active{% endif %}">
-                                    <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="/docs/{{module.name}}/{{group | downcase}}">{{group}}</a>
+                                    <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div>
+                                    <a href="/{{ child.path }}/{{ group | downcase }}">{{group}}</a>
                                     <ul class="sub-menu">
-                                    {% capture module_dir %}/docs/{{ module.name }}/{{ group | downcase }}{% endcapture %}
-                                    {% for p in site.html_pages %}
-                                        {% if p.url contains module_dir %}
-                                            {% if p.hide != true %}
-                                        <li class="menu-item"><a href="{{ p.url }}">{{ p.title }}</a></li>
-                                            {% endif %}
+                                {% capture module_dir %}/{{ child.path }}/{{ group | downcase }}{% endcapture %}
+                                {% for p in site.html_pages %}
+                                    {% if p.url contains module_dir %}
+                                        {% if p.hide != true %}
+                                        <li class="menu-item{% if page.url contains p.url %} active{% endif %}"><a href="{{ p.url }}">{{ p.title }}</a></li>
                                         {% endif %}
-                                    {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
                                     </ul>
                                 </li>
                             {% endfor %}
                             </ul>
+                        {% endif %}
                         </li>
                     {% endfor %}
+                {% endif %}
+            {% endfor %}
 
                         <li class="menu-item search">
                             <input type="search" class="form-control searchbox" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">

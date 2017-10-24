@@ -18,6 +18,9 @@
     #   path: docs/BitbucketPS
     - name: ConfluencePS
       path: docs/ConfluencePS
+      groups:
+        - Commands
+        - Classes
     # - name: HipChatPS
     #   path: docs/HipChatPS
     # - name: JiraPS

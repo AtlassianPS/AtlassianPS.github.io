@@ -41,13 +41,17 @@
 
         <div class="row flex-xl-nowrap">
 
-{% for module in site.data.modules %}
-    {% if page.path contains module.name %}
-        {% capture bc_moduleName %}{{ module.name }}{% endcapture %}
-        {% for group in module.groups %}
-            {% capture tempGroupName %}{{module.name}}/{{group | downcase}}{% endcapture %}
-            {% if page.permalink contains tempGroupName %}
-                {% capture bc_groupName %}{{group | downcase}}{% endcapture %}
+{% for module in site.data.navigation %}
+    {% if module.name == "Documentation" %}
+        {% for child in module.childs %}
+            {% if page.url contains child.path %}
+                {% capture bc_moduleName %}{{ child.name }}{% endcapture %}
+                {% for group in child.groups %}
+                    {% capture tempGroupName %}{{ child.path }}/{{ group | downcase }}{% endcapture %}
+                    {% if page.url contains tempGroupName %}
+                        {% capture bc_groupName %}{{ group | downcase }}{% endcapture %}
+                    {% endif %}
+                {% endfor %}
             {% endif %}
         {% endfor %}
     {% endif %}
