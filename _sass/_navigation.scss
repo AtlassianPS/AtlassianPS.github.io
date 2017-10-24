@@ -361,7 +361,7 @@ header.site-header {
                 background: $powershell-blue !important;
                 &>a {
                     background: transparent;
-                    color: #ffffff;
+                    color: #ffffff !important;
                 }
             }
         }
@@ -383,18 +383,18 @@ header.site-header {
             .doc-nav & {
                 color: #777777;
             }
-            &:hover {
-                color: $powershell-blue;
-                // @media screen and (max-width: 1140px) {
-                //     color: #000000;
-                // }
-                // .doc-nav & {
-                //     color: #000000;
-                // }
-                .active & {
-                    color: #ffffff;
-                }
-            }
+            // &:hover {
+            //     color: $powershell-blue;
+            //     // @media screen and (max-width: 1140px) {
+            //     //     color: #000000;
+            //     // }
+            //     // .doc-nav & {
+            //     //     color: #000000;
+            //     // }
+            //     .active & {
+            //         color: #ffffff !important;
+            //     }
+            // }
         }
         li.search {
             margin-left: 20px;
