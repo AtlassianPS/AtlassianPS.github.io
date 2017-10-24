@@ -41,6 +41,38 @@
 
         <div class="row flex-xl-nowrap">
 
+{% for module in site.data.modules %}
+    {% if page.path contains module.name %}
+        {% capture bc_moduleName %}{{ module.name }}{% endcapture %}
+        {% for group in module.groups %}
+            {% capture tempGroupName %}{{module.name}}/{{group | downcase}}{% endcapture %}
+            {% if page.permalink contains tempGroupName %}
+                {% capture bc_groupName %}{{group | downcase}}{% endcapture %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+            <div class="btn-group btn-breadcrumb">
+                <a href="/" class="btn btn-default"><i class="fa fa-home"></i></a>
+                <a href="/docs" class="btn btn-default">Documentation</a>
+            {% if bc_groupName %}
+                <a href="/docs/{{ bc_moduleName }}" class="btn btn-default" data-algolia="lvl0">{{ bc_moduleName }}</a>
+            {% else %}
+                <a href="#" class="btn btn-default hide" data-algolia="lvl0">All Modules</a>
+            {% endif %}
+            {% if bc_groupName %}
+                <a href="/docs/{{ bc_moduleName }}/{{ bc_groupName }}" class="btn btn-default" data-algolia="lvl1">{{ bc_groupName }}</a>
+            {% else %}
+                <a href="#" class="btn btn-default hide" data-algolia="lvl1">Common</a>
+            {% endif %}
+                <span class="btn btn-default" data-algolia="lvl3">{{ page.title }}</span>
+            </div>
+
+        </div>
+
+        <div class="row flex-xl-nowrap">
+
             <section class="col-10 ml-auto mr-auto content">
 
                 {{ content }}
