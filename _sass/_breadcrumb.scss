@@ -1,0 +1,89 @@
+.btn-breadcrumb {
+    .btn {
+        padding: 6px 12px 6px 24px;
+        :first-child {
+            padding: 6px 6px 6px 10px;
+        }
+        :last-child {
+            padding: 6px 18px 6px 24px;
+        }
+        &:not(:last-child) {
+            &:before {
+                content: " ";
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 17px solid transparent;
+                border-bottom: 17px solid transparent;
+                border-left: 10px solid rgb(173, 173, 173);
+                position: absolute;
+                top: 50%;
+                margin-top: -17px;
+                margin-left: 1px;
+                left: 100%;
+                z-index: 3;
+            }
+            &:after {
+                content: " ";
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 17px solid transparent;
+                border-bottom: 17px solid transparent;
+                border-left: 10px solid white;
+                position: absolute;
+                top: 50%;
+                margin-top: -17px;
+                left: 100%;
+                z-index: 3;
+            }
+        }
+    }
+}
+
+@mixin colorize($colorBefore, $colorAfter, $colorHoverBefore, $colorHoverAfter) {
+    &:not(:last-child) {
+        &:before {
+            @include border($colorBefore);
+        }
+        &:after {
+            @include border($colorAfter);
+        }
+    }
+    &:hover {
+        &:not(:last-child) {
+            &:before {
+                @include border($colorHoverBefore);
+            }
+            &:after {
+                @include border($colorHoverAfter);
+            }
+        }
+    }
+}
+@mixin border($color) {
+    border-left: 10px solid $color;
+}
+
+.btn-breadcrumb {
+    .btn {
+        & &-default {
+            @include colorize(#fff,#ccc,#ebebeb,#adadad);
+        }
+        & &-primary {
+            @include colorize(#428bca,#357ebd,#3276b1,#285e8e);
+        }
+        & &-success {
+            @include colorize(#4cae4c,#5cb85c,#398439,#47a447);
+        }
+        & &-danger {
+            @include colorize(#d9534f,#d43f3a,#d2322d,#ac2925);
+        }
+        & &-warning {
+            @include colorize(#f0ad4e,#eea236,#ed9c28,#d58512);
+        }
+        & &-info {
+            @include colorize(#5bc0de,#5bc0de,#5bc0de,#5bc0de);
+        }
+    }
+}
