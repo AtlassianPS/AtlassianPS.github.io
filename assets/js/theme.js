@@ -85,6 +85,12 @@ $(document).ready(function() {
         copyToClipboard($(this).parents('.code_block').find('code'))
     });
 
+    $('h3').each(function() {
+        let text = $(this).text();
+        text = text.replace(/[–—]/g, "");
+        $(this).text(text);
+    });
+
     anchors.add('.documentation .content h2, .documentation .content h3, .documentation .content h4, .documentation .content h5, .documentation .content h6');
 
     $('a[data-toggle="collapse"]').on('click', function () {
