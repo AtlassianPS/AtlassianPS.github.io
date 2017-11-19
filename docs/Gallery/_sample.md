@@ -1,24 +1,26 @@
 ---
 layout: galleryItem
 author: Jon Doe <Jon.Doe@corp.com>               # Name/email of the author
-title: My Sample Title
-synopsis: A very short description - Tweet lenght
+title: Cool Script
+synopsis: This cool script does stuff
 type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
-modules:                                         # List of module this entry uses
+modules:                             # List of module this entry uses
   - BitbucketPS
   - ConfluencePS
   - HipChatPS
   - JiraPS
-extras:                                          # List of other resources/modules needed in script
+extras:                            # List of other resources/modules needed in script
   - ...
 ---
 
-### Brief summary
+## Brief summary
 
-#### Description
+### Description
+
 A detailed description of what this script does
 What problem does it try to solve?
 What is the environment where this script is run in?
 
-#### Code
+### Code
+
 {% gist !!GIST ID!! %}
