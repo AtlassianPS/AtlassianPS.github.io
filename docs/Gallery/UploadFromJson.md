@@ -9,6 +9,7 @@ modules:
 ---
 
 ### Description
+
 This script takes a Json file as input and updates all Issues in it.
 
 I have a colleague at work who writes HTML apps for managing due dates and sprint assignment of issues.  
@@ -19,4 +20,5 @@ So my workaround is: his HTML app dumps the results to JSON - and a scheduled jo
 ![ScreenShot](screenshots/gallery_upload-changes.png)
 
 ### Code
+
 {% gist lipkau/a9846f014af6a92f050fe39e18ab5869 %}

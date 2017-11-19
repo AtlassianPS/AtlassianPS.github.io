@@ -27,7 +27,7 @@ layout: gallery
     <tr>
         <th>Extras</th>
         <td>
-            {% if item.extras %}
+            {% if page.extras %}
             <ul>
                 {% for extra in page.extras %}
                 <li>{{ extra }}</li>
@@ -38,6 +38,7 @@ layout: gallery
     </tr>
 </table>
 
-<p class="text-center ml-auto mr-auto">{{ page.synopsis }}<p>
+<p class="text-center ml-auto mr-auto">{{ page.synopsis }}
+    <p>
 
-{{ content }}
+        {{ content }}
