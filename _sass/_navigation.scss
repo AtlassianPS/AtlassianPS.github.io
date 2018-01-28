@@ -198,11 +198,11 @@ header.site-header {
                     padding: 12px 20px;
                 }
             }
-            &:last-child {
-                >a {
-                    padding-right: 0px;
-                }
-            }
+            // &:last-child {
+            //     >a {
+            //         padding-right: 0px;
+            //     }
+            // }
         }
         ul {
             display: none;
