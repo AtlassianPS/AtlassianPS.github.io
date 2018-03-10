@@ -109,7 +109,7 @@ When you are finished, you will send your changes to the original project (aka [
 It will be reviewed and, when approved, merged.
 
 There is a bit more to take into account when submitting code to the projects.
-You can read all about it here: [Submitting A PR].
+You can read all about it here: **[Submitting A PR]**.
 
 ## Our Guidelines
 
