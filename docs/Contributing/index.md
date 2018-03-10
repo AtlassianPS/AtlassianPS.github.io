@@ -3,6 +3,21 @@ layout: documentation
 ---
 # Contributing to AtlassianPS
 
+## Overview
+
+This page describes:
+
+* [Thank you!](#thank-you)
+  * [Report anything that is not working as expected](#report-anything-that-is-not-working-as-expected)
+  * [Question current methods and solutions](#question-current-methods-and-solutions)
+  * [Write documentation](#write-documentation)
+  * [Fix errors](#fix-errors)
+  * [Contribute code](#contribute-code)
+* [How To Report An Issue](#how-to-report-an-issue)
+* [How To Submit Code Changes](#how-to-submit-code-changes)
+* [Our Guidelines](#our-guidelines)
+* [Useful Material](#useful-material)
+
 ## Thank you!
 
 We sincerely wish to thank you for donating your time to the AtlassianPS projects.
@@ -51,15 +66,6 @@ There is _a lot_ that can be added to our projects. Any help is welcome.
 _see [submitting code changes]_  
 _see [our guidelines]_  
 _see [investigating Atlassian APIs]_
-
-## Overview
-
-This page describes:
-
-* [How To Report An Issue](#how-to-report-an-issue)
-* [How To Submit Code Changes](#how-to-submit-code-changes)
-* [Our Guidelines](#our-guidelines)
-* [Useful Material](#useful-material)
 
 ## How To Report An Issue
 
