@@ -43,7 +43,7 @@ These are more technical - pretty much what would have to be executed in the con
 * Make sure you have a [GitHub account](https://github.com/signup/free).
 * Learning Git:
   * GitHub Help: [Good Resources for Learning Git and GitHub][good-git-resources].
-  * [Git Basics](/wiki/Git-Basics): install and getting started.
+  * [Git Basics](https://github.com/PowerShell/PowerShell/blob/master/docs/git/basics.md): install and getting started.
 
 ### Tooling
 
@@ -136,6 +136,11 @@ This includes (but is not limited to) _Functions_, _Parameters_ and _Output Type
 
 It is also expected that the tests that describe the functionality are either updated or created, if the functionality is new.
 
+Additional material:
+
+* [How to write a function](writing-functions.html)
+* [How to write good tests](writing-tests.html)
+
 ### Making Sure All Is Working
 
 The projects have a lot of tests to ensure all is working as expected.
@@ -156,7 +161,18 @@ Here is how you create the Pull Request: [Creating a Pull Request](https://help.
 
 Now our [maintainers](https://github.com/orgs/AtlassianPS/teams/maintainers) and [reviewers](https://github.com/orgs/AtlassianPS/teams/reviewers) will have a look at what you have been working on.
 
-In order to help them, the GitHub repositories will use [CI](https://en.wikipedia.org/wiki/Continuous_integration) jobs to run the tests and 
+In order to help them, the GitHub repositories will use [CI](https://en.wikipedia.org/wiki/Continuous_integration) jobs to run the tests and report if the submitted code is working as expected.
+
+Every Pull Request must be approved after review and the reviewer(s) might:
+
+* have some constructive feedback for your code and suggest optimizations (eg: adding `Write-Verbose` messages)
+* request you to make specific changes before approving it (eg: adding tests)
+* request changes to the documentation (eg: add a new _example_ to the function)
+* push some changes to your code (eg: harmonize some code)  
+_By default, github grants "write" permissions to the reviewers to your fork._
+_You can disable this, if you wish._
+
+Once the reviewer approves your Pull Request, it will be merged into the `develop` branch and will await the next release.
 
 <!-- reference-style links -->
   [Pester Module]: https://github.com/pester/Pester
