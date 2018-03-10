@@ -5,10 +5,12 @@ layout: documentation
 
 ## Thank you!
 
-We sincerely wish to thank you for donating your time to the AtlassianPS projects.  The quality of our projects increase with every contribution.
+We sincerely wish to thank you for donating your time to the AtlassianPS projects.
+The quality of our projects increase with every contribution.
 
-> One thing I can't stress enough: you do **not** need to be an expert coder to contribute.  Minor bug fixes and documentation corrections are just as valuable to the goals of the projects.
->
+> One thing I can't stress enough:
+> you do **not** need to be an expert coder to contribute.  
+> Minor bug fixes and documentation corrections are just as valuable to the goals of the projects.  
 > _All contributors, independent of the size of the contribution, are listed on our [Homepage](https://atlassianps.org/#people)._
 
 ---
@@ -41,7 +43,9 @@ This page describes:
 
 ## How To Report An Issue
 
-When you notice something that could be improved, tell us by creating an issue.  GitHub makes this easy.
+When you notice something that could be improved,
+tell us by creating an issue.  
+GitHub makes this easy.
 
 Each of our projects has an _Issuetracker_ where you can report your findings.
 
@@ -52,13 +56,15 @@ Each of our projects has an _Issuetracker_ where you can report your findings.
 |**HipchatPS**|<https://github.com/AtlassianPS/HipchatPS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/HipchatPSPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/HipchatPS/issues)|
 |**JiraPS**|<https://github.com/AtlassianPS/JiraPS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/JiraPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/JiraPS/issues)|
 
-New issues are created using a template which includes pre-defined text for reporting coding exceptions.  If your issue is not related to a coding error (e.g. you are suggesting a new feature), please modify the content to suit your needs.
+New issues are created using a template which includes pre-defined text for reporting coding exceptions.  
+If your issue is not related to a coding error (e.g. you are suggesting a new feature), please modify the content to suit your needs.
 
-**Prior to creating a new issue, please search the issues to determine if a similar issue has already been created.  If one has, add any relevant comments to the issue's disussion.**
+**Prior to creating a new issue, please search the issues to determine if a similar issue has already been created.**  
+**If one has, add any relevant comments to the issue's disussion.**
 
 ## How To Submit Code Changes
 
-No matter if you are fixing a typo or if wrote a fully-functioning feature for a project:
+No matter if you are fixing a typo or if you wrote a fully-functioning feature for a project:
 
 **You will have to send your code to `AtlassianPS`**
 
