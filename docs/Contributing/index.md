@@ -5,17 +5,13 @@ layout: documentation
 
 ## Thank you!
 
-First, if you are reading this,
-we sincerely wish to thank you for even considering donating some of your time to working on any of the AtlassianPS projects.
-The quality of our projects increase with each individual contributing to the cause.
+We sincerely wish to thank you for donating your time to the AtlassianPS projects.
+The quality of our projects increase with every contribution.
 
 > One thing I can't stress enough:
-> _you do **not** have to be an expert coder to contribute._  
->
-> Minor bug fixes and documentation correction are just as valuable to the overall goals of the projects.  
->
-> _All contributors are listed on our [Homepage](https://atlassianps.org/#people).
-> Independently of the size of the contribution._
+> you do **not** need to be an expert coder to contribute.  
+> Minor bug fixes and documentation corrections are just as valuable to the goals of the projects.  
+> _All contributors, independent of the size of the contribution, are listed on our [Homepage](https://atlassianps.org/#people)._
 
 ---
 
@@ -26,12 +22,12 @@ There are several ways to contribute:
 * **Question current methods and solutions** → it is likely that a different way to solve a problem was not considered.
   * see [submitting an issue]
   * chat with us on [AtlassianPS.Slack]
-* **Write Documentation** → writing a useful and easy to read documentation is hard. Any help with documentation is valuable; even fixing typos.
+* **Write documentation** → writing useful and easy-to-read documentation is hard.  Any help with documentation is valuable, even fixing typos.
   * see [submitting code changes]
-* **Fixing stuff** → if you know how to fix a problem that you found, sending a Pull Request will make a deployment of that fix much quicker.
+* **Fix errors** → if you know how to fix a problem that you found, sending a Pull Request will simplify the process.
   * see [submitting code changes]
   * see [our guidelines]
-* **Send new stuff** → there is _a lot_ that can be added to our projects. Any help is welcome.
+* **Contribute code** → there is _a lot_ that can be added to our projects. Any help is welcome.
   * see [submitting code changes]
   * see [our guidelines]
   * see [investigating Atlassian APIs]
@@ -47,10 +43,10 @@ This page describes:
 
 ## How To Report An Issue
 
-When you notice something that is not optimal in one of our projects,
-the simplest way to communicate this is by creating an issue.
-
+When you notice something that could be improved,
+tell us by creating an issue.  
 GitHub makes this easy.
+
 Each of our projects has an _Issuetracker_ where you can report your findings.
 
 |Project|Link|# of open issues|
@@ -60,23 +56,23 @@ Each of our projects has an _Issuetracker_ where you can report your findings.
 |**HipchatPS**|<https://github.com/AtlassianPS/HipchatPS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/HipchatPSPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/HipchatPS/issues)|
 |**JiraPS**|<https://github.com/AtlassianPS/JiraPS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/JiraPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/JiraPS/issues)|
 
-When you create a new issue, the project will suggest a template for you to fill out.
-In most cases, this template is optimized for reporting a bug;
-So it is fine if the template does not match your needs.
+New issues are created using a template which includes pre-defined text for reporting coding exceptions.  
+If your issue is not related to a coding error (e.g. you are suggesting a new feature), please modify the content to suit your needs.
 
-**Please do a quick search for what you want to report to decrease the likeliness of duplicates.**
+**Prior to creating a new issue, please search the issues to determine if a similar issue has already been created.**  
+**If one has, add any relevant comments to the issue's disussion.**
 
 ## How To Submit Code Changes
 
-No matter if you are fixing a typo;
-Or wrote a full functioning feature for a project:
+No matter if you are fixing a typo or if you wrote a fully-functioning feature for a project:
+
 **You will have to send your code to `AtlassianPS`**
 
 > The possibilities of what our projects can do is ever growing (as Atlassian also makes changes to the API).
-> Therefore it is very unlikely for our project to ever reach _feature complete_.  
+> Therefore it is very unlikely for our project to ever be _feature complete_.  
 >
 > The only chance we have to keep up with the changes, is by having as many people involved as possible.
-> We will appreciate the help :satisfied:
+> We appreciate the help :satisfied:
 
 This makes sense, as it would be impossible to manage user permissions in all of the project for all of the users.
 Therefore, everyone who want to make changes to the code must make a copy of the repository into his GitHub account (aka [forking](https://help.github.com/articles/fork-a-repo/)).
