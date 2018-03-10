@@ -1,6 +1,3 @@
-# projects section data
-# If you don't have language feature(language.yml is empty), ignore "i18n" items
-# Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
 - name: Oliver Lipkau
   role: Maintainer
   gh_user: lipkau
@@ -119,4 +116,28 @@
   role: Contributor
   gh_user: ebekker
   short_desc: <a href="https://www.youtube.com/watch?v=otzJszJ9MnA">One man can make a difference.</a>
+  long_desc: 
+
+- name: Aaron Bockelie
+  role: Contributor
+  gh_user: aaronsb
+  short_desc:
+  long_desc: 
+
+- name: Valeriy Zabawski
+  role: Contributor
+  gh_user: vzabawski
+  short_desc:
+  long_desc: 
+
+- name: Dominique Clijsters
+  role: Contributor
+  gh_user: Clijsters
+  short_desc:
+  long_desc: 
+
+- name: Craig Buchanan
+  role: Contributor
+  gh_user: craibuc
+  short_desc:
   long_desc: 
