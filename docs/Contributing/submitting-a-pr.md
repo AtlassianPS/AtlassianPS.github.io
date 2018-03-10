@@ -9,8 +9,18 @@ This page describes:
 
 * [TL;DR](#tldr)
 * [The Basics](#the-setup)
+  * [New to Git(Hub)?](#new-to-github)
+  * [Tooling](#tooling)
 * [Getting Started](#getting-started)
+  * [Find Something To Contribute To](#find-something-to-contribute-to)
+  * [Forking And Branching](#forking-and-branching)
 * [Making Changes](#making-changes)
+  * [Getting Work Done](#getting-work-done)
+  * [Documenting Your Work](#documenting-your-work)
+  * [Making Sure All Is Working](#making-sure-all-is-working)
+* [Sending Your Changes](#sending-your-changes)
+  * [Send A Pull Request](#send-a-pull-request)
+  * [What Happens Next?](#what-happens-next)
 
 ## TL;DR
 
@@ -158,3 +168,4 @@ In order to help them, the GitHub repositories will use [CI](https://en.wikipedi
   [PlatyPS]: https://github.com/PowerShell/platyPS
   [using-prs]: https://help.github.com/articles/using-pull-requests/
   [fork-a-repo]: https://help.github.com/articles/fork-a-repo/
+  [good-git-resources]: https://help.github.com/articles/good-resources-for-learning-git-and-github/
