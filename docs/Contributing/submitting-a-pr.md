@@ -1,99 +1,160 @@
 ---
 layout: documentation
 ---
-# Submitting A PullRequest
+# Submitting A Pull Request
 
-### Code Formatting and Conventions
+## Overview
 
-#### Formatting
+This page describes:
 
-All code must be properly formatted for a PR to be merged. For examples of the formatting, see source code for `Invoke-RedditRequest`. If you are using VS Code, the following settings should produce the desired code formating:
+* [TL;DR](#tldr)
+* [The Basics](#the-setup)
+* [Getting Started](#getting-started)
+* [Making Changes](#making-changes)
 
-```json
-{
-  "powershell.codeFormatting.openBraceOnSameLine": true,
-  "powershell.codeFormatting.newLineAfterOpenBrace": true,
-  "powershell.codeFormatting.newLineAfterCloseBrace": true,
-  "powershell.codeFormatting.whitespaceBeforeOpenBrace": true,
-  "powershell.codeFormatting.whitespaceBeforeOpenParen": true,
-  "powershell.codeFormatting.whitespaceAroundOperator": true,
-  "powershell.codeFormatting.whitespaceAfterSeparator": true,
-  "powershell.codeFormatting.ignoreOneLineBlock": true,
-  "powershell.codeFormatting.alignPropertyValuePairs": true,
-  "powershell.codeFormatting.preset": "Stroustrup"
-}
-```
+## TL;DR
 
-#### File Header
+Here is a list for project specific instructions.
+These are more technical - pretty much what would have to be executed in the console.
 
-All PowerShell files should include a file header. You can use the Plaster templates provided in the project to generate the files for Functions, Classes, and Enums.
+|Project|Instructions|
+|-------|------------|
+|**AtlassianPS**|<https://github.com/AtlassianPS/AtlassianPS/blob/master/CONTRIBUTING.md>|
+|**AtlassianPS.github.io**|<https://github.com/AtlassianPS/AtlassianPS.github.io/blob/master/CONTRIBUTING.md>|
+|**BitbucketPS**|<https://github.com/AtlassianPS/BitbucketPS/blob/master/CONTRIBUTING.md>|
+|**ConfluencePS**|<https://github.com/AtlassianPS/ConfluencePS/blob/master/CONTRIBUTING.md>|
+|**HipchatPS**|<https://github.com/AtlassianPS/HipchatPS/blob/master/CONTRIBUTING.md>|
+|**JiraPS**|<https://github.com/AtlassianPS/JiraPS/blob/master/CONTRIBUTING.md>|
 
-#### Variable Naming
+## The Setup
 
-All variable names should be Pascal Case. This includes local variables, parameters, function nouns, method names, property names, field names, etc.
+### New to Git(Hub)?
 
-#### Function Naming
+* Make sure you have a [GitHub account](https://github.com/signup/free).
+* Learning Git:
+  * GitHub Help: [Good Resources for Learning Git and GitHub][good-git-resources].
+  * [Git Basics](/wiki/Git-Basics): install and getting started.
 
-Functions should use proper `Verb-Noun` names even on private functions and only use [Approved Verbs](https://msdn.microsoft.com/en-us/library/ms714428(v=vs.85).aspx). 
+### Tooling
 
-#### Splatting
+In order to make changes to the code or documentation and send it as a Pull Request, only one tool is required:
 
-Use at-splatting whenever a command has 3 or more parameters. Use the `$Params` variable for splatting. If you need to splat more than one command in a pipeline use `$Params<command name>` (e.g. `$ParamsGetContent` ) for each command in the pipeline.
+* **[Git]**  
+_This can be installed in a lot of different ways.
+Please google how to install it on your OS._
+* **PowerShell**  
+_Any version works.
+In case the version is 3 or 4, the `PowerShellGet` module must be installed._
+* **[InvokeBuild]**
 
+_Further modules that are required are installed when `Invoke-Build` is called._
+
+Of course there are more tools that are not _required_, but make like much easier.
+Such as:
+
+|Tool|Description|
+|----|-----------|
+|[Graphic Interfaces for Git](https://git-scm.com/downloads/guis)|_Git can get messy. A nice UI can be helpful in that case. This page contains some for you to choose from._|
+|[Visual Studio Code]|_This is the editor of choice for working with Powershell. The project contains settings to make life easier._|
+|[PowerShell Extension for VSCode]|_This extension provides rich PowerShell language support for Visual Studio Code. Now you can write and debug PowerShell scripts using the excellent IDE-like interface that Visual Studio Code provides._|
+|[Plaster Module]|_Plaster is a template-based file and project generator written in PowerShell._|
+|[Pester Module]|_Build Automation in PowerShell. Will be installed as a dependency with `Invoke-Build`._|
+|[PlatyPS]|_Write PowerShell External Help in Markdown._|
+
+## Getting Started
+
+### Find Something To Contribute To
+
+In case you are interested in contributing and have nothing specific already in mind,
+here is where we are looking for help: [Issue that are "Up-For-Grabs"](https://github.com/issues?utf8=✓&q=is%3Aopen+user%3AAtlassianPS+label%3Aup-for-grabs).
+
+### Forking And Branching
+
+GitHub fosters collaboration through the notion of [pull requests][using-prs].
+On GitHub, anyone can [fork][fork-a-repo] an existing repository
+into their own user account, where they can make private changes to their fork.
+
+Once you have your own version of the project, you should:
+
+* Clone your version of the project to your computer  
+_Here is how: [Cloning a Repository](https://help.github.com/articles/cloning-a-repository/)._  
 ```powershell
-# Single command
-$Params = @{
-    Name = 'Widget1'
-    Id   = '5ABCD98727658'
-    Type = 'Custom'
-}
-Get-Widget @Params
-
-# Multi-command pipeline
-$ParamsAddWidget = @{
-    Name = 'Widget1'
-    Id   = '5ABCD98727658'
-    Type = 'Custom'
-}
-$ParamsSetWidget = @{
-    Height = 10
-    Width  = 20
-    Depth  = 3
-}
-Add-Widget @ParamsAddWidget | Set-Widget @ParamsSetWidget
+git clone https://github.com/<YOUR USER NAME>/<NAME OF THE PROJECT>.git
+```
+* Create a new branch for your changes
+_You should make the changes in a branch for tracking them.
+You should also create your own branch out of `develop`.
+You can read more here: [Git Flow Guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)._
+```powershell
+cd <NAME OF THE PROJECT>
+git checkout develop
+git checkout -b <NAME FOR YOUR FEATURE>
 ```
 
-#### Aliases
+Additional references:
+* GitHub's guide on [forking](https://guides.github.com/activities/forking/)
 
-Expand all aliases prior to a PR. No aliases are permitted, including `Sort`. The PSAnalyzer tests should detect this and issue a failure.
+## Making Changes
 
-#### In-code Documentation
+### Getting Work Done
 
-Limit in-code comments and documentation. If you are using full command names and PowerShell best practices, the code should be fairly self-documenting. Only use comments when doing something that is out of the norm or obscure. If you feel you need to comment on code, you likely need to refactor.
+It's not our place to impose a specific way on how to write code.
 
-### Code Separation and File Naming
+There are some [Guidelines](our-guidelines.html) which should be followed at all times.
 
-All functions (public and private), classes, and enums should be defined in separate files and organized according to their category. This project has the potential to have a very large code base so separation and organization of code needs to be maintained even at an early stage. Do not define more than one function, class, or enum per file. Do not create nested functions (use separate private functions instead). The filename should match the function or enum name. Class filenames should be prepended with a 3 digit load order and a dash.
+The checklist when creating the Pull Request will look something like this:
 
-### Strive for 100% Code Coverage by Tests
+> **Types of changes:**  
+> - [ ] Bug fix (non-breaking change which fixes an issue)  
+> - [ ] New feature (non-breaking change which adds functionality)  
+> - [ ] Breaking change (fix or feature that would cause existing functionality to change)  
+> **Checklist:**  
+> - [ ] My code follows the code style of this project.  
+> - [ ] I have added Pester Tests that describe what my changes should do.  
+> - [ ] I have updated the documentation accordingly.
 
-This project strives to be as close to 100% code coverage as possible. If you are submitting a new function (public or private), the PR will not be merged until a unit test has been added that tests all available code paths for the function. The same goes for classes. Every method in a class must have a test that coves all code paths in that method. If you extend an existing class with a new method, please add a corresponding test to the class's unit test.
+### Documenting Your Work
 
+In general, PowerShell is verbose in a way that the code explains what it does.
+So not a lot of code documentation is needed.
 
-### Document as You Go
+When the code is not that easy to read or require more extensive explaining (such as workarounds),
+comments that explain what the code does is desired.
 
-The documentation under the `/docs/` project folder in the GitHub Repo is the source of truth for all documentation.
+Apart from that, all parts of the code that affect the way the user interacts with are expected to have detailed documentation.
+This includes (but is not limited to) _Functions_, _Parameters_ and _Output Types_.
 
-The build system in this project provides many auto-documentation features and many changes in code will be automatically reflected in the documentation. However, it is still important to go back and modify the documentation. Please update all documentation prior to making a pull request. PRs with help test failures will not be merged until they are corrected. 
+It is also expected that the tests that describe the functionality are either updated or created, if the functionality is new.
 
-Currently, the auto-documentation does not automatically add new methods, properties, constructors, and fields for classes and enums. Adding new methods, properties, constructors, and fields to classes or enums will required the necessary documentation be added to the relaxant `about_` topic.
+### Making Sure All Is Working
 
-I realize documentation is the boring part of coding, but it is a necessary evil and not something that can be thrown over the wall unless we gain some dedicated documentation contributors. the only way to keep this project properly documented is to do it as we go and not after the fact.
+The projects have a lot of tests to ensure all is working as expected.
+_The tests are all in the `/Tests/` folder._
 
-### Changes To the Build System
+The projects are set up so that running `Invoke-Build` will make sure the code is working as the tests describe.
+**The command must be run from the root of the project.**
 
-If you wish to make submissions to modify any of the code under the `/BuildTools/` project folder, please enable AppVeyor for your project and test that the project builds both locally and on appveyor. If you make changes to the secure variables in `AppVeyor.yml`, please revert them before your PR.
+## Sending Your Changes
 
-### Submitting Pull Requests
+### Send A Pull Request
 
-When you fork the project, please do so from the `Staging` branch. All pull requests should be made against the `Staging` branch. Ensure your last commit message does not have `[ci skip]`, `[skip ci]`, or `[skip appveyor]` so that the automated PR tests can run. Only PRs from the Staging branch will be accepted into Master. Please include a bullet list of the changes you made and to what functions, classes, enums, build tools, tests, or documentation. Please squash your commits and rebase against `Staging` before submitting your PR.
+When you are done _and all tests pass_, you can send the changes "upstream" (to the AtlassianPS project).
+
+Here is how you create the Pull Request: [Creating a Pull Request](https://help.github.com/articles/creating-a-pull-request/)
+
+### What Happens Next?
+
+Now our [maintainers](https://github.com/orgs/AtlassianPS/teams/maintainers) and [reviewers](https://github.com/orgs/AtlassianPS/teams/reviewers) will have a look at what you have been working on.
+
+In order to help them, the GitHub repositories will use [CI](https://en.wikipedia.org/wiki/Continuous_integration) jobs to run the tests and 
+
+<!-- reference-style links -->
+  [Pester Module]: https://github.com/pester/Pester
+  [Git]: https://git-scm.com
+  [Visual Studio Code]: https://code.visualstudio.com
+  [Plaster Module]: https://github.com/PowerShell/Plaster
+  [PowerShell Extension for VSCode]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
+  [InvokeBuild]: https://github.com/nightroman/Invoke-Build
+  [PlatyPS]: https://github.com/PowerShell/platyPS
+  [using-prs]: https://help.github.com/articles/using-pull-requests/
+  [fork-a-repo]: https://help.github.com/articles/fork-a-repo/
