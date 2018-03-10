@@ -17,10 +17,8 @@
                     {% for child in module.childs %}
                         <li class="menu-item menu-item-has-children{% if page.url contains child.name %} active{% endif %}">
                         {% if child.groups %}
-                            <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div>
-                        {% endif %}
+                            <div class="nav-toggle-subarrow"> <i class="fa fa-angle-down"></i> </div>
                             <a href="/{{ child.path }}">{{ child.name }}</a>
-                        {% if child.groups %}
                             <ul class="sub-menu">
                             {% for group in child.groups %}
                                 {% capture groupName %}{{ child.name }}/{{ group | downcase }}{% endcapture %}
@@ -40,6 +38,20 @@
                                 </li>
                             {% endfor %}
                             </ul>
+                        {% elsif child.listChilds %}
+                            <div class="nav-toggle-subarrow"> <i class="fa fa-angle-down"></i> </div>
+                            <a href="/{{ child.path }}">{{ child.name }}</a>
+                            <ul class="sub-menu">
+                            {% for p in site.html_pages %}
+                                {% if p.url contains child.name %}
+                                    {% if p.hide != true %}
+                                <li class="menu-item{% if page.url contains p.url %} active{% endif %}"><a href="{{ p.url }}">{{ p.title }}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <a href="/{{ child.path }}">{{ child.name }}</a>
                         {% endif %}
                         </li>
                     {% endfor %}
