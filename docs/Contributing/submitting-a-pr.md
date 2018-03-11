@@ -47,24 +47,24 @@ These are more technical - pretty much what would have to be executed in the con
 
 ### Tooling
 
-In order to make changes to the code or documentation and send it as a Pull Request, only one tool is required:
+To make changes to the code or documentation and send it as a Pull Request, only one tool is required:
 
 * **[Git]**  
-_This can be installed in a lot of different ways.
+_There are many different ways to install Git.
 Please google how to install it on your OS._
 * **PowerShell**  
 _Any version works.
-In case the version is 3 or 4, the `PowerShellGet` module must be installed._
+If you are using version 3 or 4, the `PowerShellGet` module must be installed._
 * **[InvokeBuild]**
 
-_Further modules that are required are installed when `Invoke-Build` is called._
+_Additonal required modules are installed when `Invoke-Build` is called._
 
-Of course there are more tools that are not _required_, but make like much easier.
+There are more tools that are not _required_, but will make life much easier.
 Such as:
 
 |Tool|Description|
 |----|-----------|
-|[Graphic Interfaces for Git](https://git-scm.com/downloads/guis)|_Git can get messy. A nice UI can be helpful in that case. This page contains some for you to choose from._|
+|[Graphic Interfaces for Git](https://git-scm.com/downloads/guis)|_Git can get messy. A nice UI can be helpful. This page contains some for you to use._|
 |[Visual Studio Code]|_This is the editor of choice for working with Powershell. The project contains settings to make life easier._|
 |[PowerShell Extension for VSCode]|_This extension provides rich PowerShell language support for Visual Studio Code. Now you can write and debug PowerShell scripts using the excellent IDE-like interface that Visual Studio Code provides._|
 |[Plaster Module]|_Plaster is a template-based file and project generator written in PowerShell._|
@@ -75,8 +75,8 @@ Such as:
 
 ### Find Something To Contribute To
 
-In case you are interested in contributing and have nothing specific already in mind,
-here is where we are looking for help: [Issue that are "Up-For-Grabs"](https://github.com/issues?utf8=✓&q=is%3Aopen+user%3AAtlassianPS+label%3Aup-for-grabs).
+If you are interested in contributing and have nothing specific in mind,
+we are looking for help here: [Issue that are "Up-For-Grabs"](https://github.com/issues?utf8=✓&q=is%3Aopen+user%3AAtlassianPS+label%3Aup-for-grabs).
 
 ### Forking And Branching
 
@@ -108,9 +108,9 @@ Additional references:
 
 ### Getting Work Done
 
-It's not our place to impose a specific way on how to write code.
+We do not impose a specific way to write code.
 
-There are some [Guidelines](our-guidelines.html) which should be followed at all times.
+However, there are some [Guidelines](our-guidelines.html) which should be followed at all times.
 
 The checklist when creating the Pull Request will look something like this:
 
@@ -126,12 +126,12 @@ The checklist when creating the Pull Request will look something like this:
 ### Documenting Your Work
 
 In general, PowerShell is verbose in a way that the code explains what it does.
-So not a lot of code documentation is needed.
+So, minimal code documentation is needed.
 
-When the code is not that easy to read or require more extensive explaining (such as workarounds),
-comments that explain what the code does is desired.
+When code is not easy to read or requires more extensive explaining (such as workarounds),
+use comments to explain what it does to make it more readable for others.
 
-Apart from that, all parts of the code that affect the way the user interacts with are expected to have detailed documentation.
+All parts of the code that affect user interaction are expected to have detailed documentation.
 This includes (but is not limited to) _Functions_, _Parameters_ and _Output Types_.
 
 It is also expected that the tests that describe the functionality are either updated or created, if the functionality is new.
@@ -143,7 +143,7 @@ Additional material:
 
 ### Making Sure All Is Working
 
-The projects have a lot of tests to ensure all is working as expected.
+The projects have several tests to ensure everything is working as expected.
 _The tests are all in the `/Tests/` folder._
 
 The projects are set up so that running `Invoke-Build` will make sure the code is working as the tests describe.
@@ -159,9 +159,9 @@ Here is how you create the Pull Request: [Creating a Pull Request](https://help.
 
 ### What Happens Next?
 
-Now our [maintainers](https://github.com/orgs/AtlassianPS/teams/maintainers) and [reviewers](https://github.com/orgs/AtlassianPS/teams/reviewers) will have a look at what you have been working on.
+Now our [maintainers](https://github.com/orgs/AtlassianPS/teams/maintainers) and [reviewers](https://github.com/orgs/AtlassianPS/teams/reviewers) will look over what you submitted.
 
-In order to help them, the GitHub repositories will use [CI](https://en.wikipedia.org/wiki/Continuous_integration) jobs to run the tests and report if the submitted code is working as expected.
+To help them, the GitHub repositories will use [CI](https://en.wikipedia.org/wiki/Continuous_integration) jobs to run the tests and report if the submitted code is working as expected.
 
 Every Pull Request must be approved after review and the reviewer(s) might:
 
@@ -172,7 +172,7 @@ Every Pull Request must be approved after review and the reviewer(s) might:
 _By default, github grants "write" permissions to the reviewers to your fork._
 _You can disable this, if you wish._
 
-Once the reviewer approves your Pull Request, it will be merged into the `develop` branch and will await the next release.
+Once the reviewer approves your Pull Request, it will be merged into the `develop` branch and part of the next release.
 
 <!-- reference-style links -->
   [Pester Module]: https://github.com/pester/Pester
