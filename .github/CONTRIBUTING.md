@@ -2,7 +2,7 @@
 
 Happy to see you are interested in helping.
 
-We have a comprehensive documentation on how to contribute here: **[Contributing to AtlassianPS](https://atlassianps.org/docs/Contributing/)**.
+We have a comprehensive documentation on how to contribute here: **[Contributing to AtlassianPS](https://atlassianps.org/docs/contributing/)**.
 
 But here is the gist of it once you have forked the repository:
 
