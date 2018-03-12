@@ -3,8 +3,6 @@ layout: documentation
 ---
 # Our Guidelines
 
-**THIS PAGE IS IN WORK**
-
 ## Overview
 
 This page describes:
