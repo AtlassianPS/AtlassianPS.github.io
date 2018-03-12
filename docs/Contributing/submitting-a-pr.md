@@ -50,11 +50,11 @@ These are more technical - pretty much what would have to be executed in the con
 To make changes to the code or documentation and send it as a Pull Request, only one tool is required:
 
 * **[Git]**  
-_There are many different ways to install Git.
-Please google how to install it on your OS._
+_There are many different ways to install Git._
+_Please google how to install it on your OS._
 * **PowerShell**  
-_Any version works.
-If you are using version 3 or 4, the `PowerShellGet` module must be installed._
+_Any version works._
+_If you are using version 3 or 4, the `PowerShellGet` module must be installed._
 * **[InvokeBuild]**
 
 _Additonal required modules are installed when `Invoke-Build` is called._
@@ -92,9 +92,9 @@ _Here is how: [Cloning a Repository](https://help.github.com/articles/cloning-a-
 git clone https://github.com/<YOUR USER NAME>/<NAME OF THE PROJECT>.git
 ```
 * Create a new branch for your changes
-_You should make the changes in a branch for tracking them.
-You should also create your own branch out of `develop`.
-You can read more here: [Git Flow Guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)._
+_You should make the changes in a branch for tracking them._
+_You should also create your own branch out of `develop`._
+_You can read more here: [Git Flow Guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)._
 ```powershell
 cd <NAME OF THE PROJECT>
 git checkout develop
