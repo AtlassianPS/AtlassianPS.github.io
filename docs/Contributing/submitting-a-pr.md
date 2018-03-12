@@ -57,7 +57,7 @@ _Any version works._
 _If you are using version 3 or 4, the `PowerShellGet` module must be installed._
 * **[InvokeBuild]**
 
-_Additonal required modules are installed when `Invoke-Build` is called._
+_Additional required modules are installed when `Invoke-Build` is called._
 
 There are more tools that are not _required_, but will make life much easier.
 Such as:
@@ -102,6 +102,7 @@ git checkout -b <NAME FOR YOUR FEATURE>
 ```
 
 Additional references:
+
 * GitHub's guide on [forking](https://guides.github.com/activities/forking/)
 
 ## Making Changes
