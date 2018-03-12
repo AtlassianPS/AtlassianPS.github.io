@@ -33,7 +33,8 @@ If you are using VS Code, the project is already set up to help you with that.
 
 ### Templates
 
-_No templates yet. Fill in when available._
+_No templates yet._
+_Fill in when available._
 
 ### Variable Naming
 
