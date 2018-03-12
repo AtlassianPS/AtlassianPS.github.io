@@ -9,46 +9,63 @@ layout: documentation
 
 This page describes:
 
-* [.](#.)
+* [Code Formatting and Conventions](#code-formatting-and-conventions)
+  * [Formatting](#formatting)
+  * [Templates](#templates)
+  * [Variable Naming](#variable-naming)
+  * [Function Naming](#function-naming)
+  * [Splatting](#splatting)
+  * [Aliases](#aliases)
+  * [In-code Documentation](#in-code-documentation)
+* [Code Separation and File Naming](#code-separation-and-file-naming)
+* [Strive for 100% Code Coverage by Tests](#strive-for-100-code-coverage-by-tests)
+* [Changes To the Build System](#changes-to-the-build-system)
+* [Submitting Pull Requests](#submitting-pull-requests)
 
-## .
+## Code Formatting and Conventions
 
-### Code Formatting and Conventions
+### Formatting
 
-#### Formatting
+All code must be properly formatted for a PR to be merged.
+For examples of the formatting, take a look around the public functions of the projects.
 
-All code must be properly formatted for a PR to be merged. For examples of the formatting, see source code for `Invoke-RedditRequest`. If you are using VS Code, the following settings should produce the desired code formating:
+If you are using VS Code, the project is already set up to help you with that.
 
-```json
-{
-  "powershell.codeFormatting.openBraceOnSameLine": true,
-  "powershell.codeFormatting.newLineAfterOpenBrace": true,
-  "powershell.codeFormatting.newLineAfterCloseBrace": true,
-  "powershell.codeFormatting.whitespaceBeforeOpenBrace": true,
-  "powershell.codeFormatting.whitespaceBeforeOpenParen": true,
-  "powershell.codeFormatting.whitespaceAroundOperator": true,
-  "powershell.codeFormatting.whitespaceAfterSeparator": true,
-  "powershell.codeFormatting.ignoreOneLineBlock": true,
-  "powershell.codeFormatting.alignPropertyValuePairs": true,
-  "powershell.codeFormatting.preset": "Stroustrup"
+### Templates
+
+_No templates yet. Fill in when available._
+
+### Variable Naming
+
+The naming convention asks for Pascal Case for all parameters, function nouns, method names, property names, field names, etc.  
+Local variable, which are created within the function, should be in Camel Case.
+
+Example:
+
+```powershell
+$GlobalVariable = "this is global"
+function Get-GlobalVariable {
+    param(
+        $InputObject,
+        $Filter
+    )
+    $localVariable = "this is local"
+    $global:GlobalVariable
 }
 ```
 
-#### File Header
+Additional Information:
+* [More about special case styles](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
 
-All PowerShell files should include a file header. You can use the Plaster templates provided in the project to generate the files for Functions, Classes, and Enums.
+### Function Naming
 
-#### Variable Naming
+Functions should use proper `Verb-Noun` names even on private functions
+and only use [Approved Verbs](https://msdn.microsoft.com/en-us/library/ms714428(v=vs.85).aspx).
 
-All variable names should be Pascal Case. This includes local variables, parameters, function nouns, method names, property names, field names, etc.
+### Splatting
 
-#### Function Naming
-
-Functions should use proper `Verb-Noun` names even on private functions and only use [Approved Verbs](https://msdn.microsoft.com/en-us/library/ms714428(v=vs.85).aspx). 
-
-#### Splatting
-
-Use at-splatting whenever a command has 3 or more parameters. Use the `$Params` variable for splatting. If you need to splat more than one command in a pipeline use `$Params<command name>` (e.g. `$ParamsGetContent` ) for each command in the pipeline.
+Use [splatting] whenever a command has 3 or more parameters. Use the `$params` variable for splatting.
+If you need to splat more than one command in a pipeline use `$Params<command name>` (e.g. `$ParamsGetContent` ) for each command in the pipeline.
 
 ```powershell
 # Single command
@@ -73,37 +90,47 @@ $ParamsSetWidget = @{
 Add-Widget @ParamsAddWidget | Set-Widget @ParamsSetWidget
 ```
 
-#### Aliases
+### Aliases
 
-Expand all aliases prior to a PR. No aliases are permitted, including `Sort`. The PSAnalyzer tests should detect this and issue a failure.
+Expand all aliases prior to a PR.
+No aliases are permitted, including `Sort`.
+The PSAnalyzer tests should detect this and issue a failure.
 
-#### In-code Documentation
+### In-code Documentation
 
-Limit in-code comments and documentation. If you are using full command names and PowerShell best practices, the code should be fairly self-documenting. Only use comments when doing something that is out of the norm or obscure. If you feel you need to comment on code, you likely need to refactor.
+Limit in-code comments and documentation.
+If you are using full command names and PowerShell best practices, the code should be fairly self-documenting.
+Only use comments when doing something that is out of the norm or obscure.
+If you feel you need to comment on code, you likely need to refactor.
 
-### Code Separation and File Naming
+## Code Separation and File Naming
 
-All functions (public and private), classes, and enums should be defined in separate files and organized according to their category. This project has the potential to have a very large code base so separation and organization of code needs to be maintained even at an early stage. Do not define more than one function, class, or enum per file. Do not create nested functions (use separate private functions instead). The filename should match the function or enum name. Class filenames should be prepended with a 3 digit load order and a dash.
+* all functions (public and private), classes, and enums should be defined in separate files and organized according to their category.
+* do not define more than one function, class, or enum per file.
+* do not create nested functions (use separate private functions instead).
+* the filename should match the function or enum name.
 
-### Strive for 100% Code Coverage by Tests
+## Strive for 100% Code Coverage by Tests
 
-This project strives to be as close to 100% code coverage as possible. If you are submitting a new function (public or private), the PR will not be merged until a unit test has been added that tests all available code paths for the function. The same goes for classes. Every method in a class must have a test that coves all code paths in that method. If you extend an existing class with a new method, please add a corresponding test to the class's unit test.
+This project strives to be as close to 100% code coverage as possible.
+If you are submitting a new function (public or private), the PR will not be merged until a unit test has been added that tests all available code paths for the function.
+The same goes for classes.
+If you extend the functionality of an existing feature, please add the tests that describe the changes.
 
+## Document as You Go
 
-### Document as You Go
+The documentation of a project is located in the `/docs/` folder and is the source of truth for all documentation.
 
-The documentation under the `/docs/` project folder in the GitHub Repo is the source of truth for all documentation.
+We realize documentation is the boring part of coding, but it is a necessary evil and not something that can be thrown over the wall unless we gain some dedicated documentation contributors.
+The only way to keep this project properly documented is to do it as we go and not after the fact.
 
-The build system in this project provides many auto-documentation features and many changes in code will be automatically reflected in the documentation. However, it is still important to go back and modify the documentation. Please update all documentation prior to making a pull request. PRs with help test failures will not be merged until they are corrected. 
+Any code submission will be checked for the according changes to the documentation.
 
-Currently, the auto-documentation does not automatically add new methods, properties, constructors, and fields for classes and enums. Adding new methods, properties, constructors, and fields to classes or enums will required the necessary documentation be added to the relaxant `about_` topic.
+## Changes To the Build System
 
-I realize documentation is the boring part of coding, but it is a necessary evil and not something that can be thrown over the wall unless we gain some dedicated documentation contributors. the only way to keep this project properly documented is to do it as we go and not after the fact.
+_This chapter must describe how to make changes and test them against AppVeyor/Travis._
 
-### Changes To the Build System
+_Maybe a page dedicated to this topic might be in order._
 
-If you wish to make submissions to modify any of the code under the `/BuildTools/` project folder, please enable AppVeyor for your project and test that the project builds both locally and on appveyor. If you make changes to the secure variables in `AppVeyor.yml`, please revert them before your PR.
-
-### Submitting Pull Requests
-
-When you fork the project, please do so from the `Staging` branch. All pull requests should be made against the `Staging` branch. Ensure your last commit message does not have `[ci skip]`, `[skip ci]`, or `[skip appveyor]` so that the automated PR tests can run. Only PRs from the Staging branch will be accepted into Master. Please include a bullet list of the changes you made and to what functions, classes, enums, build tools, tests, or documentation. Please squash your commits and rebase against `Staging` before submitting your PR.
+<!-- reference-style links -->
+  [splatting]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting
