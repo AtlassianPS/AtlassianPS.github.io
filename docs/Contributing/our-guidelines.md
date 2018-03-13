@@ -24,10 +24,10 @@ This page describes:
 
 ### Formatting
 
-All code must be properly formatted for a PR to be merged.
+All code must be properly formatted for a Pull Request (PR) to be merged.
 For examples of the formatting, take a look around the public functions of the projects.
 
-If you are using VS Code, the project is already set up to help you with that.
+If you are using VS Code, the project is already configured to help you with that.
 
 ### Templates
 
@@ -98,7 +98,7 @@ The PSAnalyzer tests should detect this and issue a failure.
 ### In-code Documentation
 
 Limit in-code comments and documentation.
-If you are using full command names and PowerShell best practices, the code should be fairly self-documenting.
+If you are using full, command names and PowerShell "best practices", the code should be fairly self-documenting.
 Only use comments when doing something that is out of the norm or obscure.
 If you feel you need to comment on code, you likely need to refactor.
 
