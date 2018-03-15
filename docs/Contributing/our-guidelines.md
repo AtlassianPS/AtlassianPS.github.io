@@ -25,7 +25,7 @@ This page describes:
 ### Formatting
 
 All code must be properly formatted for a Pull Request (PR) to be merged.
-For examples of the formatting, take a look around the public functions of the projects.
+For examples of formatting, take a look around the public functions of the projects.
 
 If you are using VS Code, the project is already configured to help you with that.
 
@@ -37,7 +37,7 @@ _Fill in when available._
 ### Variable Naming
 
 The naming convention asks for Pascal Case for all parameters, function nouns, method names, property names, field names, etc.  
-Local variable, which are created within the function, should be in Camel Case.
+Local variables created within a function should be in Camel Case.
 
 Example:
 
@@ -58,7 +58,7 @@ Additional Information:
 
 ### Function Naming
 
-Functions should use proper `Verb-Noun` names even on private functions
+Functions should use proper `Verb-Noun` names even for private functions
 and only use [Approved Verbs](https://msdn.microsoft.com/en-us/library/ms714428(v=vs.85).aspx).
 
 ### Splatting
@@ -100,7 +100,7 @@ The PSAnalyzer tests should detect this and issue a failure.
 Limit in-code comments and documentation.
 If you are using full, command names and PowerShell "best practices", the code should be fairly self-documenting.
 Only use comments when doing something that is out of the norm or obscure.
-If you feel you need to comment on code, you likely need to refactor.
+If you feel you need to comment the code, you likely need to refactor it.
 
 ## Code Separation and File Naming
 
@@ -120,10 +120,10 @@ If you extend the functionality of an existing feature, please add the tests tha
 
 The documentation of a project is located in the `/docs/` folder and is the source of truth for all documentation.
 
-We realize documentation is the boring part of coding, but it is a necessary evil and not something that can be thrown over the wall unless we gain some dedicated documentation contributors.
+We realize documentation is a boring part of coding, but it is a necessary evil. This is not something that can be thrown over the wall unless we gain some dedicated documentation contributors.
 The only way to keep this project properly documented is to do it as we go and not after the fact.
 
-Any code submission will be checked for the according changes to the documentation.
+Any code submission will be checked for documentation according to its changes.
 
 ## Changes To the Build System
 
