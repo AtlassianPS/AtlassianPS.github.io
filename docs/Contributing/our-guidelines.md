@@ -112,7 +112,8 @@ If you feel you need to comment the code, you likely need to refactor it.
 ## Strive for 100% Code Coverage by Tests
 
 This project strives to be as close to 100% code coverage as possible.
-If you are submitting a new function (public or private), the PR will not be merged until a unit test has been added that tests all available code paths for the function.
+If you are submitting a new function (public or private),
+the PR will not be merged until a unit test has been added that tests all available code paths for the function.
 The same goes for classes.
 If you extend the functionality of an existing feature, please add the tests that describe the changes.
 
@@ -120,7 +121,8 @@ If you extend the functionality of an existing feature, please add the tests tha
 
 The documentation of a project is located in the `/docs/` folder and is the source of truth for all documentation.
 
-We realize documentation is a boring part of coding, but it is a necessary evil. This is not something that can be thrown over the wall unless we gain some dedicated documentation contributors.
+We realize documentation is a boring part of coding, but it is a necessary evil.
+This is not something that can be thrown over the wall unless we gain some dedicated documentation contributors.
 The only way to keep this project properly documented is to do it as we go and not after the fact.
 
 Any code submission will be checked for documentation according to its changes.
