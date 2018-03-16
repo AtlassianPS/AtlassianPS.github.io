@@ -12,6 +12,9 @@
 - name: Documentation
   path: docs
   childs:
+    - name: Contributing
+      path: docs/Contributing
+      listChilds: true
     - name: Gallery
       path: docs/Gallery
     # - name: BitbucketPS
