@@ -29,7 +29,7 @@
     # - name: JiraPS
     #   path: docs/JiraPS
 - name: Donate
-  path: https://paypal.me/AtlassianPS
+  path: donate
   target: _blank
 - name: Contact
   path: contact
