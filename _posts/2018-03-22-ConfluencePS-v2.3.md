@@ -2,7 +2,7 @@
 layout:     article
 permalink:  /article/:categories/:title
 title:      ConfluencePS v2.3
-date:       2018-03-23 12:00:00
+date:       2018-03-22 22:29:00
 categories: Announcement
 thumbnail:  
 author:     lipkau
@@ -11,7 +11,7 @@ tags:
  - Release
 ---
 
-We have just published a new major version of the **ConfluencePS** module to the [Gallery](https://www.powershellgallery.com/packages/ConfluencePS/2.2.10) and to [GitHub](https://github.com/AtlassianPS/ConfluencePS/releases/tag/v2.2.5)!
+We have just published a new major version of the **ConfluencePS** module to the [Gallery](https://www.powershellgallery.com/packages/ConfluencePS/2.3.1) and to [GitHub](https://github.com/AtlassianPS/ConfluencePS/tree/v2.3.1)!
 <!--more-->
 
 # Description
