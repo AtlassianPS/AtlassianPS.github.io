@@ -10,7 +10,7 @@
     <article id="{{post.title}}" class="container post item col-10 ml-auto mr-auto">
         <div class="row">
             <div class="col-3 ml-auto article-thumb text-center">
-                <a href="{{ post.url | prepend: site.baseurl }}">
+                <a href="#"> <!-- href="{{ categoryIcon.name | prepend: site.baseurl }}" -->
                     <i class="fa {{categoryIcon.icon}} fa-5x {{categoryIcon.class}}"></i>
                 </a>
             </div>
@@ -23,7 +23,9 @@
                 </div>
                 <div class="article-content row">
                     <div class="container">
-                        <h3 class="item-title article-title"><a href="{{ post.url | prepend: site.baseurl }}" class="link" rel="bookmark">{{ post.title }}</a></h3>
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="link" rel="bookmark">
+                            <h3 class="item-title article-title"></h3>{{ post.title }}</h3>
+                        </a>
                         {{ post.excerpt }}
                     </div>
                 </div>
