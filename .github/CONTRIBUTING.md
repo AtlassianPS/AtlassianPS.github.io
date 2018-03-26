@@ -10,7 +10,6 @@ But here is the gist of it once you have forked the repository:
 ```powershell
 git clone https://github.com/<YOUR GITHUB USER>/atlassianps.github.io
 cd atlassianps.github.io
-# git checkout develop # not applicable for this repository
 git checkout -b <NAME FOR YOUR FEATURE>
 code .
 ```
