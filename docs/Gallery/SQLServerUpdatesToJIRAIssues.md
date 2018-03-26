@@ -3,7 +3,7 @@ layout: galleryItem
 author: <a href="https://github.com/tsvenbla">tsvenbla</a>
 title: SQL Server Updates to JIRA Issues
 synopsis: This script will create JIRA issues from an RSS feed
-type: Working Script  # Is this an idea or a working script?
+type: Working Script
 modules:
   - JiraPS
 ---
