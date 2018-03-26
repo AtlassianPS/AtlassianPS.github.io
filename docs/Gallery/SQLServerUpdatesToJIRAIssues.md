@@ -20,10 +20,10 @@ This script will do these things, in order:
 1. Establish a connection with your company JIRA.
 2. Fetch an RSS feed (in my script, the https://blogs.msdn.microsoft.com/sqlreleaseservices/feed/).
 3. For each feed item in the feed:
-  1. Extract useable information, like the feed item title, publishing date and link.
-  2. Check whether there already exists a JIRA issue with the same title/summary as the feed title.
-  3. If not, create the issue with a certain set of parameters.
-  4. Repeat for each feed item in the feed.
+    1. Extract useable information, like the feed item title, publishing date and link.
+    2. Check whether there already exists a JIRA issue with the same title/summary as the feed title.
+    3. If not, create the issue with a certain set of parameters.
+    4. Repeat for each feed item in the feed.
 4. Done!
 
 ![ScreenShot](screenshots/SQLBacklog.PNG)
