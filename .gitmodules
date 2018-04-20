@@ -5,6 +5,7 @@
 [submodule "modules/JiraPS"]
 	path = modules/JiraPS
 	url = https://github.com/AtlassianPS/JiraPS.git
+	branch = master
 [submodule "modules/HipChatPS"]
 	path = modules/HipChatPS
 	url = https://github.com/AtlassianPS/HipChatPS.git

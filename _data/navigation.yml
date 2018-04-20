@@ -26,8 +26,11 @@
         - Classes
     # - name: HipChatPS
     #   path: docs/HipChatPS
-    # - name: JiraPS
-    #   path: docs/JiraPS
+    - name: JiraPS
+      path: docs/JiraPS
+      groups:
+        - About
+        - Commands
 - name: Donate
   path: donate
   target: _blank
