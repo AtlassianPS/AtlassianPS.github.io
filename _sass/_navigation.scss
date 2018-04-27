@@ -27,6 +27,14 @@ header.site-header {
     }
     .site-branding {
         float: left;
+        .site-brand-inner {
+            display: inline-flex;
+        }
+        .site-logo-div {
+            width: 70px;
+            margin-right: 10px;
+            line-height: 75px;
+        }
         .site-title,
         .site-text-logo {
             margin: 0px;
@@ -47,9 +55,6 @@ header.site-header {
         }
         .site-image-logo {
             display: block;
-        }
-        .site-logo-div {
-            line-height: 75px;
         }
         .no-logo-img.has-desc,
         .has-logo-img {
