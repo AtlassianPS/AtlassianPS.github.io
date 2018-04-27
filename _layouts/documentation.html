@@ -71,7 +71,9 @@
             {% else %}
                 <a href="#" class="btn btn-default hide" data-algolia="lvl1">Common</a>
             {% endif %}
+            {% if bc_groupName != page.title and bc_moduleName != page.title and "Documentation" != page.title %}
                 <span class="btn btn-default">{{ page.title }}</span>
+            {% endif %}
             </div>
 
         </div>
