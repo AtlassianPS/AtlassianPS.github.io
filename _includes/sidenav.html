@@ -1,0 +1,72 @@
+{% assign documentation = site.data.navigation | where: "name", "Documentation" %}
+<nav class="bd-links d-none d-md-block" id="bd-docs-nav">
+{% for module in documentation[0].childs %}
+    {% if page.url contains module.path %}
+        {% if module.groups %}
+            {% for group in module.groups %}
+                {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
+    <div class="bd-toc-item{% if page.url contains groupName %} active{% endif %}">
+        <a class="bd-toc-link" href="{{ groupPath }}">{{group}}</a>
+
+        <ul class="nav bd-sidenav">
+
+                {% for p in site.html_pages %}
+                    {% if p.url contains groupPath %}
+                        {% if p.hide != true %}
+            <li class="{% if page.url contains p.url %}active{% endif %}">
+                <a href="{{ p.url }}">{{ p.title }}</a>
+            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+        </ul>
+    </div>
+            {% endfor %}
+        {% elsif module.listChilds %}
+    <ul class="nav bd-sidenav">
+            {% for p in site.html_pages %}
+                {% if p.url contains module.path %}
+                    {% if p.hide != true %}
+    <li class="{% if page.url contains p.url %}active{% endif %}">
+        <a class="bd-toc-link" href="{{ p.url }}">{{ p.title }}</a>
+    </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+    </ul>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</nav>
+<nav class="bd-links d-block d-md-none text-center" id="small-nav">
+    <h4 class="d-inline">Topics</h4>
+    <select id="small-nav-dropdown">
+{% for module in documentation[0].childs %}
+    {% if page.url contains module.path %}
+        <option class="font-weight-bold" value="{{ module.path }}">{{ module.name }}</option>
+        {% if module.groups %}
+            {% for group in module.groups %}
+                {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
+        <optgroup label="{{ group }}">
+                {% for p in site.html_pages %}
+                    {% if p.url contains groupPath %}
+                        {% if p.hide != true %}
+            <option value="{{ p.url }}"{% if page.url contains p.url %}selected{% endif %}>{{ p.title }}</option>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </optgroup>
+            {% endfor %}
+        {% elsif module.listChilds %}
+            {% for p in site.html_pages %}
+                {% if p.url contains module.path %}
+                    {% if p.hide != true %}
+        <option value="{{ p.url }}" {% if page.url contains p.url %}selected{% endif %}>{{ p.title }}</option>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+    </select>
+</nav>
