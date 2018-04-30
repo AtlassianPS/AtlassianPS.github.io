@@ -10,7 +10,7 @@ extras:
   - BetterCredentials
 ---
 
-### Description
+## Description
 
 This script will:
 * install [BetterCredentials](https://github.com/Jaykul/BetterCredentials)
@@ -21,6 +21,6 @@ This script will:
 
 ![ScreenShot](screenshots/gallery_init-env.png)
 
-### Code
+## Code
 
 {% gist lipkau/f43bf4be92eb9b88a671cd087d1af262 %}

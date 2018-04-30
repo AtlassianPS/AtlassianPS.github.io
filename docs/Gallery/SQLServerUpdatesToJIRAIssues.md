@@ -11,7 +11,7 @@ modules:
 ## Brief summary
 This script will poll an RSS feed containing SQL Server Updates and create issues in JIRA off the feed entry titles.
 
-### Description
+## Description
 I created this script because I was sick of having to manually create a JIRA issue every time there was a SQL Server update/patch release.
 This script will take care of all that, if you don't mind a few non-patch issues being created (like SCOM management packs). This could easily be sifted away with content parsing.
 
@@ -28,6 +28,6 @@ This script will do these things, in order:
 
 ![ScreenShot](screenshots/SQLBacklog.PNG)
 
-### Code
+## Code
 
 {% gist tsvenbla/1716a662b21ee9574b1bc78ea8efbf15 %}
