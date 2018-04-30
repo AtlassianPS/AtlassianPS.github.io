@@ -201,3 +201,10 @@
         color: #099
     } // Literal.Number.Integer.Long
 }
+
+.language-powershell::before {
+    content: "" !important
+}
+.highlight {
+    margin: 0;
+}
