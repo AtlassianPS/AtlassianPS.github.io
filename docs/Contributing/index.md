@@ -1,5 +1,6 @@
 ---
 layout: documentation
+hide: true
 ---
 # Contributing to AtlassianPS
 
