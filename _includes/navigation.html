@@ -19,7 +19,7 @@
                     <ul class="onepress-menu">
                     {% for section in site.data.navigation %}
                         {% if section.childs %}
-                        <li class="menu-item menu-item-has-children{% if page.path contains section.path %} active{% endif %}">
+                        <li class="menu-item menu-item-has-children{% if page.url contains section.path %} active{% endif %}">
                             {% if section.path %}
                             <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}">{{ section.name }}</a>
                             {% else %}
