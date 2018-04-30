@@ -1,16 +1,3 @@
-function _to_number(string) {
-    if (typeof string === 'number') { return string; }
-    var n = string.match(/\d+$/);
-    if (n) { return parseFloat(n[0]); } else { return 0; }
-}
-
-function _to_bool(v) {
-    if (typeof v === 'boolean') { return v; }
-    if (typeof v === 'number') { return v === 0 ? false : true; }
-    if (typeof v === 'string') { if (v === 'true' || v === '1') { return true; } else { return false; } }
-    return false;
-}
-
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
@@ -21,7 +8,9 @@ function copyToClipboard(element) {
 
 function smoothScroll(element) {
     let headerSize = $('header#masthead').height();
-    if (element.length <= 0) { return false; }
+    if (element.length <= 0) {
+        return false;
+    }
     $("html, body").animate({
         scrollTop: ($(element).offset().top - headerSize) + "px"
     }, {
@@ -30,7 +19,7 @@ function smoothScroll(element) {
     });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     if ($(location.hash) > 0) {
         window.scrollTo(0, 0);
         smoothScroll($(location.hash));
@@ -41,31 +30,38 @@ $(document).ready(function() {
     var is_transparent = $('body').hasClass('header-transparent');
     $wrap = $('.site-header-wrapper');
     $wrap.addClass('no-scroll');
-    if (!is_top_header) { $('body').removeClass('header-transparent'); }
+    if (!is_top_header) {
+        $('body').removeClass('header-transparent');
+    }
     var header_fixed = $('.site-header').eq(0);
 
-    $('#nav-toggle').on('click', function(event) {
+    $('#nav-toggle').on('click', function (event) {
         event.preventDefault();
         $('#nav-toggle').toggleClass('nav-is-visible');
         $('ul.onepress-menu').toggleClass('nav-is-visible');
     });
-    $('.nav-toggle-subarrow').click(function() { $(this).parent().toggleClass("nav-toggle-dropdown"); });
+    $('.nav-toggle-subarrow').click(function () {
+        $(this).parent().toggleClass("nav-toggle-dropdown");
+    });
 
-    $('a[href*="#"]:not([href="#"]), a.inpage-navigation[href*="#"]').on('click', function(event) {
+    $('a[href*="#"]:not([href="#"]), a.inpage-navigation[href*="#"]').on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
     });
 
-    $(window).resize(function() {});
-    setTimeout(function() { $(window).trigger('scroll'); }, 500);
+    $(window).resize(function () {});
+    setTimeout(function () {
+        $(window).trigger('scroll');
+    }, 500);
 
-    $('[data-toggle="slide-collapse"]').on('click', function() {
+    $('[data-toggle="slide-collapse"]').on('click', function () {
         $navMenuCont = $($(this).data('target'));
-        $navMenuCont.animate({ 'width': 'toggle' }, 350);
+        $navMenuCont.animate({
+            'width': 'toggle'
+        }, 350);
     });
 
-    let wrapper = $('pre code').parent().parent().wrap('<div class="code_block"></div>');
-    wrapper.each(function(k, v) {
+    $('.highlighter-rouge pre.highlight code').parent().parent().wrap('<div class="code_block"></div>').each(function (k, v) {
         let language = "";
         if ($(v).hasClass('language-powershell')) {
             language = "PowerShell";
@@ -81,11 +77,11 @@ $(document).ready(function() {
         }
     });
 
-    $('button.action.copy').on('click', function() {
+    $('button.action.copy').on('click', function () {
         copyToClipboard($(this).parents('.code_block').find('code'))
     });
 
-    $('h3').each(function() {
+    $('h3').each(function () {
         let text = $(this).text();
         text = text.replace(/[–—]/g, "");
         $(this).text(text);
@@ -96,4 +92,25 @@ $(document).ready(function() {
     $('a[data-toggle="collapse"]').on('click', function () {
         $(this).parent().parent().find('.panel-collapse').toggle();
     });
+
+    // $('.bd-toc-link').click(function (event) {
+    //     event.preventDefault();
+    //     $(this).parent().find('.nav.bd-sidenav').toggle();
+    // })
+
+    $("#small-nav-dropdown").change(function () {
+        if ($(this).val() != '') {
+            window.location.href = $(this).val();
+        }
+    });
+
+    $("ul.nav.toc").toc({
+        content: "section.content",
+        headings: "h1,h2,h3"
+    });
+
+    $('ul.nav.toc li').addClass('nav-item toc-entry');
+    $('ul.nav.toc li a').addClass('nav-link');
+
+    $('body').scrollspy({ target: 'ul.nav.toc' });
 });
