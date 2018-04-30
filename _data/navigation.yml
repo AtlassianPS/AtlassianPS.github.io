@@ -17,6 +17,7 @@
       listChilds: true
     - name: Gallery
       path: docs/Gallery
+      listChilds: true
     # - name: BitbucketPS
     #   path: docs/BitbucketPS
     - name: ConfluencePS
@@ -33,6 +34,5 @@
         - Commands
 - name: Donate
   path: donate
-  target: _blank
 - name: Contact
   path: contact
