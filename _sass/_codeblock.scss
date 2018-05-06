@@ -64,9 +64,15 @@
         border-radius: 0;
         border: $powershell-blue 1px solid;
     }
-    .language-powershell pre {
-        // background-color: $powershell-blue;
-        // color: #ffffff;
-        font-weight: 500;
+    .language-powershell {
+        content: "" !important pre {
+            background-color: $powershell-blue;
+            color: #ffffff;
+            font-weight: 500;
+        }
     }
+}
+
+.highlight {
+    margin: 0;
 }
