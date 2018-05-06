@@ -91,21 +91,6 @@ a:hover {
     outline: none;
 }
 
-p {
-    a {
-        word-wrap: break-word;
-    }
-    a[href^="http://"]:after,
-    a[href^="https://"]:after {
-        content: " (" attr(href) ")";
-        font-size: 80%;
-    }
-}
-
-q:after {
-    content: " (Source: " attr(cite) ")";
-}
-
 h1,
 h2,
 h3,
@@ -753,5 +738,21 @@ body>.page {
                 border-top: none;
             }
         }
+    }
+}
+
+@media print {
+    p {
+        a {
+            word-wrap: break-word;
+        }
+        a[href^="http://"]:after,
+        a[href^="https://"]:after {
+            content: " (" attr(href) ")";
+            font-size: 80%;
+        }
+    }
+    q:after {
+        content: " (Source: " attr(cite) ")";
     }
 }
