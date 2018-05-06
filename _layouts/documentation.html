@@ -75,7 +75,7 @@
 
         <div class="row flex-xl-nowrap">
 
-            <div class="col-12 col-md-3 col-xl-2 ml-auto bd-sidebar">
+            <div class="col-12 col-md-3 col-xl-2 ml-auto d-print-none bd-sidebar">
 
                 {% if page.url != "/docs/" %}
                     {% include sidenav.html %}
@@ -83,7 +83,7 @@
 
             </div>
             
-            <div class="col-12 col-md-3 col-xl-2 mr-auto d-none d-lg-block bd-toc">
+            <div class="col-12 col-md-3 col-xl-2 mr-auto d-none d-lg-block d-print-none bd-toc">
 
                 {% include toc.html %}
 
