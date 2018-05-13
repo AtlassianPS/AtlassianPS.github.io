@@ -7,32 +7,32 @@
 - name: replicaJunction
   role: Maintainer
   gh_user: replicaJunction
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: brianbunke
   role: Maintainer
   gh_user: brianbunke
   short_desc: Created ConfluencePS, stayed for the free drinks
-  long_desc: 
+  long_desc:
 
 - name: beaudryj
   role: Reviewer
   gh_user: beaudryj
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: Dejulia489
   role: Reviewer
   gh_user: Dejulia489
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: markwragg
   role: Reviewer
   gh_user: markwragg
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: Joel Bennett (@jaykul)
   role: Architecture consultant
@@ -43,113 +43,119 @@
 - name: axxelG
   role: Contributor
   gh_user: axxelG
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: jkknorr
   role: Contributor
   gh_user: jkknorr
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: padgers
   role: Contributor
   gh_user: padgers
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: colhal
   role: Contributor
   gh_user: colhal
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: kittholland
   role: Contributor
   gh_user: kittholland
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: lukhase
   role: Contributor
   gh_user: lukhase
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: alexsuslin
   role: Contributor
   gh_user: alexsuslin
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: ThePSAdmin
   role: Contributor
   gh_user: ThePSAdmin
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: LiamLeane
   role: Contributor
   gh_user: LiamLeane
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: TomasDeceuninck
   role: Contributor
   gh_user: TomasDeceuninck
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: MrAusnadian
   role: Contributor
   gh_user: MrAusnadian
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: vzabauski
   role: Contributor
   gh_user: vzabauski
-  short_desc: 
-  long_desc: 
+  short_desc:
+  long_desc:
 
 - name: ebekker
   role: Contributor
   gh_user: ebekker
   short_desc: <a href="https://www.youtube.com/watch?v=otzJszJ9MnA">One man can make a difference.</a>
-  long_desc: 
+  long_desc:
 
 - name: Aaron Bockelie
   role: Contributor
   gh_user: aaronsb
   short_desc:
-  long_desc: 
+  long_desc:
 
 - name: Valeriy Zabawski
   role: Contributor
   gh_user: vzabawski
   short_desc:
-  long_desc: 
+  long_desc:
 
 - name: Dominique Clijsters
   role: Contributor
   gh_user: Clijsters
   short_desc:
-  long_desc: 
+  long_desc:
 
 - name: Craig Buchanan
   role: Contributor
   gh_user: craibuc
   short_desc:
-  long_desc: 
+  long_desc:
 
 - name: Lawrence
   role: Contributor
   gh_user: Lawrence-W
   short_desc:
   long_desc:
- 
+
 - name: Tobias Svenblad
   role: Contributor
   gh_user: tsvenbla
   short_desc:
-  long_desc: 
+  long_desc:
+
+- name: Mike Levan
+  role: Contributor
+  gh_user: WindowsAdmin92
+  short_desc:
+  long_desc:
