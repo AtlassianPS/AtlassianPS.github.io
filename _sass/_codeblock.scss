@@ -65,7 +65,8 @@
         border: $powershell-blue 1px solid;
     }
     .language-powershell {
-        content: "" !important pre {
+        content: "" !important;
+        pre {
             background-color: $powershell-blue;
             color: #ffffff;
             font-weight: 500;

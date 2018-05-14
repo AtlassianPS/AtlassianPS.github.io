@@ -61,13 +61,10 @@ $(document).ready(function () {
         }, 350);
     });
 
-    $('.highlighter-rouge pre.highlight code').parent().parent().wrap('<div class="code_block"></div>').each(function (k, v) {
+    $('pre code').parent().wrap('<div class="code_block"></div>').each(function (k, v) {
         let language = "";
         if ($(v).hasClass('language-powershell')) {
             language = "PowerShell";
-        }
-
-        if (language) {
             $(v).before(`
                 <div class="code_head">
                     <span class="">${language}</span>
