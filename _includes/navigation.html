@@ -21,9 +21,9 @@
                         {% if section.childs %}
                         <li class="menu-item menu-item-has-children{% if page.url contains section.path %} active{% endif %}">
                             {% if section.path %}
-                            <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}">{{ section.name }}</a>
+                            <div class="nav-toggle-subarrow"><i class="fas fa-angle-down"></i></div><a href="{% if section.path contains '://' %}{% else %}/{% endif %}{{ section.path }}">{{ section.name }}</a>
                             {% else %}
-                            <div class="nav-toggle-subarrow"><i class="fa fa-angle-down"></i></div><a href="#">{{ section.name }}  </a>
+                            <div class="nav-toggle-subarrow"><i class="fas fa-angle-down"></i></div><a href="#">{{ section.name }}  </a>
                             {% endif %}
                             <ul class="sub-menu">
                                 {% for child in section.childs %}
