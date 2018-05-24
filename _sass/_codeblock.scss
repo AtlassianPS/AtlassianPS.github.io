@@ -1,4 +1,4 @@
-.code_block {
+div.code_block {
     margin-bottom: 10px;
     .code_head {
         background-color: #f5f5f5;
@@ -48,32 +48,38 @@
                 font-weight: 666;
             }
         }
-        .action.copy:before {
-            content: '\f24d ';
-            font-family: FontAwesome;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: inherit;
-            padding-right: 0.5em;
+        .action.copy {
+            i {
+                font-style: normal;
+                font-weight: normal;
+                text-decoration: inherit;
+                padding-right: 0.5em;
+            }
         }
     }
+    div.highlight {
+        margin: 0;
+        padding: 0;
+    }
     pre {
-        // border: 1px solid #d3d6db;
+        padding: 20px;
         background-color: #f9f9f9;
         font-size: .875rem;
         border-radius: 0;
         border: $powershell-blue 1px solid;
-    }
-    .language-powershell {
-        content: "" !important;
-        pre {
+        &.console {
             background-color: $powershell-blue;
-            color: #ffffff;
-            font-weight: 500;
+        }
+        code {
+            padding: 0;
+            background: transparent;
+            font-weight: 600;
+            &.language-powershell {
+                &:before {
+                    content: '';
+                }
+                color: #fff !important;
+            }
         }
     }
-}
-
-.highlight {
-    margin: 0;
 }
