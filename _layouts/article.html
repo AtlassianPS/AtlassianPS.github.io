@@ -16,7 +16,7 @@ layout: page
     </div>
     {% elsif page.thumbnail %}
     <div class="thumb">
-        <i class="fa fa-{{ page.thumbnail }} fa-4x"></i>
+        <i class="{{ page.thumbnail }} fa-4x"></i>
     </div>
     {% endif %}
 
@@ -43,7 +43,7 @@ layout: page
     {% if page.tags and page.tags.size > 0 %}
     <div class="tags">
         <small>
-            <i class="fa fa-tags"></i>
+            <i class="fas fa-tags"></i>
                 {{ page.tags | join: ', ' }}
         </small>
     </div>
