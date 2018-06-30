@@ -2,17 +2,26 @@ blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
     margin: 1.5em 10px;
-    padding: 0.5em 10px;
+    padding: 1em 10px;
     &::before {
         color: #ccc;
-        content: "\f10d";
-        font-family: FontAwesome;
-        font-size: 2em;
+        content: "\f10e";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 1.5em;
         line-height: 0.1em;
         margin-right: 0.25em;
-        vertical-align: -0.4em;
     }
     p {
         display: inline;
+        line-height: 1.5em;
+    }
+    cite {
+        display: flex;
+        font-style: italic;
+        margin-bottom: 0;
+        &:before {
+            content: "-- ";
+        }
     }
 }

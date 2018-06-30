@@ -1,3 +1,8 @@
+/**
+ * Copy the content of a input tag to clipboard
+ * @param any element
+ * @return void
+ */
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
@@ -6,8 +11,13 @@ function copyToClipboard(element) {
     $temp.remove();
 }
 
+/**
+ * Scroll the DOM so that the element is in view
+ * @param any element
+ * @return void
+ */
 function smoothScroll(element) {
-    let headerSize = $('header#masthead').height();
+    var headerSize = $('header#masthead').height();
     if (element.length <= 0) {
         return false;
     }
@@ -20,6 +30,10 @@ function smoothScroll(element) {
 }
 
 $(document).ready(function () {
+
+    /**
+     * Move the DOM to see an element if provided by Hash
+     */
     if ($(location.hash) > 0) {
         window.scrollTo(0, 0);
         smoothScroll($(location.hash));
@@ -44,6 +58,9 @@ $(document).ready(function () {
         $(this).parent().toggleClass("nav-toggle-dropdown");
     });
 
+    /**
+     * Use smoothScroll for links that navigate inside the same page
+     */
     $('a[href*="#"]:not([href="#"]), a.inpage-navigation[href*="#"]').on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
@@ -61,26 +78,29 @@ $(document).ready(function () {
         }, 350);
     });
 
-    $('.highlighter-rouge pre.highlight code').parent().parent().wrap('<div class="code_block"></div>').each(function (k, v) {
+    $('pre code').parent().wrap('<div class="code_block"></div>').each(function (k, v) {
         let language = "";
-        if ($(v).hasClass('language-powershell')) {
+        if ($(v).children('code').hasClass('language-powershell')) {
             language = "PowerShell";
-        }
 
-        if (language) {
             $(v).before(`
                 <div class="code_head">
                     <span class="">${language}</span>
-                    <button class="action copy"> Copy</button>
+                    <button class="action copy"><i class="far fa-clone"></i> Copy</button>
                 </div>
             `);
+            $(v).addClass('console');
         }
     });
 
     $('button.action.copy').on('click', function () {
-        copyToClipboard($(this).parents('.code_block').find('code'))
+        console.log("copying:", $(this).parents('div.code_block').find('code'));
+        copyToClipboard($(this).parents('div.code_block').find('code'));
     });
 
+    /**
+     * Remove Powershell help specific dashes on H3 of examples
+     */
     $('h3').each(function () {
         let text = $(this).text();
         text = text.replace(/[–—]/g, "");

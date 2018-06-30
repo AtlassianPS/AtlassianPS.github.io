@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<script src="{{ '/assets/js/github.js' | relative_url }}" async defer></script>
+<script src="{{ '/assets/javascript/github.js' | relative_url }}" async defer></script>
 <div class="landing-page">
 
     {% include carousel.html %}
-    
+
     {% for section in site.data.landing %}
         {% assign loopindex = forloop.index | modulo: 2 %}
     <section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.classes }}">

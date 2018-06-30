@@ -16,15 +16,11 @@ encoding: utf-8
 # other settings
 excerpt_separator: <!--more-->
 
-# kramdown:
-#   input: GFM
-# #   syntax_highlighter: rouge
-# markdown: kramdown
-# kramdown:
-#   input: GFM
-#   hard_wrap: false
-#   syntax_highlighter: rouge
-#   syntax_highlighter_opts:
-#     span: false
-# highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
 
