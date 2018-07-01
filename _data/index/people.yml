@@ -159,3 +159,39 @@
   gh_user: WindowsAdmin92
   short_desc:
   long_desc:
+
+- name: Brett Miller
+  role: Contributor
+  gh_user: brettmillerb
+  short_desc:
+  long_desc:
+
+- name: JohnAdders
+  role: Contributor
+  gh_user: JohnAdders
+  short_desc:
+  long_desc:
+
+- name: hmmwhatsthisdo
+  role: Contributor
+  gh_user: hmmwhatsthisdo
+  short_desc:
+  long_desc:
+
+- name: Mike Levan
+  role: Contributor
+  gh_user: AdminTurnedDevOps
+  short_desc:
+  long_desc:
+
+- name: bw-0
+  role: Contributor
+  gh_user: bw-0
+  short_desc:
+  long_desc:
+
+- name: OpCode1300
+  role: Contributor
+  gh_user: OpCode1300
+  short_desc:
+  long_desc:
