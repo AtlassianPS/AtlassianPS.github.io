@@ -3,5 +3,5 @@
   class: tilted
 
 - name: Celebration
-  icon: fa-thumbs-up
+  icon: fas fa-thumbs-up
   class:
