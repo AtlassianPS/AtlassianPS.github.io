@@ -106,12 +106,6 @@
   short_desc:
   long_desc:
 
-- name: vzabauski
-  role: Contributor
-  gh_user: vzabauski
-  short_desc:
-  long_desc:
-
 - name: ebekker
   role: Contributor
   gh_user: ebekker
@@ -151,12 +145,6 @@
 - name: Tobias Svenblad
   role: Contributor
   gh_user: tsvenbla
-  short_desc:
-  long_desc:
-
-- name: Mike Levan
-  role: Contributor
-  gh_user: WindowsAdmin92
   short_desc:
   long_desc:
 
