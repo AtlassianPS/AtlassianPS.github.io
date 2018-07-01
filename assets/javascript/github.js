@@ -24,19 +24,8 @@ $(document).ready(function() {
                 $("div.module.item[repo='" + data.name + "']").find(".html_url").attr("href", data.html_url);
                 $("div.module.item[repo='" + data.name + "']").find(".item-description").html(data.description);
                 $("div.module.item[repo='" + data.name + "']").find(".img.logo").attr("alt", data.name);
-                $("div.module.item[repo='" + data.name + "']").find(".fork").html('<i class="fa fa-code-fork"></i> ' + data.forks_count);
-                $("div.module.item[repo='" + data.name + "']").find(".star").html('<i class="fa fa-star"></i> ' + data.stargazers_count);
-
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        $("div.module.item[repo='" + data.name + "']").find("img.logo").src = "data:" + xhr.getResponseHeader("Content-Type") + ";base64," + btoa(String.fromCharCode.apply(null, new Uint8Array(xhr.response)));
-                        $("div.module.item[repo='" + data.name + "']").find("img.logo").removeClass("hide");
-                    }
-                }
-                xhr.responseType = "arraybuffer";
-                xhr.open("GET", "https://raw.githubusercontent.com/" + id + "/master/logo.png", true);
-                xhr.send();
+                $("div.module.item[repo='" + data.name + "']").find(".fork").html('<i class="fas fa-code-branch"></i> ' + data.forks_count);
+                $("div.module.item[repo='" + data.name + "']").find(".star").html('<i class="fas fa-star"></i> ' + data.stargazers_count);
             });
         }
     }).done(function(data) {
