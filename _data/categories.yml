@@ -1,3 +1,7 @@
 - name: Announcement
   icon: fas fa-bullhorn
   class: tilted
+
+- name: Celebration
+  icon: fa-thumbs-up
+  class:
