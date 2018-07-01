@@ -2,10 +2,12 @@
     {% for module in site.data.index.modules %}
     <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-10 col-md-5 ml-auto mr-auto">
         <div class="module-item">
-            <img src="/assets/img/{{ module.name }}.png" class="logo img-responsive" alt="{{ module.name }}">
-            <h3 class="item-title">
-                <a class="link" href="/module/{{ module.name }}">{{ module.name }}</a>
-            </h3>
+            <a class="link" href="/module/{{ module.name }}">
+                <img src="/assets/img/{{ module.name }}.png" class="logo img-responsive" alt="{{ module.name }}">
+                <h3 class="item-title">
+                    {{ module.name }}
+                </h3>
+            </a>
             <p class="item-description"></p>
             <div class="ghbtn">
                 <a target="_blank" href="#" class="btn btn-xs btn-white html_url" alt="Repository">
