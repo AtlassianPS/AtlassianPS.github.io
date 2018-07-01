@@ -79,12 +79,14 @@ Here are some things we achieved in this regard:
 
 ### JiraPS
 
+* **Total Downloads:** 19,716
 * **Merged Pull Requests:** 65
 * **Line changes:** 79,563++ 33,993--
 * **Commits:** 335
 
 ### ConfluencePS
 
+* **Total Downloads:** 1,877
 * **Merged Pull Requests:** 36
 * **Line changes:** 16,079++ 9,156--
 * **Commits:** 119
