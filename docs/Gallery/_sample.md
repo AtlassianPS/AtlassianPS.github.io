@@ -12,9 +12,6 @@ modules:                             # List of module this entry uses
 extras:                            # List of other resources/modules needed in script
   - ...
 ---
-
-## Brief summary
-
 ### Description
 
 A detailed description of what this script does
