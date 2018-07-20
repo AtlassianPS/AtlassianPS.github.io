@@ -15,6 +15,6 @@
   github: https://github.com/AtassianPS/JiraPS
   path: /module/JiraPS
 - name: AtlassianPS.Configuration
-description: A module for AtlassianPS modules to use for managing connections
-github: https://github.com/AtassianPS/AtlassianPS.Configuration
-path: /module/AtlassianPS.Configuration
+  description: A module for AtlassianPS modules to use for managing connections
+  github: https://github.com/AtassianPS/AtlassianPS.Configuration
+  path: /module/AtlassianPS.Configuration

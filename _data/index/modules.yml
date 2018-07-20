@@ -10,3 +10,6 @@
 
 - name: JiraPS
   gh_user: AtlassianPS
+
+- name: AtlassianPS.Configuration
+  gh_user: AtlassianPS
