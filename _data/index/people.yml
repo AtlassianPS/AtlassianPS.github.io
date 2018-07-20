@@ -40,6 +40,12 @@
   short_desc:
   long_desc:
 
+- name: Mark Kraus
+  role: Architecture consultant
+  gh_user: markekraus
+  short_desc:
+  long_desc:
+
 - name: axxelG
   role: Contributor
   gh_user: axxelG
