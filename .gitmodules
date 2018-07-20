@@ -18,3 +18,7 @@
 	path = modules/AtlassianPS
 	url = https://github.com/AtlassianPS/AtlassianPS.git
 	branch = master
+[submodule "modules/AtlassianPS.Configuration"]
+	path = modules/AtlassianPS.Configuration
+	url = https://github.com/AtlassianPS/AtlassianPS.Configuration.git
+	branch = master
