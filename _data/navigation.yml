@@ -1,6 +1,8 @@
 - name: Modules
   path: module
   childs:
+    - name: AtlassianPS.Configuration
+    path: module/AtlassianPS.Configuration
     # - name: BitbucketPS
     #   path: module/BitbucketPS
     - name: ConfluencePS
@@ -20,6 +22,12 @@
       listChilds: true
     # - name: BitbucketPS
     #   path: docs/BitbucketPS
+    - name: AtlassianPS.Configuration
+      path: docs/AtlassianPS.Configuration
+      groups:
+        - Commands
+        - Classes
+        - Enumerations
     - name: ConfluencePS
       path: docs/ConfluencePS
       groups:
