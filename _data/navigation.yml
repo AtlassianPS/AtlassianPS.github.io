@@ -2,7 +2,7 @@
   path: module
   childs:
     - name: AtlassianPS.Configuration
-    path: module/AtlassianPS.Configuration
+      path: module/AtlassianPS.Configuration
     # - name: BitbucketPS
     #   path: module/BitbucketPS
     - name: ConfluencePS
