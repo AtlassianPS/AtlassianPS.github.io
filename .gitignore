@@ -15,8 +15,10 @@
 # Ignore build files
 _site
 node_modules
+vendor
 
 # Ignore local jekyll files
+.bundle
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
