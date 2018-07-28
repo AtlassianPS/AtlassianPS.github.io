@@ -62,7 +62,7 @@
 
             <nav class="col-12 col-md-10 col-lg-8 ml-auto mr-auto breadcrumb">
                 <div class="btn-group btn-breadcrumb">
-                    <a href="/" class="btn btn-default"><i class="fas fa-home"></i></a>
+                    <a href="/" class="btn btn-default d-none d-lg-block"><i class="fas fa-home"></i></a>
                     <a href="/docs" class="btn btn-default">Documentation</a>
                 {% if bc_moduleName %}
                     <a href="/docs/{{ bc_moduleName }}" class="btn btn-default" data-algolia="lvl0">{{ bc_moduleName }}</a>
@@ -75,7 +75,7 @@
                     <a href="#" class="btn btn-default hide" data-algolia="lvl1">Common</a>
                 {% endif %}
                 {% if bc_groupName != page.title and bc_moduleName != page.title and "Documentation" != page.title %}
-                    <span class="btn btn-default">{{ page.title }}</span>
+                    <span class="btn btn-default d-none d-lg-block">{{ page.title }}</span>
                 {% endif %}
                 </div>
             </nav>

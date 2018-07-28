@@ -30,6 +30,7 @@ These are more technical - pretty much what would have to be executed in the con
 |Project|Instructions|
 |-------|------------|
 |**AtlassianPS**|<https://github.com/AtlassianPS/AtlassianPS/blob/master/CONTRIBUTING.md>|
+|**AtlassianPS.Configuration**|<https://github.com/AtlassianPS/AtlassianPS.Configuration/blob/master/CONTRIBUTING.md>|
 |**AtlassianPS.github.io**|<https://github.com/AtlassianPS/AtlassianPS.github.io/blob/master/CONTRIBUTING.md>|
 |**BitbucketPS**|<https://github.com/AtlassianPS/BitbucketPS/blob/master/CONTRIBUTING.md>|
 |**ConfluencePS**|<https://github.com/AtlassianPS/ConfluencePS/blob/master/CONTRIBUTING.md>|

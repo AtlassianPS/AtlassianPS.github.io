@@ -1,6 +1,5 @@
 ---
 layout: documentation
-hide: true
 ---
 # Contributing to AtlassianPS
 
@@ -79,6 +78,7 @@ Each of our projects has an _Issuetracker_ where you can report your findings.
 |Project|Link|# of open issues|
 |-------|----|----------------|
 |**AtlassianPS**|<https://github.com/AtlassianPS/AtlassianPS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS/issues)|
+|**AtlassianPS.Configuration**|<https://github.com/AtlassianPS/AtlassianPS.Configuration/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.Configuration.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS.Configuration/issues)|
 |**AtlassianPS.github.io**|<https://github.com/AtlassianPS/AtlassianPS.github.io/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.github.io.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS.github.io/issues)|
 |**BitbucketPS**|<https://github.com/AtlassianPS/BitbucketPS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/BitbucketPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/BitbucketPS/issues)|
 |**ConfluencePS**|<https://github.com/AtlassianPS/ConfluencePS/issues/new>|[![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/ConfluencePS.svg?maxAge=2592000)](https://github.com/AtlassianPS/ConfluencePS/issues)|
