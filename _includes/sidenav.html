@@ -1,11 +1,15 @@
 {% assign documentation = site.data.navigation | where: "name", "Documentation" %}
-<nav class="bd-links d-none d-md-block" id="bd-docs-nav">
+<nav class="bd-links d-none d-md-block d-nooverflow" id="bd-docs-search">
     <ul class="nav bd-sidenav bd-search">
         <li class="menu-item search">
             <input type="search" class="form-control searchbox" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </li>
     </ul>
+</nav>
+<nav class="bd-links d-none d-md-block" id="bd-docs-nav">
 {% for module in documentation[0].childs %}
+<a class="bd-toc-link" href="/{{ module.path }}"><h3 class="bd-toc-item">{{ module.name }}</h3></a>
+
     {% if page.url contains module.path %}
         {% if module.groups %}
             {% for group in module.groups %}
@@ -54,7 +58,7 @@
     <select id="small-nav-dropdown">
 {% for module in documentation[0].childs %}
     {% if page.url contains module.path %}
-        <option class="font-weight-bold" value="{{ module.path }}">{{ module.name }}</option>
+        <option class="font-weight-bold" value="/{{ module.path }}">{{ module.name }}</option>
         {% if module.groups %}
             {% for group in module.groups %}
                 {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
