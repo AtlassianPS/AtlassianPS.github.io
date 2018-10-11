@@ -16,6 +16,10 @@
     }
 }
 
+.d-nooverflow {
+    overflow: hidden;
+}
+
 #small-nav {
     &>* {
         display: inline-block;
