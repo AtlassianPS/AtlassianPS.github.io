@@ -1,0 +1,38 @@
+<div class="row">
+{% for item in site.pages %}
+    {% if item.url contains '/docs/Gallery/' %}
+        {% if item.url contains '.html' %}
+            {% if item.url contains '_sample' %}{% else %}
+    <div class="col-12 col-sm-6 ml-auto mr-auto">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><a href="{{ item.url }}">{{ item.title }}</a></h4>
+                <p class="card-text">{{ item.synopsis}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Author</strong>: {{ item.author }}</li>
+                <li class="list-group-item"><strong>Type</strong>: {{ item.type }}</li>
+                <li class="list-group-item"><strong>Modules</strong>
+                <ul>
+                    {% for module in item.modules %}
+                    <li>{{ module }}</li>
+                    {% endfor %}
+                </ul>
+                </li>
+                {% if item.extras %}
+                <li class="list-group-item"><strong>Extras</strong>
+                <ul>
+                    {% for extra in item.extras %}
+                    <li>{{ extra }}</li>
+                    {% endfor %}
+                </ul>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</div>
