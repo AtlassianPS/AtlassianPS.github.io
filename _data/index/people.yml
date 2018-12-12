@@ -189,3 +189,23 @@
   gh_user: OpCode1300
   short_desc:
   long_desc:
+
+- name: Phillip Guzman
+  role: Contributor
+  gh_user: tuxgoose
+  short_desc:
+  long_desc:
+  long_desc:
+
+- name: Conor Tolan
+  role: Contributor
+  gh_user: ctolan
+  short_desc:
+  long_desc:
+  long_desc:
+
+- name: Felix Melchert
+  role: Contributor
+  gh_user: FelixMelchert
+  short_desc:
+  long_desc:
