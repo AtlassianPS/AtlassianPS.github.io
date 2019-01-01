@@ -19,6 +19,9 @@
 .d-nooverflow {
     overflow: hidden;
 }
+.d-overflow {
+    overflow: visible;
+}
 
 #small-nav {
     &>* {
