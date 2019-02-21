@@ -209,3 +209,21 @@
   gh_user: FelixMelchert
   short_desc:
   long_desc:
+
+- name: Michał Poręba
+  role: Contributor
+  gh_user: michalporeba
+  short_desc:
+  long_desc:
+
+- name: Joel Nolan
+  role: Contributor
+  gh_user: nojp
+  short_desc:
+  long_desc:
+
+- name: wisemoth
+  role: Contributor
+  gh_user: wisemoth
+  short_desc:
+  long_desc:
