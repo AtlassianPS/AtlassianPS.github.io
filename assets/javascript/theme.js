@@ -61,7 +61,7 @@ $(document).ready(function () {
     /**
      * Use smoothScroll for links that navigate inside the same page
      */
-    $('a[href*="#"]:not([href="#"]), a.inpage-navigation[href*="#"]').on('click', function (event) {
+    $('a[href^="#"]:not([href="#"]), a.inpage-navigation[href*="#"]').on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
     });
