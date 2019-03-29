@@ -1,8 +1,8 @@
 ---
 layout:     article
 permalink:  /article/:categories/:title
-title:      ConfluencePS v2.4
-date:       2018-12-12 22:29:00
+title:      ConfluencePS v2.5
+date:       2019-03-28 12:00:00
 categories: Announcement
 thumbnail:  
 author:     lipkau
@@ -11,7 +11,7 @@ tags:
  - Release
 ---
 
-We have just published a new major version of the **ConfluencePS** module to the [Gallery](https://www.powershellgallery.com/packages/ConfluencePS/2.4.0) and to [GitHub](https://github.com/AtlassianPS/ConfluencePS/tree/v2.4.0)!
+We have just published a new major version of the **ConfluencePS** module to the [Gallery](https://www.powershellgallery.com/packages/ConfluencePS/2.5.0) and to [GitHub](https://github.com/AtlassianPS/ConfluencePS/tree/v2.5.0)!
 <!--more-->
 
 # Description
@@ -24,17 +24,14 @@ _Details are listed below_
 
 ## Added
 
-- Added `-Vertical` to `ConvertTo-Table` (#148, [@brianbunke])
-- Added support for TLS1.2 (#155, [@lipkau])
+- Added support for authenticating with X509Certificate (#164, [@ritzcrackr])
 
-## Changed
+## Fixed
 
-- Changed productive module files to be compiled into single `.psm1` file (#133, [@lipkau])
-- Fixed `ConvertTo-Table` for empty cells (#144, [@FelixMelchert])
-- Changed CI/CD pipeline from AppVeyor to Azure DevOps (#150, [@lipkau])
-- Fixed trailing slash in ApiURi parameter (#153, [@lipkau])
+- Conversion of pageID attribute of Attachments to `[Int]` (#166, [@lipkau])
+- Fixed generation of headers in tables when using `ConvertTo-ConfluenceTable` (#163, [@lipkau])
 
-_Full list of issues can be found in [Milestone v2.4](https://github.com/AtlassianPS/ConfluencePS/milestone/6)._
+_Full list of issues can be found in [Milestone v2.5](https://github.com/AtlassianPS/ConfluencePS/milestone/7)._
 
 <!-- reference-style links -->
   [@alexsuslin]: https://github.com/alexsuslin
@@ -53,4 +50,5 @@ _Full list of issues can be found in [Milestone v2.4](https://github.com/Atlassi
   [@lipkau]: https://github.com/lipkau
   [@lukhase]: https://github.com/lukhase
   [@padgers]: https://github.com/padgers
+  [@ritzcrackr]: https://github.com/ritzcrackr
   [@ThePSAdmin]: https://github.com/ThePSAdmin
