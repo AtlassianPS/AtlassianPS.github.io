@@ -21,9 +21,6 @@ jobs:
       - name: Install and Build 🔧
         run: bundle install
 
-      # - name: Run tests 🚦
-      #   run: bundle exec rake
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
