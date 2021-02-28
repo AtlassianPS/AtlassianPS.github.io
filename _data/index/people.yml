@@ -4,31 +4,31 @@
   short_desc: Some think he is a nice guy. We are still waiting for evidence.
   long_desc: A long descr.
 
-- name: replicaJunction
+- name: Joshua T
   role: Maintainer
   gh_user: replicaJunction
   short_desc:
   long_desc:
 
-- name: brianbunke
+- name: Brian Bunke
   role: Maintainer
   gh_user: brianbunke
   short_desc: Created ConfluencePS, stayed for the free drinks
   long_desc:
 
-- name: beaudryj
+- name: Joe Beaudry
   role: Reviewer
   gh_user: beaudryj
   short_desc:
   long_desc:
 
-- name: Dejulia489
+- name: Michael Dejulia
   role: Reviewer
   gh_user: Dejulia489
   short_desc:
   long_desc:
 
-- name: markwragg
+- name: Mark Wragg
   role: Reviewer
   gh_user: markwragg
   short_desc:
@@ -70,7 +70,7 @@
   short_desc:
   long_desc:
 
-- name: kittholland
+- name: Kitt Holland
   role: Contributor
   gh_user: kittholland
   short_desc:
@@ -82,7 +82,7 @@
   short_desc:
   long_desc:
 
-- name: alexsuslin
+- name: Alex Suslin
   role: Contributor
   gh_user: alexsuslin
   short_desc:
@@ -94,13 +94,13 @@
   short_desc:
   long_desc:
 
-- name: LiamLeane
+- name: Liam Leane
   role: Contributor
   gh_user: LiamLeane
   short_desc:
   long_desc:
 
-- name: TomasDeceuninck
+- name: Tomas Deceuninck
   role: Contributor
   gh_user: TomasDeceuninck
   short_desc:
@@ -112,7 +112,7 @@
   short_desc:
   long_desc:
 
-- name: ebekker
+- name: Eugene Bekker
   role: Contributor
   gh_user: ebekker
   short_desc: <a href="https://www.youtube.com/watch?v=otzJszJ9MnA">One man can make a difference.</a>
@@ -195,13 +195,11 @@
   gh_user: tuxgoose
   short_desc:
   long_desc:
-  long_desc:
 
 - name: Conor Tolan
   role: Contributor
   gh_user: ctolan
   short_desc:
-  long_desc:
   long_desc:
 
 - name: Felix Melchert
@@ -225,5 +223,65 @@
 - name: wisemoth
   role: Contributor
   gh_user: wisemoth
+  short_desc:
+  long_desc:
+
+- name: ritzcrackr
+  role: Contributor
+  gh_user: ritzcrackr
+  short_desc:
+  long_desc:
+
+- name: Igor
+  role: Contributor
+  gh_user: FreZZZeR
+  short_desc:
+  long_desc:
+
+- name: John Heusinger
+  role: Contributor
+  gh_user: johnheusinger
+  short_desc:
+  long_desc:
+
+- name: Rufus
+  role: Contributor
+  gh_user: Rufus125
+  short_desc:
+  long_desc:
+
+- name: lmf-mx
+  role: Contributor
+  gh_user: lmf-mx
+  short_desc:
+  long_desc:
+
+- name: Laurent Goderre
+  role: Contributor
+  gh_user: LaurentGoderre
+  short_desc:
+  long_desc:
+
+- name: mirrorgleam
+  role: Contributor
+  gh_user: mirrorgleam
+  short_desc:
+  long_desc:
+
+- name: sgtwilko
+  role: Contributor
+  gh_user: sgtwilko
+  short_desc:
+  long_desc:
+
+- name: Boris Khasanov
+  role: Contributor
+  gh_user: borislol
+  short_desc:
+  long_desc:
+
+- name: kb-cs
+  role: Contributor
+  gh_user: kb-cs
   short_desc:
   long_desc:
