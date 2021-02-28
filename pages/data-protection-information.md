@@ -233,7 +233,7 @@ to point (a) of Article 6(1) of the GDPR, or point (a) of Article 9(2) of the GD
 and where there is no other legal ground for the processing.
 * The data subject objects to the processing pursuant to Article 21(1) of the GDPR
 and there are no overriding legitimate grounds for the processing,
-or the data subject objects to the processing pursuant to Article 21(2) of the GDPR. 
+or the data subject objects to the processing pursuant to Article 21(2) of the GDPR.
 * The personal data have been unlawfully processed.
 * The personal data must be erased for compliance with a legal obligation
 in Union or Member State law to which the controller is subject.
@@ -261,7 +261,7 @@ Each data subject shall have the right granted by the European legislator
 to obtain from the controller restriction of processing where one of the following applies:
 
 * The accuracy of the personal data is contested by the data subject,
-for a period enabling the controller to verify the accuracy of the personal data. 
+for a period enabling the controller to verify the accuracy of the personal data.
 * The processing is unlawful and the data subject opposes the erasure
 of the personal data and requests instead the restriction of their use instead.
 * The controller no longer needs the personal data for the purposes of the processing,
@@ -323,7 +323,6 @@ This applies to profiling to the extent that it is related to such direct market
 If the data subject objects to the AtlassianPS to the processing
 for direct marketing purposes,
 the AtlassianPS will no longer process the personal data for these purposes.
-
 
 In addition, the data subject has the right,
 on grounds relating to his or her particular situation,
@@ -391,7 +390,7 @@ The operator of the Google Analytics component
 is Google Inc., 1600 Amphitheatre Pkwy, Mountain View, CA 94043-1351, United States.
 
 For the web analytics through Google Analytics
-the controller uses the application "_gat. _anonymizeIp".
+the controller uses the application `_gat._anonymizeIp`.
 By means of this application the IP address of the Internet connection
 of the data subject is abridged by Google and anonymised
 when accessing our websites from a Member State
@@ -502,7 +501,6 @@ they have been specifically mentioned by the European legislator.
 He considered that a legitimate interest could be assumed
 if the data subject is a client of the controller (Recital 47 Sentence 2 GDPR).
 
-
 ## 8. The legitimate interests pursued by the controller or by a third party
 
 Where the processing of personal data is based on Article 6(1) lit. f GDPR
@@ -539,7 +537,6 @@ of the personal data is required by law or contract or is necessary
 for the conclusion of the contract, whether there is an obligation
 to provide the personal data and the consequences
 of non-provision of the personal data.
-
 
 ## 11. Existence of automated decision-making
 
