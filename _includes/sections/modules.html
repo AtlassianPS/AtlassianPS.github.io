@@ -1,31 +1,61 @@
 <div class="row module-wrapper">
     {% for module in site.data.index.modules %}
-    <div user="{{ module.gh_user }}" repo="{{ module.name }}" class="module item col-10 col-md-5 ml-auto mr-auto">
+    <div
+        user="AtlassianPS"
+        repo="{{ module.name }}"
+        class="module item col-10 col-md-5 ml-auto mr-auto"
+    >
         <div class="module-item">
             <a class="link" href="/module/{{ module.name }}">
-                <img src="/assets/img/{{ module.name }}.png" class="logo img-responsive" alt="{{ module.name }}">
-                <h3 class="item-title">
-                    {{ module.name }}
-                </h3>
+                <img
+                    src="/assets/img/{{ module.name }}.png"
+                    class="logo img-responsive"
+                    alt="{{ module.name }}"
+                />
+                <h3 class="item-title">{{ module.name }}</h3>
             </a>
             <p class="item-description"></p>
             <div class="ghbtn">
-                <a target="_blank" href="#" class="btn btn-xs btn-white html_url" alt="Repository">
+                <a
+                    target="_blank"
+                    href="#"
+                    class="btn btn-xs btn-white html_url"
+                    alt="Repository"
+                >
                     <i class="fab fa-github"></i>
                 </a>
-                <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/issues" class="btn btn-xs btn-white repo"
-                    alt="Report Issue">
+                <a
+                    target="_blank"
+                    href="https://github.com/AtlassianPS/{{ module.name }}/issues"
+                    class="btn btn-xs btn-white repo"
+                    alt="Report Issue"
+                >
                     <i class="fas fa-bug"></i>
                 </a>
-                <br/>
-                <a target="_blank" href="https://www.powershellgallery.com/packages/{{ module.name }}" class="btn btn-xs btn-white gallery"
-                    alt="Gallery Downloads">
-                    <i class="fas fa-cloud-download-alt"></i> ...</a>
-                <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/stargazers" class="btn btn-xs btn-white star">
-                    <i class="fas fa-star"></i> ...</a>
-                <a target="_blank" href="https://github.com/{{ module.gh_user }}/{{ module.name }}/network" class="btn btn-xs btn-white fork">
-                    <i class="fas fa-code-branch"></i> ...</a>
-                <div style="height: 10px;"></div>
+                <br />
+                <a
+                    target="_blank"
+                    href="https://www.powershellgallery.com/packages/{{ module.name }}"
+                    class="btn btn-xs btn-white gallery"
+                    alt="Gallery Downloads"
+                >
+                    <i class="fas fa-cloud-download-alt"></i> ...</a
+                >
+                <a
+                    target="_blank"
+                    href="https://github.com/AtlassianPS/{{ module.name }}/stargazers"
+                    class="btn btn-xs btn-white star"
+                >
+                    <i class="fas fa-star"></i> ...</a
+                >
+                <a
+                    target="_blank"
+                    href="https://github.com/AtlassianPS/{{ module.name }}/network"
+                    class="btn btn-xs btn-white fork"
+                >
+                    <i class="fas fa-code-branch"></i> ...</a
+                >
+                <div style="height: 10px"></div>
             </div>
         </div>
     </div>
