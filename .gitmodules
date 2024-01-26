@@ -1,24 +1,22 @@
-[submodule "modules/ConfluencePS"]
-	path = modules/ConfluencePS
-	url = https://github.com/AtlassianPS/ConfluencePS.git
-	branch = master
-[submodule "modules/JiraPS"]
-	path = modules/JiraPS
-	url = https://github.com/AtlassianPS/JiraPS.git
-	branch = master
-[submodule "modules/HipChatPS"]
-	path = modules/HipChatPS
-	url = https://github.com/AtlassianPS/HipChatPS.git
-	branch = master
-[submodule "modules/BitbucketPS"]
-	path = modules/BitbucketPS
-	url = https://github.com/AtlassianPS/BitbucketPS.git
-	branch = master
 [submodule "modules/AtlassianPS"]
 	path = modules/AtlassianPS
 	url = https://github.com/AtlassianPS/AtlassianPS.git
-	branch = master
 [submodule "modules/AtlassianPS.Configuration"]
 	path = modules/AtlassianPS.Configuration
 	url = https://github.com/AtlassianPS/AtlassianPS.Configuration.git
-	branch = master
+[submodule "modules/BitbucketPS"]
+	path = modules/BitbucketPS
+	url = https://github.com/AtlassianPS/BitbucketPS.git
+[submodule "modules/ConfluencePS"]
+	path = modules/ConfluencePS
+	url = https://github.com/AtlassianPS/ConfluencePS.git
+[submodule "modules/HipChatPS"]
+	path = modules/HipChatPS
+	url = https://github.com/AtlassianPS/HipChatPS.git
+[submodule "modules/JiraAgilePS"]
+	path = modules/JiraAgilePS
+	url = https://github.com/AtlassianPS/JiraAgilePS.git
+[submodule "modules/JiraPS"]
+	path = modules/JiraPS
+	url = https://github.com/AtlassianPS/JiraPS.git
+

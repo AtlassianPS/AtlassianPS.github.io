@@ -9,6 +9,8 @@
       path: module/ConfluencePS
     # - name: HipChatPS
     #   path: module/HipChatPS
+    - name: JiraAgilePS
+      path: module/JiraAgilePS
     - name: JiraPS
       path: module/JiraPS
 - name: Documentation

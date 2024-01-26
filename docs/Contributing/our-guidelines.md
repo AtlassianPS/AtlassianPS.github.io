@@ -7,18 +7,20 @@ layout: documentation
 
 This page describes:
 
-* [Code Formatting and Conventions](#code-formatting-and-conventions)
-  * [Formatting](#formatting)
-  * [Templates](#templates)
-  * [Variable Naming](#variable-naming)
-  * [Function Naming](#function-naming)
-  * [Splatting](#splatting)
-  * [Aliases](#aliases)
-  * [In-code Documentation](#in-code-documentation)
-* [Code Separation and File Naming](#code-separation-and-file-naming)
-* [Strive for 100% Code Coverage by Tests](#strive-for-100-code-coverage-by-tests)
-* [Changes To the Build System](#changes-to-the-build-system)
-* [Submitting Pull Requests](#submitting-pull-requests)
+- [Our Guidelines](#our-guidelines)
+  - [Overview](#overview)
+  - [Code Formatting and Conventions](#code-formatting-and-conventions)
+    - [Formatting](#formatting)
+    - [Templates](#templates)
+    - [Variable Naming](#variable-naming)
+    - [Function Naming](#function-naming)
+    - [Splatting](#splatting)
+    - [Aliases](#aliases)
+    - [In-code Documentation](#in-code-documentation)
+  - [Code Separation and File Naming](#code-separation-and-file-naming)
+  - [Strive for 100% Code Coverage by Tests](#strive-for-100-code-coverage-by-tests)
+  - [Document as You Go](#document-as-you-go)
+  - [Changes To the Build System](#changes-to-the-build-system)
 
 ## Code Formatting and Conventions
 
@@ -54,7 +56,8 @@ function Get-GlobalVariable {
 ```
 
 Additional Information:
-* [More about special case styles](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
+
+- [More about special case styles](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
 
 ### Function Naming
 
@@ -104,10 +107,10 @@ If you feel you need to comment the code, you likely need to refactor it.
 
 ## Code Separation and File Naming
 
-* all functions (public and private), classes, and enums should be defined in separate files and organized according to their category.
-* do not define more than one function, class, or enum per file.
-* do not create nested functions (use separate private functions instead).
-* the filename should match the function or enum name.
+- all functions (public and private), classes, and enums should be defined in separate files and organized according to their category.
+- do not define more than one function, class, or enum per file.
+- do not create nested functions (use separate private functions instead).
+- the filename should match the function or enum name.
 
 ## Strive for 100% Code Coverage by Tests
 
