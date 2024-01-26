@@ -1,6 +1,6 @@
 ---
 layout: landingpage
-title: index
+title: AtlassianPS
 permalink: /
 sitemap:
   priority: 1.0

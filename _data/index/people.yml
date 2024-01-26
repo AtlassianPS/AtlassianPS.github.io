@@ -34,6 +34,12 @@
   short_desc:
   long_desc:
 
+- name: Marc R Kellerman
+  role: Reviewer
+  gh_user: mkellerman
+  short_desc:
+  long_desc:
+
 - name: Joel Bennett (@jaykul)
   role: Architecture consultant
   gh_user: jaykul
