@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
+{
+    "name": "AtlassianPS Dev Environment - Jekyll",
+    "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {}
+    },
+    "postCreateCommand": ".devcontainer/post-create.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {}
+        },
+        "extensions": [
+            "DavidAnson.vscode-markdownlint",
+            "editorconfig.editorconfig",
+            "ginfuru.ginfuru-vscode-jekyll-syntax",
+            "ginfuru.vscode-jekyll-snippets",
+            "jasonnutter.vscode-codeowners",
+            "streetsidesoftware.code-spell-checker"
+        ]
+    }
+}
