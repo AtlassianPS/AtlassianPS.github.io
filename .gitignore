@@ -3,15 +3,18 @@
 *.ini
 *.conf
 *.config
-
-# Ignore all files beginning with dot (.)
+# Ignore all files beginning with a dot (.)
 .*
-# except for
-!.prettierrc.json
+# except for git files
+!.devcontainer/
+!.github/
+!.vscode/
+!.editorconfig
 !.gitattributes
 !.gitignore
 !.gitmodules
-!.github/
+!.prettierrc.json
+!.spelling
 
 # Ignore build files
 _site

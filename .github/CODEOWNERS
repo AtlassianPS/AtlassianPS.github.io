@@ -1,0 +1,6 @@
+.github/workflows/              @atlassianps/ci-managers
+*.build.ps1                     @atlassianps/ci-managers
+PPSScriptAnalyzerSettings.psd1  @atlassianps/ci-managers
+Tools/                          @atlassianps/ci-managers
+
+*                               @atlassianps/maintainers
