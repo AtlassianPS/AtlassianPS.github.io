@@ -48,7 +48,7 @@ _see [submitting an issue]_
 It is likely that a different way to solve a problem was not considered.
 
 _see [submitting an issue]_  
-_chat with us on [AtlassianPS.Slack]_
+_chat with us on [AtlassianPS.Discord]_
 
 ### Write documentation
 
@@ -169,7 +169,7 @@ When contributing to the code, please follow [Our Guidelines](our-guidelines.htm
 - [GitHub Flow Guide](https://guides.github.com/introduction/flow/): step-by-step instructions of GitHub flow.
 
 <!-- reference-style links -->
-  [AtlassianPS.Slack]: https://atlassianps.org/slack/
+  [AtlassianPS.Discord]: https://atlassianps.org/contact/
   [submitting an issue]: #how-to-report-an-issue
   [submitting code changes]: #how-to-submit-code-changes
   [our guidelines]: #our-guidelines
