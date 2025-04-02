@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Jekyll does not work on ruby v3.3*
-rvm install "ruby-2.6"
+rvm install "ruby-3"
 rvm use
 
 # Install the version of Bundler specified in the Gemfile.lock
