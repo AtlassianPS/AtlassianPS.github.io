@@ -6,9 +6,11 @@ keywords: Atlassian,AtlassianPS,jira,confluence,bitbucket,hipchat,jiraps,conflue
 baseurl: ""
 url: "https://atlassianps.org"
 
+# exclude: ["modules"]
+
 # analytics
-## google analytics
-ga: UA-101621732-1
+## google analytics (GA4)
+ga: G-DYC6MWFGCF
 
 # Build settings
 encoding: utf-8
