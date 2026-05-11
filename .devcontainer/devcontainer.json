@@ -3,10 +3,22 @@
 {
     "name": "AtlassianPS Dev Environment - Jekyll",
     "image": "mcr.microsoft.com/devcontainers/ruby:3.3-bookworm",
+    "forwardPorts": [
+        4000,
+        35729
+    ],
+    "portsAttributes": {
+        "4000": {
+            "label": "Jekyll site"
+        },
+        "35729": {
+            "label": "LiveReload"
+        }
+    },
     "features": {
         "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {}
     },
-    "postCreateCommand": ".devcontainer/post-create.sh",
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
     "customizations": {
         "vscode": {
             "settings": {}

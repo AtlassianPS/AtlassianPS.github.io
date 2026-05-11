@@ -16,26 +16,12 @@
 {% endfor %}
 
 <!DOCTYPE html>
-<html {{ site.lang | default: "en-US" }}>
+<html lang="{{ site.lang | default: 'en-US' }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-
-    <meta content="{{ site.description }}" name="description">
-    <meta name="keywords" content="{{ site.keywords }}">
-    <meta name="author" content="{{ site.author.name }}">
-    <title>{{ page.title }} - Docs | {{ site.title }}</title>
-
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+    {% capture pageTitle %}{{ page.title }} - Docs{% endcapture %}
+    {% include head-meta.html title=pageTitle %}
+    {% include head-favicons.html %}
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -43,18 +29,7 @@
     <link rel="stylesheet" href="/assets/css/docs.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script src="/assets/javascript/jquery.toc.min.js"></script>
-    <script src="/assets/javascript/theme.js"></script>
-
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    {% include head-scripts-core.html %}
 </head>
 
 
@@ -113,19 +88,7 @@
     </div>
 
     {% include footer.html %}
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/assets/javascript/ie10-viewport-bug-workaround.js"></script>
-    <script src="/assets/javascript/ie-emulation-modes-warning.js"></script>
-
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', '{{ site.ga }}');
-    </script>
+    {% include analytics.html %}
 
 </body>
 </html>

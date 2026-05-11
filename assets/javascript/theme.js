@@ -24,7 +24,7 @@ function smoothScroll(element) {
     $("html, body").animate({
         scrollTop: ($(element).offset().top - headerSize) + "px"
     }, {
-        duration: 800,
+        duration: 280,
         easing: "swing",
     });
 }
@@ -34,27 +34,52 @@ $(document).ready(function () {
     /**
      * Move the DOM to see an element if provided by Hash
      */
-    if ($(location.hash) > 0) {
+    if (location.hash && $(location.hash).length > 0) {
         window.scrollTo(0, 0);
         smoothScroll($(location.hash));
     }
 
-    var is_top_header = $('.site-header').length ? true : false;
+    var hasTopHeader = $('.site-header').length > 0;
     $('.site-header').eq(0).wrap('<div class="site-header-wrapper">');
-    var is_transparent = $('body').hasClass('header-transparent');
-    $wrap = $('.site-header-wrapper');
+    var $wrap = $('.site-header-wrapper');
     $wrap.addClass('no-scroll');
-    if (!is_top_header) {
+    if (!hasTopHeader) {
         $('body').removeClass('header-transparent');
     }
-    var header_fixed = $('.site-header').eq(0);
 
-    $('#nav-toggle').on('click', function (event) {
-        event.preventDefault();
-        $('#nav-toggle').toggleClass('nav-is-visible');
-        $('ul.onepress-menu').toggleClass('nav-is-visible');
+    var $navToggle = $('#nav-toggle');
+    var $mainMenu = $('ul.onepress-menu');
+    var setNavExpanded = function (expanded) {
+        $navToggle.attr('aria-expanded', expanded ? 'true' : 'false');
+    };
+    var closeNavMenu = function () {
+        $navToggle.removeClass('nav-is-visible');
+        $mainMenu.removeClass('nav-is-visible');
+        setNavExpanded(false);
+    };
+
+    setNavExpanded($navToggle.hasClass('nav-is-visible'));
+    $navToggle.on('click', function () {
+        $navToggle.toggleClass('nav-is-visible');
+        $mainMenu.toggleClass('nav-is-visible');
+        setNavExpanded($navToggle.hasClass('nav-is-visible'));
     });
-    $('.nav-toggle-subarrow').click(function () {
+
+    $(document).on('keyup', function (event) {
+        if (event.key === 'Escape') {
+            closeNavMenu();
+        }
+    });
+
+    $(window).on('resize', function () {
+        if (window.matchMedia('(min-width: 1141px)').matches) {
+            closeNavMenu();
+        }
+    });
+
+    $('.nav-toggle-subarrow').on('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
         $(this).parent().toggleClass("nav-toggle-dropdown");
     });
 
@@ -62,23 +87,34 @@ $(document).ready(function () {
      * Use smoothScroll for links that navigate inside the same page
      */
     $('a[href^="#"]:not([href="#"]), a.inpage-navigation[href*="#"]').on('click', function (event) {
+        var linkHref = this.getAttribute('href') || '';
+        var isHashOnlyLink = linkHref.charAt(0) === '#';
+        var currentPath = window.location.pathname.replace(/\/+$/, '');
+        var targetPath = this.pathname.replace(/\/+$/, '');
+        var isSamePageInpageLink = $(this).hasClass('inpage-navigation') && targetPath === currentPath;
+        var $target = this.hash ? $(this.hash) : $();
+
+        if ((!isHashOnlyLink && !isSamePageInpageLink) || $target.length === 0) {
+            return;
+        }
+
         event.preventDefault();
-        smoothScroll($(this.hash));
+        smoothScroll($target);
     });
 
-    $(window).resize(function () {});
-    setTimeout(function () {
-        $(window).trigger('scroll');
-    }, 500);
-
     $('[data-toggle="slide-collapse"]').on('click', function () {
-        $navMenuCont = $($(this).data('target'));
+        var $navMenuCont = $($(this).data('target'));
         $navMenuCont.animate({
             'width': 'toggle'
         }, 350);
     });
 
-    $('pre code').parent().wrap('<div class="code_block"></div>').each(function (k, v) {
+    $('pre code').parent().each(function (k, v) {
+        if ($(v).closest('.hero-quickstart').length > 0) {
+            return;
+        }
+
+        $(v).wrap('<div class="code_block"></div>');
         let language = "";
         if ($(v).children('code').hasClass('language-powershell')) {
             language = "PowerShell";
@@ -94,8 +130,8 @@ $(document).ready(function () {
     });
 
     $('button.action.copy').on('click', function () {
-        console.log("copying:", $(this).parents('div.code_block').find('code'));
-        copyToClipboard($(this).parents('div.code_block').find('code'));
+        var $code = $(this).parents('div.code_block').find('code');
+        copyToClipboard($code);
     });
 
     /**
@@ -119,8 +155,9 @@ $(document).ready(function () {
     // })
 
     $("#small-nav-dropdown").change(function () {
-        if ($(this).val() != '') {
-            window.location.href = $(this).val();
+        var targetUrl = $(this).val();
+        if (targetUrl !== '') {
+            window.location.href = targetUrl;
         }
     });
 

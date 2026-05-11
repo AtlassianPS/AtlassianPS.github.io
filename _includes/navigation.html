@@ -14,9 +14,9 @@
             </div>
 
             <div class="header-right-wrapper d-print-none">
-                <a href="#0" id="nav-toggle" class="">Menu<span></span></a>
+                <button type="button" id="nav-toggle" aria-label="Toggle navigation menu" aria-controls="site-navigation-menu" aria-expanded="false">Menu<span></span></button>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <ul class="onepress-menu">
+                    <ul class="onepress-menu" id="site-navigation-menu">
                     {% for section in site.data.navigation %}
                         {% if section.childs %}
                         <li class="menu-item menu-item-has-children{% if page.url contains section.path %} active{% endif %}">

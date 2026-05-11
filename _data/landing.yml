@@ -1,25 +1,41 @@
 # index page sections
 # custom following lines to edit your index page
+- id: quickstart
+  name: Quick Start
+  tpl: quickstart.html
+  preTitle: Pick a module and run
+  title: One Powerful Command
+  postTitle:
+  classes: quickstart-section
+
 - id: modules
   name: Modules
   tpl: modules.html
-  preTitle: These are our
-  title: Modules
+  preTitle: Build automation with
+  title: AtlassianPS Modules
   postTitle: 
-  classes:
+  classes: modules-section
+
+- id: workflows
+  name: Workflows
+  tpl: workflows.html
+  preTitle: Common automation
+  title: Workflow Recipes
+  postTitle: Ready-to-adapt examples from the gallery
+  classes: workflows-section
 
 - id: people
   name: People
   tpl: people.html
-  preTitle: 
-  title: People
-  postTitle: Who built this
-  classes: 
+  preTitle: Open source by
+  title: Community
+  postTitle: Maintainers, reviewers, and contributors
+  classes: people-section
 
 - id: posts
   name: Posts
   tpl: posts.html
   preTitle: Latest
-  title: Posts
+  title: Updates
   postTitle: 
-  classes: 
+  classes: updates-section

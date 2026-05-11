@@ -78,6 +78,9 @@
         margin-bottom: 0 !important;
         font-size: .875rem !important;
         font-weight: 400 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
     .algolia-docsearch-suggestion--text {
         padding: 0 1rem .5rem !important;
@@ -85,6 +88,9 @@
         font-size: .875rem !important;
         font-weight: normal;
         line-height: 1.25 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
     .algolia-docsearch-footer {
         float: none !important;
@@ -113,4 +119,27 @@
     .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content {
         background-color: rgba(208, 189, 236, .15) !important;
     }
+}
+
+#bd-docs-search .algolia-autocomplete,
+#small-nav .algolia-autocomplete {
+    width: 100% !important;
+}
+
+#bd-docs-search .algolia-autocomplete .ds-dropdown-menu,
+#small-nav .algolia-autocomplete .ds-dropdown-menu {
+    width: min(52rem, calc(100vw - 2rem)) !important;
+    max-width: min(52rem, calc(100vw - 2rem)) !important;
+    max-height: min(70vh, 38rem) !important;
+    overflow-y: auto !important;
+}
+
+#bd-docs-search .algolia-autocomplete .algolia-docsearch-suggestion--wrapper,
+#small-nav .algolia-autocomplete .algolia-docsearch-suggestion--wrapper {
+    margin: 0 16px !important;
+}
+
+#bd-docs-search .algolia-autocomplete .algolia-docsearch-suggestion--content,
+#small-nav .algolia-autocomplete .algolia-docsearch-suggestion--content {
+    overflow-wrap: anywhere;
 }

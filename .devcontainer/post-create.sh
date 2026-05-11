@@ -1,16 +1,22 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Use Ruby 3.3 for Jekyll
+repo_root="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$repo_root"
 
-# Install the version of Bundler specified in the Gemfile.lock
-if [ -f Gemfile.lock ] && grep "BUNDLED WITH" Gemfile.lock > /dev/null; then
-  cat Gemfile.lock | tail -n 2 | grep -C2 "BUNDLED WITH" | tail -n 1 | xargs gem install bundler -v
+echo "Preparing Jekyll devcontainer dependencies..."
+
+# Install the Bundler version pinned in Gemfile.lock when present.
+if [[ -f Gemfile.lock ]]; then
+  bundler_version="$(awk '/^BUNDLED WITH$/ { getline; gsub(/^[[:space:]]+/, "", $0); print $0; exit }' Gemfile.lock)"
+  if [[ -n "${bundler_version:-}" ]]; then
+    gem install bundler -v "$bundler_version"
+  fi
 fi
 
-# If there's a Gemfile, then run `bundle install`
-# It's assumed that the Gemfile will install jekyll too
-if [ -f Gemfile ]; then
+if [[ -f Gemfile ]]; then
   bundle install
 fi
 
-bundle exec jekyll serve --force-polling
+echo "Devcontainer is ready."
+echo "Run: bundle exec jekyll serve --host 0.0.0.0 --livereload --force-polling"

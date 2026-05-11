@@ -11,29 +11,25 @@ footer.site-footer {
         font-weight: 500;
         color: #bbbbbb;
         .btt a {
-            border-radius: 0px 20px 0 0;
+            border-radius: 999px;
             color: #999999;
             background: #222222;
             display: block;
-            font-size: 30px;
-            height: 50px;
-            line-height: 50px;
+            font-size: 24px;
+            height: 46px;
+            line-height: 46px;
             margin: auto;
             position: absolute;
             right: 60px;
-            top: -25px;
+            top: -23px;
             transition: all 0.2s linear 0s;
-            width: 50px;
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
+            width: 46px;
             i {
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                margin-left: 3px;
+                margin-left: 0;
+            }
+            &:hover {
+                color: #fff;
+                background: $powershell-blue;
             }
         }
         a {
