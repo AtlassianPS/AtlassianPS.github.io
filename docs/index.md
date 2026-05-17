@@ -8,7 +8,7 @@ This is the fastest way to get productive with AtlassianPS modules.
 
 ## Start here
 
-- New user? Start with [`New-JiraSession`](/docs/JiraPS/commands/New-JiraSession) and [`Get-ConfluencePage`](/docs/ConfluencePS/commands/Get-ConfluencePage).
+- New user? Start with [`New-JiraSession`](/docs/JiraPS/commands/New-JiraSession) and [`Get-Page`](/docs/ConfluencePS/commands/Get-Page/).
 - Looking for examples? Visit the [Gallery](/docs/Gallery).
 - Want to contribute? Read the [Contributing](/docs/Contributing) guides.
 

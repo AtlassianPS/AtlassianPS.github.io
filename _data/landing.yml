@@ -3,7 +3,7 @@
 - id: quickstart
   name: Quick Start
   tpl: quickstart.html
-  preTitle: Pick a module and run
+  preTitle: ⚡ Pick a module and run
   title: One Powerful Command
   postTitle:
   classes: quickstart-section
@@ -35,7 +35,7 @@
 - id: posts
   name: Posts
   tpl: posts.html
-  preTitle: Latest
+  preTitle: 📰 Latest
   title: Updates
   postTitle: 
   classes: updates-section

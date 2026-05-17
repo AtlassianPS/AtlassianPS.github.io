@@ -1,3 +1,6 @@
+{% assign docsNav = site.data.navigation | where: "name", "Documentation" | first %}
+{% assign docsModuleEntries = docsNav.childs | where_exp: "item", "item.path != 'docs/Contributing'" | where_exp: "item", "item.path != 'docs/Gallery'" %}
+{% assign docsModuleNames = docsModuleEntries | map: "name" %}
 <div class="row module-wrapper">
     {% for module in site.data.index.modules %}
     <div
@@ -15,9 +18,11 @@
             <p class="item-description"></p>
 
             <div class="module-actions">
+                {% if docsModuleNames contains module.name %}
                 <a href="/docs/{{ module.name }}/" class="btn btn-xs btn-white" aria-label="{{ module.name }} documentation">
                     <i class="fas fa-book"></i> Docs
                 </a>
+                {% endif %}
                 <a
                     target="_blank"
                     href="#"
