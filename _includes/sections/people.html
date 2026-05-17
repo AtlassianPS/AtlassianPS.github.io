@@ -3,10 +3,11 @@
     <div class="person item col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="person-item">
             <img
-                src="https://octodex.github.com/images/daftpunktocat-thomas.gif"
+                src="https://github.com/{{ person.gh_user }}.png?size=96"
                 class="rounded-circle img-md person-avatar"
-                data-gh-user="{{ person.gh_user }}"
                 alt="{{ person.name }}"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://octodex.github.com/images/daftpunktocat-thomas.gif';"
             >
             <h3 class="item-title">
                 <a class="link" href="https://github.com/{{ person.gh_user }}" target="_blank" rel="noopener noreferrer">{{ person.name }}</a>
@@ -23,29 +24,3 @@
         <a href="/contributors/" class="btn btn-outline btn-square landing-link-btn">View full contributors list 🙌</a>
     </div>
 </div>
-
-<script>
-    $(function() {
-        $('.person-avatar').each(function() {
-            var $avatar = $(this);
-            var userName = $avatar.data('gh-user');
-            if (!userName) {
-                return;
-            }
-
-            var cacheKey = 'gh-avatar-' + userName;
-            var avatarUrl = localStorage.getItem(cacheKey);
-            if (avatarUrl) {
-                $avatar.attr('src', avatarUrl);
-                return;
-            }
-
-            $.get('https://api.github.com/users/' + userName, function(data) {
-                if (data && data.avatar_url) {
-                    localStorage.setItem(cacheKey, data.avatar_url);
-                    $avatar.attr('src', data.avatar_url);
-                }
-            });
-        });
-    });
-</script>
