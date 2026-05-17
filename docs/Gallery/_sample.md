@@ -4,7 +4,7 @@ author: Jon Doe <Jon.Doe@corp.com>               # Name/email of the author
 title: Cool Script
 synopsis: This cool script does stuff
 type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
-modules:                             # List of module this entry uses
+modules:                             # List of modules this entry uses
   - BitbucketPS
   - ConfluencePS
   - HipChatPS

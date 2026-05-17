@@ -3,30 +3,10 @@ layout: documentation
 ---
 # Contributing to AtlassianPS
 
-## Overview
-
-This page describes:
-
-- [Contributing to AtlassianPS](#contributing-to-atlassianps)
-  - [Overview](#overview)
-  - [Thank you!](#thank-you)
-    - [Report anything that is not working as expected](#report-anything-that-is-not-working-as-expected)
-    - [Question current methods and solutions](#question-current-methods-and-solutions)
-    - [Write documentation](#write-documentation)
-    - [Fix errors](#fix-errors)
-    - [Contribute code](#contribute-code)
-  - [How To Report An Issue](#how-to-report-an-issue)
-  - [How To Submit Code Changes](#how-to-submit-code-changes)
-    - [Development Container](#development-container)
-      - [Working locally (in VS Code)](#working-locally-in-vs-code)
-      - [Using Github Codespace](#using-github-codespace)
-  - [Our Guidelines](#our-guidelines)
-  - [Useful Material](#useful-material)
-
 ## Thank you!
 
 We sincerely wish to thank you for donating your time to the AtlassianPS projects.
-The quality of our projects increase with every contribution.
+The quality of our projects increases with every contribution.
 
 > One thing I can't stress enough:
 > you do **not** need to be an expert coder to contribute.  
@@ -78,7 +58,7 @@ When you notice something that could be improved,
 tell us by creating an issue.  
 GitHub makes this easy.
 
-Each of our projects has an _Issuetracker_ where you can report your findings.
+Each of our projects has an _issue tracker_ where you can report your findings.
 
 | Project                       | Link                                                                  | # of open issues                                                                                                                                                                     |
 | ----------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -108,7 +88,7 @@ No matter if you are fixing a typo or if you wrote a fully-functioning feature f
 > We appreciate the help 😊
 
 This makes sense, as it would be impossible to manage user permissions in all of the project for all of the users.
-Therefore, everyone who want to make changes to the code must make a copy of the repository into his GitHub account (aka [forking](https://help.github.com/articles/fork-a-repo/)).
+Therefore, everyone who wants to make changes to the code must make a copy of the repository in their GitHub account (aka [forking](https://help.github.com/articles/fork-a-repo/)).
 
 With a copy of the code in a location where you are allowed to make changes to, you get to work.
 
@@ -129,14 +109,14 @@ Our repository includes a ["Dev Container"](https://containers.dev/) / GitHub Co
 > or runtimes needed for working with a codebase,
 > and to aid in continuous integration and testing.
 
-You can use the devcontainer to spin up a fine tuned development environment with
+You can use the devcontainer to spin up a fine-tuned development environment with
 everything you need for working on AtlassianPS projects.
 
-You can use the devcontainer in your favorite edit or github codespace.
+You can use the devcontainer in your favorite editor or GitHub Codespace.
 
 #### Working locally (in VS Code)
 
-You can use the bellow links to get started.
+You can use the links below to get started.
 The links will trigger VS Code to automatically install the Dev Containers extension if needed,
 clone the source code into a container volume, and spin up a dev container for use.
 
@@ -148,11 +128,11 @@ clone the source code into a container volume, and spin up a dev container for u
 - [JiraAgilePS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/jiraagileps)
 - [JiraPS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/jiraps)
 
-#### Using Github Codespace
+#### Using GitHub Codespace
 
-Github allows you to spin up a virtual editor ("VS Code in your browser").
+GitHub allows you to spin up a virtual editor ("VS Code in your browser").
 You can create your own codespace by navigating to <https://github.com/codespaces>
-or by using the "Code" button in the repository itself, as shown bellow.
+or by using the "Code" button in the repository itself, as shown below.
 
 ![Create Codespace In Repository](../../assets/img/create_github_codespace.png)
 

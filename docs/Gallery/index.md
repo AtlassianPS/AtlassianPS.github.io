@@ -4,11 +4,11 @@ layout: gallery
 
 # Gallery
 
-This is a collection of ideas, scripts and intricate uses of the _AtlassianPS_ modules.
+This is a collection of ideas, scripts, and practical uses of the _AtlassianPS_ modules.
 
 ## Contribute
 
-This gallery can only be useful with as much input/collaboration as possible. So please consider submitting your ideas / code.
+This gallery is best when many people contribute. Please consider submitting your ideas or code.
 
 To submit your code, you need to [fork this repository](https://github.com/AtlassianPS/AtlassianPS.github.io/fork),
 add your file to [the gallery](https://github.com/AtlassianPS/AtlassianPS.github.io/tree/master/docs/Gallery)

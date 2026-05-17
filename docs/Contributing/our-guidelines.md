@@ -3,25 +3,6 @@ layout: documentation
 ---
 # Our Guidelines
 
-## Overview
-
-This page describes:
-
-- [Our Guidelines](#our-guidelines)
-  - [Overview](#overview)
-  - [Code Formatting and Conventions](#code-formatting-and-conventions)
-    - [Formatting](#formatting)
-    - [Templates](#templates)
-    - [Variable Naming](#variable-naming)
-    - [Function Naming](#function-naming)
-    - [Splatting](#splatting)
-    - [Aliases](#aliases)
-    - [In-code Documentation](#in-code-documentation)
-  - [Code Separation and File Naming](#code-separation-and-file-naming)
-  - [Strive for 100% Code Coverage by Tests](#strive-for-100-code-coverage-by-tests)
-  - [Document as You Go](#document-as-you-go)
-  - [Changes To the Build System](#changes-to-the-build-system)
-
 ## Code Formatting and Conventions
 
 ### Formatting
@@ -33,8 +14,7 @@ If you are using VS Code, the project is already configured to help you with tha
 
 ### Templates
 
-_No templates yet._
-_Fill in when available._
+_No templates yet. Fill in when available._
 
 ### Variable Naming
 

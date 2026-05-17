@@ -3,31 +3,10 @@ layout: documentation
 ---
 # Submitting A Pull Request
 
-## Overview
-
-This page describes:
-
-- [Submitting A Pull Request](#submitting-a-pull-request)
-  - [Overview](#overview)
-  - [TL;DR](#tldr)
-  - [The Setup](#the-setup)
-    - [New to Git(Hub)?](#new-to-github)
-    - [Tooling](#tooling)
-  - [Getting Started](#getting-started)
-    - [Find Something To Contribute To](#find-something-to-contribute-to)
-    - [Forking And Branching](#forking-and-branching)
-  - [Making Changes](#making-changes)
-    - [Getting Work Done](#getting-work-done)
-    - [Documenting Your Work](#documenting-your-work)
-    - [Making Sure All Is Working](#making-sure-all-is-working)
-  - [Sending Your Changes](#sending-your-changes)
-    - [Send A Pull Request](#send-a-pull-request)
-    - [What Happens Next?](#what-happens-next)
-
 ## TL;DR
 
-Here is a list for project specific instructions.
-These are more technical - pretty much what would have to be executed in the console.
+Here is a list of project-specific instructions.
+These are the technical, command-line-focused references.
 
 | Project                       | Instructions                                                                           |
 | ----------------------------- | -------------------------------------------------------------------------------------- |
@@ -51,11 +30,11 @@ These are more technical - pretty much what would have to be executed in the con
 
 ### Tooling
 
-To make changes to the code or documentation and send it as a Pull Request, only one tool is required:
+To make changes to code or documentation and send a Pull Request, a few tools are required:
 
 - **[Git]**  
 _There are many different ways to install Git._
-_Please google how to install it on your OS._
+_Use the one that best fits your OS._
 - **PowerShell**  
 _Any version works._
 _If you are using version 3 or 4, the `PowerShellGet` module must be installed._
@@ -80,7 +59,7 @@ Such as:
 ### Find Something To Contribute To
 
 If you are interested in contributing and have nothing specific in mind,
-we are looking for help here: [Issue that are "Up-For-Grabs"](https://github.com/issues?utf8=✓&q=is%3Aopen+user%3AAtlassianPS+label%3Aup-for-grabs).
+we are looking for help here: [Issues that are "Up-For-Grabs"](https://github.com/issues?utf8=✓&q=is%3Aopen+user%3AAtlassianPS+label%3Aup-for-grabs).
 
 ### Forking And Branching
 
@@ -93,18 +72,18 @@ Once you have your own version of the project, you should:
 - Clone your version of the project to your computer  
 _Here is how: [Cloning a Repository](https://help.github.com/articles/cloning-a-repository/)._  
 
-**    ```powershell
-    git clone https://github.com/<YOUR USER NAME>/<NAME OF THE PROJECT>.git
-    ```**
+```powershell
+git clone https://github.com/<YOUR USER NAME>/<NAME OF THE PROJECT>.git
+```
 
 - Create a new branch for your changes
 _You should make the changes in a branch for tracking them._
-_You should also create your own branch out of `develop`._
+_You should also create your own branch out of `master`._
 _You can read more here: [Git Flow Guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)._
 
     ```powershell
     cd <NAME OF THE PROJECT>
-    git checkout develop
+    git checkout master
     git checkout -b <NAME FOR YOUR FEATURE>
     ```
 
@@ -178,10 +157,10 @@ Every Pull Request must be approved after review and the reviewer(s) might:
 - request you to make specific changes before approving it (eg: adding tests)
 - request changes to the documentation (eg: add a new _example_ to the function)
 - push some changes to your code (eg: harmonize some code)  
-_By default, github grants "write" permissions to the reviewers to your fork._
+_By default, GitHub grants "write" permissions to the reviewers to your fork._
 _You can disable this, if you wish._
 
-Once the reviewer approves your Pull Request, it will be merged into the `develop` branch and part of the next release.
+Once the reviewer approves your Pull Request, it will be merged into the `master` branch and part of the next release.
 
 <!-- reference-style links -->
   [Pester Module]: https://github.com/pester/Pester
