@@ -16,11 +16,31 @@
     }
 }
 
+.bd-toc {
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+}
+
+.bd-sidebar {
+    overflow: visible;
+}
+
+#bd-docs-nav {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-right: 0.25rem;
+}
+
 .d-nooverflow {
     overflow: hidden;
 }
 .d-overflow {
     overflow: visible;
+}
+
+.bd-search .searchbox {
+    width: 100%;
+    min-width: 0;
 }
 
 #small-nav {
@@ -29,7 +49,7 @@
     }
     .bd-search {
         display: block !important;
-        width: 70%;
+        width: 100%;
         margin: 0 auto 10px;
     }
     h4 {
@@ -41,7 +61,10 @@
     }
     select {
         vertical-align: baseline;
-        padding: 5px;
+        padding: 0.4rem 0.5rem;
+        border-radius: 6px;
+        border: 1px solid #ccd5e0;
+        min-width: 180px;
     }
 }
 
@@ -58,17 +81,19 @@
 ul.nav {
     &.toc {
         list-style: none;
+        padding-left: 0.25rem;
         li {
             display: block;
             position: relative;
             a {
                 display: block;
                 position: relative;
+                padding: 0.1rem 0 0.1rem 1rem;
                 &:before {
-                    content: "➡";
+                    content: "\2192";
                     color: $powershell-blue;
                     position: absolute;
-                    font-size: 16px;
+                    font-size: 14px;
                     padding-right: 5px;
                     top: 1px;
                     left: 0;

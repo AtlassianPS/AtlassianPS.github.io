@@ -83,3 +83,8 @@ div.code_block {
         }
     }
 }
+
+.documentation .content div.code_block pre,
+.documentation .content div.code_block pre.console {
+    border-radius: 0 !important;
+}

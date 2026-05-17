@@ -53,7 +53,7 @@ textarea {
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.7;
-    color: #777777;
+    color: #42526e;
 }
 
 pre,
@@ -76,19 +76,22 @@ textarea {
 a {
     color: $powershell-blue;
     text-decoration: none;
-    outline: none;
 }
 
 a:hover {
     text-decoration: none;
-    color: #777777;
+    color: #1f2f46;
     text-decoration: underline;
 }
 
 a:active,
-a:focus,
 a:hover {
     outline: none;
+}
+
+a:focus {
+    outline: 2px solid $powershell-blue;
+    outline-offset: 2px;
 }
 
 h1,
@@ -268,7 +271,8 @@ details summary {
 }
 
 details :focus {
-    outline: none;
+    outline: 2px solid $powershell-blue;
+    outline-offset: 2px;
 }
 
 abbr,

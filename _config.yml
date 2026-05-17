@@ -3,8 +3,18 @@ title: AtlassianPS
 description: A PowerShell community for Atlassian products
 # description: A community for PowerShell lovers that use Atlassian products
 keywords: Atlassian,AtlassianPS,jira,confluence,bitbucket,hipchat,jiraps,confluenceps,bitbucketps,hipchatps,github,gh-pages
+lang: en-US
 baseurl: ""
 url: "https://atlassianps.org"
+logo: /assets/img/AtlassianPS.png
+
+author:
+  name: AtlassianPS
+
+social:
+  name: AtlassianPS
+  links:
+    - https://github.com/AtlassianPS
 
 # exclude: ["modules"]
 

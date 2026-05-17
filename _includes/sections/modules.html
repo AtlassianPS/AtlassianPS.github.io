@@ -1,61 +1,71 @@
+{% assign docsNav = site.data.navigation | where: "name", "Documentation" | first %}
+{% assign docsModuleEntries = docsNav.childs | where_exp: "item", "item.path != 'docs/Contributing'" | where_exp: "item", "item.path != 'docs/Gallery'" %}
+{% assign docsModuleNames = docsModuleEntries | map: "name" %}
 <div class="row module-wrapper">
     {% for module in site.data.index.modules %}
     <div
         user="AtlassianPS"
         repo="{{ module.name }}"
-        class="module item col-10 col-md-5 ml-auto mr-auto"
+        class="module item col-12 col-md-6"
     >
         <div class="module-item">
-            <a class="link" href="/module/{{ module.name }}">
-                <img
-                    src="/assets/img/{{ module.name }}.png"
-                    class="logo img-responsive"
-                    alt="{{ module.name }}"
-                />
-                <h3 class="item-title">{{ module.name }}</h3>
-            </a>
+            <img
+                src="/assets/img/{{ module.name }}.png"
+                class="logo img-responsive"
+                alt="{{ module.name }}"
+            />
+            <h3 class="item-title">{{ module.name }}</h3>
             <p class="item-description"></p>
-            <div class="ghbtn">
+
+            <div class="module-actions">
+                {% if docsModuleNames contains module.name %}
+                <a href="/docs/{{ module.name }}/" class="btn btn-xs btn-white" aria-label="{{ module.name }} documentation">
+                    <i class="fas fa-book"></i> Docs
+                </a>
+                {% endif %}
                 <a
                     target="_blank"
                     href="#"
                     class="btn btn-xs btn-white html_url"
-                    alt="Repository"
+                    rel="noopener noreferrer"
+                    aria-label="{{ module.name }} repository on GitHub"
+                    title="Repository"
                 >
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i> Repository
                 </a>
-                <a
-                    target="_blank"
-                    href="https://github.com/AtlassianPS/{{ module.name }}/issues"
-                    class="btn btn-xs btn-white repo"
-                    alt="Report Issue"
-                >
-                    <i class="fas fa-bug"></i>
-                </a>
-                <br />
                 <a
                     target="_blank"
                     href="https://www.powershellgallery.com/packages/{{ module.name }}"
                     class="btn btn-xs btn-white gallery"
-                    alt="Gallery Downloads"
+                    rel="noopener noreferrer"
+                    aria-label="{{ module.name }} on PowerShell Gallery"
+                    title="PowerShell Gallery"
                 >
-                    <i class="fas fa-cloud-download-alt"></i> ...</a
-                >
+                    <i class="fas fa-cloud-download-alt"></i> Gallery
+                </a>
+            </div>
+
+            <div class="module-metrics">
                 <a
                     target="_blank"
                     href="https://github.com/AtlassianPS/{{ module.name }}/stargazers"
-                    class="btn btn-xs btn-white star"
+                    class="metric-chip star"
+                    rel="noopener noreferrer"
+                    aria-label="{{ module.name }} stargazer count"
+                    title="Stars"
                 >
-                    <i class="fas fa-star"></i> ...</a
-                >
+                    <i class="fas fa-star"></i> ...
+                </a>
                 <a
                     target="_blank"
                     href="https://github.com/AtlassianPS/{{ module.name }}/network"
-                    class="btn btn-xs btn-white fork"
+                    class="metric-chip fork"
+                    rel="noopener noreferrer"
+                    aria-label="{{ module.name }} fork count"
+                    title="Forks"
                 >
-                    <i class="fas fa-code-branch"></i> ...</a
-                >
-                <div style="height: 10px"></div>
+                    <i class="fas fa-code-branch"></i> ...
+                </a>
             </div>
         </div>
     </div>

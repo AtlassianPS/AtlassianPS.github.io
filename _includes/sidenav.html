@@ -1,84 +1,83 @@
-{% assign documentation = site.data.navigation | where: "name", "Documentation" %}
-<nav class="bd-links d-none d-md-block d-overflow" id="bd-docs-search">
+{% assign documentation = site.data.navigation | where: "name", "Documentation" | first %}
+{% assign visiblePages = site.html_pages | where_exp: "p", "p.hide != true" %}
+{% assign visibleDocsPages = visiblePages | where_exp: "p", "p.url contains '/docs/'" %}
+
+<nav class="bd-links d-none d-md-block d-overflow" id="bd-docs-search" role="search" aria-label="Documentation search">
     <ul class="nav bd-sidenav bd-search">
         <li class="menu-item search">
-            <input type="search" class="form-control searchbox" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+            <input type="search" class="form-control searchbox" id="search-input-desktop" placeholder="Search..." aria-label="Search documentation" autocomplete="off">
         </li>
     </ul>
 </nav>
-<nav class="bd-links d-none d-md-block" id="bd-docs-nav">
-{% for module in documentation[0].childs %}
+
+<nav class="bd-links d-none d-md-block" id="bd-docs-nav" aria-label="Documentation topics">
+{% for module in documentation.childs %}
+    {% assign modulePath = "/" | append: module.path %}
+    {% assign modulePages = visibleDocsPages | where_exp: "p", "p.url contains modulePath" | sort: "title" %}
     <a class="bd-toc-link" href="/{{ module.path }}"><h4 class="bd-toc-item">{{ module.name }}</h4></a>
 
     {% if page.url contains module.path %}
         {% if module.groups %}
             {% for group in module.groups %}
-                {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
-    <div class="bd-toc-item{% if page.url contains groupName %} active{% endif %}">
-        <a class="bd-toc-link" href="{{ groupPath }}">{{group}}</a>
-
+                {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture %}
+                {% assign groupPages = modulePages | where_exp: "p", "p.url contains groupPath" %}
+                {% if groupPages.size > 0 %}
+    <div class="bd-toc-item{% if page.url contains groupPath %} active{% endif %}">
+        <a class="bd-toc-link" href="{{ groupPath }}">{{ group }}</a>
         <ul class="nav bd-sidenav">
-
-                {% for p in site.html_pages %}
-                    {% if p.url contains groupPath %}
-                        {% if p.hide != true %}
+                    {% for p in groupPages %}
             <li class="{% if page.url contains p.url %}active{% endif %}">
                 <a href="{{ p.url }}">{{ p.title }}</a>
             </li>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
         </ul>
     </div>
+                {% endif %}
             {% endfor %}
-        {% elsif module.listChilds %}
+        {% elsif module.listChilds and modulePages.size > 0 %}
     <ul class="nav bd-sidenav">
-            {% for p in site.html_pages %}
-                {% if p.url contains module.path %}
-                    {% if p.hide != true %}
+            {% for p in modulePages %}
     <li class="{% if page.url contains p.url %}active{% endif %}">
         <a class="bd-toc-link" href="{{ p.url }}">{{ p.title }}</a>
     </li>
-                    {% endif %}
-                {% endif %}
             {% endfor %}
     </ul>
         {% endif %}
     {% endif %}
 {% endfor %}
 </nav>
-<nav class="bd-links d-block d-md-none text-center" id="small-nav">
+
+<nav class="bd-links d-block d-md-none text-center" id="small-nav" aria-label="Documentation topics menu">
     <ul class="nav bd-sidenav bd-search">
         <li class="menu-item search">
-            <input type="search" class="form-control searchbox" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+            <input type="search" class="form-control searchbox" id="search-input-mobile" placeholder="Search..." aria-label="Search documentation" autocomplete="off">
         </li>
     </ul>
 
     <h4 class="d-inline">Topics</h4>
-    <select id="small-nav-dropdown">
-{% for module in documentation[0].childs %}
+    <label for="small-nav-dropdown" class="screen-reader-text">Jump to documentation topic</label>
+    <select id="small-nav-dropdown" aria-label="Documentation topics">
+        <option value="">Choose a topic...</option>
+{% for module in documentation.childs %}
+    {% assign modulePath = "/" | append: module.path %}
+    {% assign modulePages = visibleDocsPages | where_exp: "p", "p.url contains modulePath" | sort: "title" %}
     {% if page.url contains module.path %}
         <option class="font-weight-bold" value="/{{ module.path }}">{{ module.name }}</option>
         {% if module.groups %}
             {% for group in module.groups %}
-                {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
+                {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture %}
+                {% assign groupPages = modulePages | where_exp: "p", "p.url contains groupPath" %}
+                {% if groupPages.size > 0 %}
         <optgroup label="{{ group }}">
-                {% for p in site.html_pages %}
-                    {% if p.url contains groupPath %}
-                        {% if p.hide != true %}
-            <option value="{{ p.url }}"{% if page.url contains p.url %}selected{% endif %}>{{ p.title }}</option>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </optgroup>
-            {% endfor %}
-        {% elsif module.listChilds %}
-            {% for p in site.html_pages %}
-                {% if p.url contains module.path %}
-                    {% if p.hide != true %}
-        <option value="{{ p.url }}" {% if page.url contains p.url %}selected{% endif %}>{{ p.title }}</option>
-                    {% endif %}
+                    {% for p in groupPages %}
+            <option value="{{ p.url }}"{% if page.url contains p.url %} selected{% endif %}>{{ p.title }}</option>
+                    {% endfor %}
+        </optgroup>
                 {% endif %}
+            {% endfor %}
+        {% elsif module.listChilds and modulePages.size > 0 %}
+            {% for p in modulePages %}
+        <option value="{{ p.url }}"{% if page.url contains p.url %} selected{% endif %}>{{ p.title }}</option>
             {% endfor %}
         {% endif %}
     {% endif %}
@@ -87,10 +86,13 @@
 </nav>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-<script type="text/javascript"> docsearch({
-    apiKey: '50f1199d6c47bdb6fe668f3b569453f0',
-    indexName: 'atlassianps',
-    inputSelector: '#search-input',
-    debug: true // Set debug to true if you want to inspect the dropdown
-});
+<script type="text/javascript">
+if (typeof docsearch === 'function') {
+    docsearch({
+        apiKey: '50f1199d6c47bdb6fe668f3b569453f0',
+        indexName: 'atlassianps',
+        inputSelector: '#search-input-desktop, #search-input-mobile',
+        debug: false
+    });
+}
 </script>

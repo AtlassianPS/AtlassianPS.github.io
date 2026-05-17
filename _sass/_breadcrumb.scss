@@ -1,12 +1,16 @@
 .breadcrumb {
     background: transparent;
+    margin-bottom: 1rem;
     .btn {
-        padding: 6px 12px 6px 24px;
+        padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+        border-color: #d8dee6;
+        color: #24354d;
+        background: #f6f8fb;
         :first-child {
-            padding: 6px 6px 6px 10px;
+            padding: 0.4rem 0.5rem 0.4rem 0.75rem;
         }
         :last-child {
-            padding: 6px 18px 6px 24px;
+            padding: 0.4rem 1rem 0.4rem 1.2rem;
         }
         &:not(:last-child) {
             &:before {
@@ -14,12 +18,12 @@
                 display: block;
                 width: 0;
                 height: 0;
-                border-top: 17px solid transparent;
-                border-bottom: 17px solid transparent;
+                border-top: 16px solid transparent;
+                border-bottom: 16px solid transparent;
                 border-left: 10px solid rgb(173, 173, 173);
                 position: absolute;
                 top: 50%;
-                margin-top: -17px;
+                margin-top: -16px;
                 margin-left: 1px;
                 left: 100%;
                 z-index: 3;
@@ -29,15 +33,19 @@
                 display: block;
                 width: 0;
                 height: 0;
-                border-top: 17px solid transparent;
-                border-bottom: 17px solid transparent;
-                border-left: 10px solid white;
+                border-top: 16px solid transparent;
+                border-bottom: 16px solid transparent;
+                border-left: 10px solid #f6f8fb;
                 position: absolute;
                 top: 50%;
-                margin-top: -17px;
+                margin-top: -16px;
                 left: 100%;
                 z-index: 3;
             }
+        }
+        &:hover {
+            background: #e9eef5;
+            color: $powershell-blue;
         }
     }
 }
@@ -69,7 +77,7 @@
 .btn-breadcrumb {
     .btn {
         & &-default {
-            @include colorize(#fff,#ccc,#ebebeb,#adadad);
+            @include colorize(#d8dee6,#f6f8fb,#c8d2df,#e9eef5);
         }
         & &-primary {
             @include colorize(#428bca,#357ebd,#3276b1,#285e8e);
