@@ -10,10 +10,13 @@ This is a collection of ideas, scripts, and practical uses of the _AtlassianPS_ 
 
 This gallery is best when many people contribute. Please consider submitting your ideas or code.
 
-To submit your code, you need to [fork this repository](https://github.com/AtlassianPS/AtlassianPS.github.io/fork),
-add your file to [the gallery](https://github.com/AtlassianPS/AtlassianPS.github.io/tree/master/docs/Gallery)
-and [submit your changes as a Pull Request](https://github.com/AtlassianPS/AtlassianPS.github.io/compare).
-**_You can find a detailed instruction [here](/docs/Contributing)._**
+To submit your code:
+
+1. [Fork this repository](https://github.com/AtlassianPS/AtlassianPS.github.io/fork)
+2. Add your file to [the gallery folder](https://github.com/AtlassianPS/AtlassianPS.github.io/tree/master/docs/Gallery)
+3. [Open a Pull Request](https://github.com/AtlassianPS/AtlassianPS.github.io/compare)
+
+Detailed contribution guidance is available in [/docs/Contributing](/docs/Contributing).
 
 ### Disclaimer
 

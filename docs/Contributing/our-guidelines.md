@@ -3,118 +3,61 @@ layout: documentation
 ---
 # Our Guidelines
 
-## Code Formatting and Conventions
+These guidelines keep contributions consistent and review-friendly across AtlassianPS projects.
 
-### Formatting
+## 1) Prefer clear code over clever code
 
-All code must be properly formatted for a Pull Request (PR) to be merged.
-For examples of formatting, take a look around the public functions of the projects.
+- Use descriptive names.
+- Keep functions focused.
+- Avoid hidden side effects.
+- Refactor when comments are needed to explain basic flow.
 
-If you are using VS Code, the project is already configured to help you with that.
+## 2) Follow PowerShell conventions
 
-### Templates
+- Use approved `Verb-Noun` function names.
+- Use PascalCase for parameters and public members.
+- Use camelCase for local variables.
+- Expand aliases before submitting a PR.
 
-_No templates yet. Fill in when available._
+## 3) Keep files and structure predictable
 
-### Variable Naming
+- One function/class/enum per file.
+- Match file names to the function/class/enum name.
+- Keep public and private code separated according to repository structure.
 
-The naming convention asks for Pascal Case for all parameters, function nouns, method names, property names, field names, etc.  
-Local variables created within a function should be in Camel Case.
+## 4) Use splatting for readability
 
-Example:
-
-```powershell
-$GlobalVariable = "this is global"
-function Get-GlobalVariable {
-    param(
-        $InputObject,
-        $Filter
-    )
-    $localVariable = "this is local"
-    $global:GlobalVariable
-}
-```
-
-Additional Information:
-
-- [More about special case styles](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
-
-### Function Naming
-
-Functions should use proper `Verb-Noun` names even for private functions
-and only use [Approved Verbs](https://msdn.microsoft.com/en-us/library/ms714428(v=vs.85).aspx).
-
-### Splatting
-
-Use [splatting] whenever a command has 3 or more parameters. Use the `$params` variable for splatting.
-If you need to splat more than one command in a pipeline use `$Params<command name>` (e.g. `$ParamsGetContent` ) for each command in the pipeline.
+Use [splatting] when a command has multiple parameters, especially in pipelines.
 
 ```powershell
-# Single command
-$Params = @{
+$paramsGetWidget = @{
     Name = 'Widget1'
     Id   = '5ABCD98727658'
-    Type = 'Custom'
 }
-Get-Widget @Params
 
-# Multi-command pipeline
-$ParamsAddWidget = @{
-    Name = 'Widget1'
-    Id   = '5ABCD98727658'
-    Type = 'Custom'
-}
-$ParamsSetWidget = @{
+$paramsSetWidget = @{
     Height = 10
     Width  = 20
-    Depth  = 3
 }
-Add-Widget @ParamsAddWidget | Set-Widget @ParamsSetWidget
+
+Get-Widget @paramsGetWidget | Set-Widget @paramsSetWidget
 ```
 
-### Aliases
+## 5) Treat tests and docs as part of the change
 
-Expand all aliases prior to a PR.
-No aliases are permitted, including `Sort`.
-The PSAnalyzer tests should detect this and issue a failure.
+- Add or update tests for behavior changes.
+- Update user-facing documentation for user-facing changes.
+- Do not ship code changes without matching validation/docs updates.
 
-### In-code Documentation
+## 6) Keep comments intentional
 
-Limit in-code comments and documentation.
-If you are using full, command names and PowerShell "best practices", the code should be fairly self-documenting.
-Only use comments when doing something that is out of the norm or obscure.
-If you feel you need to comment the code, you likely need to refactor it.
+Comments should explain:
 
-## Code Separation and File Naming
+- constraints and edge cases
+- non-obvious workarounds
+- design intent when structure alone is not enough
 
-- all functions (public and private), classes, and enums should be defined in separate files and organized according to their category.
-- do not define more than one function, class, or enum per file.
-- do not create nested functions (use separate private functions instead).
-- the filename should match the function or enum name.
-
-## Strive for 100% Code Coverage by Tests
-
-This project strives to be as close to 100% code coverage as possible.
-If you are submitting a new function (public or private),
-the PR will not be merged until a unit test has been added that tests all available code paths for the function.
-The same goes for classes.
-If you extend the functionality of an existing feature, please add the tests that describe the changes.
-
-## Document as You Go
-
-The documentation of a project is located in the `/docs/` folder and is the source of truth for all documentation.
-
-We realize documentation is a boring part of coding, but it is a necessary evil.
-This is not something that can be thrown over the wall unless we gain some dedicated documentation contributors.
-The only way to keep this project properly documented is to do it as we go and not after the fact.
-
-Any code submission will be checked for documentation according to its changes.
-
-## Changes To the Build System
-
-_This chapter must describe how to make changes and test them against AppVeyor/Travis._
-
-_Maybe a page dedicated to this topic might be in order._
+If a comment only explains what the line already says, remove it.
 
 <!-- reference-style links -->
-  [splatting]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting
+[splatting]: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting
