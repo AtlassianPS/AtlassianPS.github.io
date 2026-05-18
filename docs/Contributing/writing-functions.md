@@ -6,7 +6,7 @@ layout: documentation
 This page covers the baseline expectations for writing PowerShell functions in AtlassianPS projects.
 Use it as a lightweight checklist, not a barrier.
 
-## Public Functions
+## 🧩 Public Functions
 
 - Use approved `Verb-Noun` naming.
 - Keep parameters explicit and discoverable.
@@ -16,7 +16,7 @@ Use it as a lightweight checklist, not a barrier.
 
 Public command documentation should be updated in the repository's docs alongside code changes.
 
-## Private Functions
+## 🔒 Private Functions
 
 - Keep helpers focused on one responsibility.
 - Give private functions intention-revealing names.
@@ -24,7 +24,10 @@ Public command documentation should be updated in the repository's docs alongsid
 - Avoid side effects where possible.
 - Keep private helpers covered by unit tests through public behavior or direct tests (based on repo pattern).
 
-## Practical checklist
+## ✅ Practical checklist
+
+> [!TIP]
+> Prefer small, focused function changes. They are easier to test and review.
 
 - [ ] Function name follows project naming conventions.
 - [ ] Parameters are validated and documented.

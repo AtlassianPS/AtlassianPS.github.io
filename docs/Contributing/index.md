@@ -8,13 +8,13 @@ Thank you for helping improve AtlassianPS.
 You do **not** need to be an expert to contribute. Small fixes, typo corrections, and docs improvements are all valuable.
 Every contribution matters, and we are glad you are here.
 
-## Start here
+## 🚀 Start here
 
 - Want to report a problem or suggest an idea? See [How To Report An Issue](#how-to-report-an-issue).
 - Want to submit changes? See [How To Submit Code Changes](#how-to-submit-code-changes).
 - Want coding standards? Read [Our Guidelines](our-guidelines.html).
 
-## Common ways to contribute
+## 🤝 Common ways to contribute
 
 - Report bugs or unclear behavior.
 - Improve documentation.
@@ -22,7 +22,10 @@ Every contribution matters, and we are glad you are here.
 - Add small quality-of-life enhancements.
 - Contribute larger features.
 
-## How To Report An Issue
+> [!TIP]
+> Not sure where to begin? Small docs improvements are a great first contribution.
+
+## 🐞 How To Report An Issue
 
 When you notice something that could be improved, tell us by creating an issue.
 
@@ -42,17 +45,17 @@ Each of our projects has an _issue tracker_ where you can report your findings.
 Before creating a new issue, please search open issues first.
 If a similar issue already exists, add your details there.
 
-## How To Submit Code Changes
+## 🔁 How To Submit Code Changes
 
 No matter if you are fixing a typo or shipping a new feature, changes are submitted through a Pull Request.
 
 Start with **[Submitting A PR](submitting-a-pr.html)** for the full flow.
 
-### Development Container
+### 🧰 Development Container
 
 Our repository includes a ["Dev Container"](https://containers.dev/) / GitHub Codespaces development container.
 
-> **What are Development Containers?**  
+> [!NOTE]
 > A development container (or dev container for short) allows you to use
 > a container as a full-featured development environment.
 > It can be used to run an application, to separate tools, libraries,
@@ -86,11 +89,11 @@ or by using the "Code" button in the repository itself, as shown below.
 
 ![Create Codespace In Repository](../../assets/img/create_github_codespace.png)
 
-## Our Guidelines
+## 📏 Our Guidelines
 
 Please follow [Our Guidelines](our-guidelines.html) when contributing code or docs.
 
-## Useful Material
+## 📚 Useful Material
 
 - GitHub's guide on [Contributing to Open Source](https://guides.github.com/activities/contributing-to-open-source/#pull-request)
 - [GitHub Flow Guide](https://guides.github.com/introduction/flow/): step-by-step instructions of GitHub flow.

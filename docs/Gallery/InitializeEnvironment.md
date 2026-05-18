@@ -6,7 +6,7 @@ synopsis: Set up the environment to work with JiraPS
 type: Working Script
 modules:
   - JiraPS
-extras: 
+extras:
   - BetterCredentials
 ---
 ### Description

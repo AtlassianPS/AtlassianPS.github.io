@@ -6,7 +6,10 @@ layout: documentation
 Use this page as a practical checklist for contributing to any AtlassianPS repository.
 If this is your first PR, you are in the right place.
 
-## Quick checklist
+> [!TIP]
+> Start small if you want to. A focused PR is often the fastest path to a successful review.
+
+## ✅ Quick checklist
 
 1. Pick an issue (or open one first).
 2. Fork the target repository.
@@ -17,7 +20,7 @@ If this is your first PR, you are in the right place.
 
 No stress if you do not get everything perfect on the first try. Reviews are collaborative.
 
-## Project-specific contribution guides
+## 🧭 Project-specific contribution guides
 
 For command-level details and repo-specific rules, use each repository's `CONTRIBUTING.md`.
 
@@ -32,7 +35,7 @@ For command-level details and repo-specific rules, use each repository's `CONTRI
 | **JiraAgilePS**               | <https://github.com/AtlassianPS/JiraAgilePS/blob/master/CONTRIBUTING.md>               |
 | **JiraPS**                    | <https://github.com/AtlassianPS/JiraPS/blob/master/CONTRIBUTING.md>                    |
 
-## Setup
+## 🧰 Setup
 
 ### Required tools
 
@@ -46,7 +49,7 @@ For command-level details and repo-specific rules, use each repository's `CONTRI
 - [PowerShell extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
 - [Git GUIs](https://git-scm.com/downloads/guis)
 
-## Forking and branching
+## 🌿 Forking and branching
 
 ```powershell
 git clone https://github.com/<YOUR USER NAME>/<NAME OF THE PROJECT>.git
@@ -57,7 +60,7 @@ git checkout -b <SHORT-FEATURE-NAME>
 
 Keep your branch focused on one change set. Small PRs are easier to review and merge.
 
-## Implementation expectations
+## 🛠️ Implementation expectations
 
 - Follow [Our Guidelines](our-guidelines.html).
 - Update tests when behavior changes.
@@ -69,9 +72,12 @@ Additional references:
 - [How to write a function](writing-functions.html)
 - [How to write tests](writing-tests.html)
 
-## Validation
+## 🧪 Validation
 
 Run the validation commands defined by the target repository before opening a PR.
+
+> [!IMPORTANT]
+> Always run the repository's validation commands before opening or updating your PR.
 
 For `AtlassianPS.github.io`, run:
 
@@ -79,7 +85,7 @@ For `AtlassianPS.github.io`, run:
 bundle exec jekyll build --baseurl ""
 ```
 
-## Opening the Pull Request
+## 📬 Opening the Pull Request
 
 Open a PR from your fork branch to the upstream `master` branch.
 
@@ -89,7 +95,7 @@ A strong PR description should include:
 - why it changed
 - how you validated it
 
-## What happens next
+## 🤝 What happens next
 
 Maintainers and reviewers will review your PR and CI checks.
 
