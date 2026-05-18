@@ -52,5 +52,5 @@ jobs:
       - name: Check local docs links and anchors
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --no-progress --exclude-mail docs
+          args: --offline --no-progress docs
           fail: true
