@@ -9,12 +9,12 @@ modules:
 ---
 ### Description
 
-This script takes a Json file as input and updates all Issues in it.
+This script takes a JSON file as input and updates all issues in it.
 
-I have a colleague at work who writes HTML apps for managing due dates and sprint assignment of issues.  
+I have a colleague at work who writes HTML apps for managing due dates and sprint assignment of issues.
 He was unable to figure out how to upload the data back into Jira, as the server does not allow for CORS ajax requests.
 
-So my workaround is: his HTML app dumps the results to JSON - and a scheduled job runs the following script that persists the changes to the issues on Jira.
+So my workaround is: his HTML app dumps the results to JSON, and a scheduled job runs the following script that persists the changes to Jira issues.
 
 ![ScreenShot](screenshots/gallery_upload-changes.png)
 

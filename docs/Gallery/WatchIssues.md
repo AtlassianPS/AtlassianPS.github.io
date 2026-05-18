@@ -9,10 +9,10 @@ modules:
 ---
 ### Description
 
-The following script allows one to search for as many Jira Issues as he wants
+The following script lets you search as many Jira issues as needed
 with JQL and set predefined users as watchers of those issues.
 
-_As a watchers of an issue, the user will receiver notifications for changes on the issue._
+_As a watcher of an issue, a user will receive notifications for changes on that issue._
 
 ### Code
 

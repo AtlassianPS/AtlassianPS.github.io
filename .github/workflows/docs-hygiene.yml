@@ -1,0 +1,103 @@
+name: Docs hygiene
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - "docs/**"
+      - "_data/**"
+      - "assets/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - ".github/workflows/docs-hygiene.yml"
+  pull_request:
+    branches: [master]
+    paths:
+      - "docs/**"
+      - "_data/**"
+      - "assets/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - ".github/workflows/docs-hygiene.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  content-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Guard against stale placeholder docs text
+        run: |
+          set -euo pipefail
+
+          if grep -RInE "THIS PAGE IS IN WORK|This page describes:" docs; then
+            echo "Found placeholder docs text. Please replace with real content."
+            exit 1
+          fi
+
+          if grep -RInE 'git checkout develop|out of `develop`|merged into the `develop` branch' docs/Contributing; then
+            echo "Found outdated branch guidance that still references develop."
+            exit 1
+          fi
+
+      - name: Validate AtlassianPS repository guide links
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          mapfile -t urls < <(grep -Eo 'https://github\.com/AtlassianPS/[A-Za-z0-9._-]+/blob/master/[A-Za-z0-9._/-]+' docs/Contributing/submitting-a-pr.md | sort -u)
+
+          if [ "${#urls[@]}" -eq 0 ]; then
+            echo "No AtlassianPS repository guide links found in docs/Contributing/submitting-a-pr.md."
+            exit 1
+          fi
+
+          for url in "${urls[@]}"; do
+            slug="${url#https://github.com/AtlassianPS/}"
+            repo="${slug%%/*}"
+            file_path="${slug#${repo}/blob/master/}"
+            api_url="https://api.github.com/repos/AtlassianPS/${repo}/contents/${file_path}?ref=master"
+
+            status="$(curl -sS -o /dev/null -w '%{http_code}' \
+              -H 'Accept: application/vnd.github+json' \
+              -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+              "${api_url}")"
+
+            if [ "${status}" -ne 200 ]; then
+              echo "Broken repository guide link: ${url} (HTTP ${status})"
+              exit 1
+            fi
+
+            echo "OK: ${url}"
+          done
+
+  local-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --baseurl ""
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check local docs links and anchors
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --root-dir _site '_site/docs/Contributing/**/*.html' '_site/docs/Gallery/**/*.html'
+          fail: true
