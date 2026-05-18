@@ -6,6 +6,7 @@ layout: documentation
 Thank you for helping improve AtlassianPS.
 
 You do **not** need to be an expert to contribute. Small fixes, typo corrections, and docs improvements are all valuable.
+Every contribution matters, and we are glad you are here.
 
 ## Start here
 

@@ -4,6 +4,7 @@ layout: documentation
 # Our Guidelines
 
 These guidelines keep contributions consistent and review-friendly across AtlassianPS projects.
+Think of them as guardrails that make collaboration easier.
 
 ## 1) Prefer clear code over clever code
 

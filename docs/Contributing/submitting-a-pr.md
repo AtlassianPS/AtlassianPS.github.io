@@ -4,6 +4,7 @@ layout: documentation
 # Submitting A Pull Request
 
 Use this page as a practical checklist for contributing to any AtlassianPS repository.
+If this is your first PR, you are in the right place.
 
 ## Quick checklist
 
@@ -13,6 +14,8 @@ Use this page as a practical checklist for contributing to any AtlassianPS repos
 4. Implement the change (code + tests + docs where needed).
 5. Run the repository validation steps.
 6. Open a Pull Request to `AtlassianPS/<repo>:master`.
+
+No stress if you do not get everything perfect on the first try. Reviews are collaborative.
 
 ## Project-specific contribution guides
 
@@ -97,3 +100,5 @@ You may be asked to:
 - update docs/examples
 
 Once approved, the PR is merged into `master`.
+
+If you get stuck at any point, open an issue and ask for guidance.

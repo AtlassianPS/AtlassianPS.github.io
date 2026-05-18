@@ -4,6 +4,7 @@ layout: documentation
 # Writing Tests
 
 Tests are part of the change, not an optional follow-up.
+Well-placed tests also make reviews and future refactors much easier.
 
 ## Unit Tests
 

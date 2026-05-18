@@ -4,6 +4,7 @@ layout: documentation
 # Writing Functions
 
 This page covers the baseline expectations for writing PowerShell functions in AtlassianPS projects.
+Use it as a lightweight checklist, not a barrier.
 
 ## Public Functions
 
