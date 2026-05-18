@@ -26,8 +26,7 @@ Public command documentation should be updated in the repository's docs alongsid
 
 ## ✅ Practical checklist
 
-> [!TIP]
-> Prefer small, focused function changes. They are easier to test and review.
+> **Tip:** Prefer small, focused function changes. They are easier to test and review.
 
 - [ ] Function name follows project naming conventions.
 - [ ] Parameters are validated and documented.

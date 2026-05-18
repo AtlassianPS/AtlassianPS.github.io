@@ -5,11 +5,17 @@ on:
     branches: [master]
     paths:
       - "docs/**"
+      - "assets/**"
+      - "_layouts/**"
+      - "_includes/**"
       - ".github/workflows/docs-hygiene.yml"
   pull_request:
     branches: [master]
     paths:
       - "docs/**"
+      - "assets/**"
+      - "_layouts/**"
+      - "_includes/**"
       - ".github/workflows/docs-hygiene.yml"
 
 permissions:

@@ -18,8 +18,7 @@ To submit your code:
 
 Detailed contribution guidance is available in [/docs/Contributing](/docs/Contributing).
 
-> [!TIP]
-> Keep entries focused and practical. Short context + working code is ideal.
+> **Tip:** Keep entries focused and practical. Short context plus working code is ideal.
 
 ### Disclaimer
 

@@ -6,8 +6,7 @@ layout: documentation
 Use this page as a practical checklist for contributing to any AtlassianPS repository.
 If this is your first PR, you are in the right place.
 
-> [!TIP]
-> Start small if you want to. A focused PR is often the fastest path to a successful review.
+> **Tip:** Start small if you want to. A focused PR is often the fastest path to a successful review.
 
 ## ✅ Quick checklist
 
@@ -76,8 +75,7 @@ Additional references:
 
 Run the validation commands defined by the target repository before opening a PR.
 
-> [!IMPORTANT]
-> Always run the repository's validation commands before opening or updating your PR.
+> **Important:** Always run the repository's validation commands before opening or updating your PR.
 
 For `AtlassianPS.github.io`, run:
 

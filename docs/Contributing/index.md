@@ -10,8 +10,8 @@ Every contribution matters, and we are glad you are here.
 
 ## 🚀 Start here
 
-- Want to report a problem or suggest an idea? See [How To Report An Issue](#how-to-report-an-issue).
-- Want to submit changes? See [How To Submit Code Changes](#how-to-submit-code-changes).
+- Want to report a problem or suggest an idea? See [How To Report An Issue](#-how-to-report-an-issue).
+- Want to submit changes? See [How To Submit Code Changes](#-how-to-submit-code-changes).
 - Want coding standards? Read [Our Guidelines](our-guidelines.html).
 
 ## 🤝 Common ways to contribute
@@ -22,8 +22,7 @@ Every contribution matters, and we are glad you are here.
 - Add small quality-of-life enhancements.
 - Contribute larger features.
 
-> [!TIP]
-> Not sure where to begin? Small docs improvements are a great first contribution.
+> **Tip:** Not sure where to begin? Small docs improvements are a great first contribution.
 
 ## 🐞 How To Report An Issue
 
@@ -55,8 +54,7 @@ Start with **[Submitting A PR](submitting-a-pr.html)** for the full flow.
 
 Our repository includes a ["Dev Container"](https://containers.dev/) / GitHub Codespaces development container.
 
-> [!NOTE]
-> A development container (or dev container for short) allows you to use
+> **Note:** A development container (or dev container for short) allows you to use
 > a container as a full-featured development environment.
 > It can be used to run an application, to separate tools, libraries,
 > or runtimes needed for working with a codebase,

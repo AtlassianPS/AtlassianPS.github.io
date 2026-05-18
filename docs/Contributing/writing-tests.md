@@ -23,8 +23,7 @@ Use integration tests when behavior depends on real API/server interaction.
 
 ## 🧪 Practical checklist
 
-> [!CAUTION]
-> Avoid brittle tests that depend on ordering, timing, or shared mutable state.
+> **Caution:** Avoid brittle tests that depend on ordering, timing, or shared mutable state.
 
 - [ ] New behavior is tested.
 - [ ] Existing behavior remains covered after refactors.
