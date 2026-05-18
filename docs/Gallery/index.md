@@ -4,16 +4,21 @@ layout: gallery
 
 # Gallery
 
-This is a collection of ideas, scripts and intricate uses of the _AtlassianPS_ modules.
+This is a collection of ideas, scripts, and practical uses of the _AtlassianPS_ modules.
 
-## Contribute
+## ✨ Contribute
 
-This gallery can only be useful with as much input/collaboration as possible. So please consider submitting your ideas / code.
+This gallery is best when many people contribute. Please consider submitting your ideas or code.
 
-To submit your code, you need to [fork this repository](https://github.com/AtlassianPS/AtlassianPS.github.io/fork),
-add your file to [the gallery](https://github.com/AtlassianPS/AtlassianPS.github.io/tree/master/docs/Gallery)
-and [submit your changes as a Pull Request](https://github.com/AtlassianPS/AtlassianPS.github.io/compare).
-**_You can find a detailed instruction [here](/docs/Contributing)._**
+To submit your code:
+
+1. [Fork this repository](https://github.com/AtlassianPS/AtlassianPS.github.io/fork)
+2. Add your file to [the gallery folder](https://github.com/AtlassianPS/AtlassianPS.github.io/tree/master/docs/Gallery)
+3. [Open a Pull Request](https://github.com/AtlassianPS/AtlassianPS.github.io/compare)
+
+Detailed contribution guidance is available in [/docs/Contributing](/docs/Contributing).
+
+> **Tip:** Keep entries focused and practical. Short context plus working code is ideal.
 
 ### Disclaimer
 
@@ -21,6 +26,6 @@ All the snippets in the gallery are licensed under the [MIT license](https://git
 
 > By adding your code to this gallery, you agree to this license.
 
-## The Entries
+## 📚 The Entries
 
 {% include galleryEntries.html %}

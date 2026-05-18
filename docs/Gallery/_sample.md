@@ -1,23 +1,25 @@
 ---
 layout: galleryItem
-author: Jon Doe <Jon.Doe@corp.com>               # Name/email of the author
+author: Jon Doe <jon.doe@corp.com>               # Name/email of the author
 title: Cool Script
-synopsis: This cool script does stuff
-type: [Idea | Working Script | Redacted Script]  # Is this an idea or a working script?
-modules:                             # List of module this entry uses
+synopsis: One-line summary of what the script does
+type: [Idea | Working Script | Redacted Script]  # Choose one
+modules:                                          # List of modules this entry uses
   - BitbucketPS
   - ConfluencePS
   - HipChatPS
   - JiraPS
-extras:                            # List of other resources/modules needed in script
+extras:                                           # List of other resources/modules needed
   - ...
 ---
 ### Description
 
-A detailed description of what this script does
-What problem does it try to solve?
-What is the environment where this script is run in?
+Add a short description of:
+
+- what the script does
+- what problem it solves
+- where/how it is expected to run
 
 ### Code
 
-{% gist !!GIST ID!! %}
+{% gist <GIST ID> %}
