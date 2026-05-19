@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [master]
-    paths:
+    paths: &docs_hygiene_paths
       - "docs/**"
       - "_data/**"
       - "assets/**"
@@ -14,14 +14,7 @@ on:
       - ".github/workflows/docs-hygiene.yml"
   pull_request:
     branches: [master]
-    paths:
-      - "docs/**"
-      - "_data/**"
-      - "assets/**"
-      - "_layouts/**"
-      - "_includes/**"
-      - ".lycheeignore"
-      - ".github/workflows/docs-hygiene.yml"
+    paths: *docs_hygiene_paths
 
 permissions:
   contents: read
