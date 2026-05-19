@@ -5,8 +5,14 @@
         repo="{{ module.name }}"
         class="module item col-10 col-md-5 ml-auto mr-auto"
     >
+        {% assign module_data = site.data.modules | where: "name", module.name | first %}
+        {% if module_data and module_data.path %}
+            {% assign module_link = module_data.path %}
+        {% else %}
+            {% assign module_link = "/module/" | append: module.name %}
+        {% endif %}
         <div class="module-item">
-            <a class="link" href="/module/{{ module.name }}">
+            <a class="link" href="{{ module_link }}">
                 <img
                     src="/assets/img/{{ module.name }}.png"
                     class="logo img-responsive"
