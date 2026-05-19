@@ -10,8 +10,7 @@
     # - name: HipChatPS
     #   path: module/HipChatPS
     - name: JiraAgilePS
-      path: https://github.com/AtlassianPS/JiraAgilePS
-      target: _blank
+      path: module/JiraAgilePS
     - name: JiraPS
       path: module/JiraPS
 - name: Documentation

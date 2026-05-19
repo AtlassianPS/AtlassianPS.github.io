@@ -27,12 +27,7 @@
                             {% endif %}
                             <ul class="sub-menu">
                                 {% for child in section.childs %}
-                                <li class="menu-item">
-                                    <a
-                                        href="{% if child.path contains '://' %}{{ child.path }}{% else %}/{{ child.path }}{% endif %}"
-                                        {% if child.target %} target="{{ child.target }}" {% endif %}
-                                    >{{ child.name }}</a>
-                                </li>
+                                <li class="menu-item"><a href="/{{ child.path }}">{{ child.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>

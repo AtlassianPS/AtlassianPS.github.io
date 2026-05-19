@@ -13,7 +13,7 @@
 - name: JiraAgilePS
   description: PowerShell module to interact with Jira's Agile plugin
   github: https://github.com/AtlassianPS/JiraAgilePS
-  path: https://github.com/AtlassianPS/JiraAgilePS
+  path: /module/JiraAgilePS
 - name: JiraPS
   description: PowerShell module to interact with Atlassian JIRA
   github: https://github.com/AtlassianPS/JiraPS
