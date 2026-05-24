@@ -14,8 +14,13 @@
         {% if module.groups %}
             {% for group in module.groups %}
                 {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
+                {% if group == "About" %}
+                    {% capture groupLink %}/{{ module.path }}{% endcapture %}
+                {% else %}
+                    {% capture groupLink %}{{ groupPath }}{% endcapture %}
+                {% endif %}
     <div class="bd-toc-item{% if page.url contains groupName %} active{% endif %}">
-        <a class="bd-toc-link" href="{{ groupPath }}">{{group}}</a>
+        <a class="bd-toc-link" href="{{ groupLink }}">{{group}}</a>
 
         <ul class="nav bd-sidenav">
 
