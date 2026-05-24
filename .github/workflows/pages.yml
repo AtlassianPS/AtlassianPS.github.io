@@ -34,6 +34,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Check module submodules
+        run: bash .github/scripts/check-module-submodules.sh
+
       - name: Build Jekyll
         run: bundle exec jekyll build --baseurl ""
         env:

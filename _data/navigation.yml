@@ -38,7 +38,9 @@
         - Classes
     - name: JiraAgilePS
       path: docs/JiraAgilePS
-      listChilds: true
+      groups:
+        - About
+        - Commands
     # - name: HipChatPS
     #   path: docs/HipChatPS
     - name: JiraPS

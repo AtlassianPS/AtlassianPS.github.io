@@ -1,7 +1,4 @@
-# projects section data
-# - name: BitbucketPS
 - name: ConfluencePS
-# - name: HipChatPS
 - name: JiraAgilePS
 - name: JiraPS
 - name: AtlassianPS.Configuration

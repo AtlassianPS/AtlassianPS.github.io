@@ -1,24 +1,35 @@
-# - name: BitbucketPS
-#   description: ToDo
-#   github: https://github.com/AtlassianPS/BitbucketPS
-#   path: /module/BitbucketPS
 - name: ConfluencePS
   description: A PowerShell module that interacts with Atlassian's Confluence wiki product.
   github: https://github.com/AtlassianPS/ConfluencePS
   path: /module/ConfluencePS
-# - name: HipChatPS
-#   description: ToDo
-#   github: https://github.com/AtlassianPS/HipChatPS
-#   path: /module/HipChatPS
+  status: active
 - name: JiraAgilePS
   description: PowerShell module to interact with Jira's Agile plugin
   github: https://github.com/AtlassianPS/JiraAgilePS
   path: /module/JiraAgilePS
+  status: active
 - name: JiraPS
   description: PowerShell module to interact with Atlassian JIRA
   github: https://github.com/AtlassianPS/JiraPS
   path: /module/JiraPS
+  status: active
 - name: AtlassianPS.Configuration
   description: A module for AtlassianPS modules to use for managing connections
   github: https://github.com/AtlassianPS/AtlassianPS.Configuration
   path: /module/AtlassianPS.Configuration
+  status: active
+- name: AtlassianPS
+  description: Legacy metapackage; not an active documentation target.
+  github: https://github.com/AtlassianPS/AtlassianPS
+  path: /module/AtlassianPS
+  status: legacy
+- name: BitbucketPS
+  description: Legacy Bitbucket module; not an active documentation target.
+  github: https://github.com/AtlassianPS/BitbucketPS
+  path: /module/BitbucketPS
+  status: legacy
+- name: HipChatPS
+  description: Legacy HipChat module; not an active documentation target.
+  github: https://github.com/AtlassianPS/HipChatPS
+  path: /module/HipChatPS
+  status: legacy
