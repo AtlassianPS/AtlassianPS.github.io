@@ -32,14 +32,14 @@ Each of our projects has an _issue tracker_ where you can report your findings.
 
 | Project                       | Link                                                                  | # of open issues                                                                                                                                                                     |
 | ----------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **AtlassianPS**               | <https://github.com/AtlassianPS/AtlassianPS/issues/new>               | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS/issues)                             |
 | **AtlassianPS.Configuration** | <https://github.com/AtlassianPS/AtlassianPS.Configuration/issues/new> | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.Configuration.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS.Configuration/issues) |
 | **AtlassianPS.github.io**     | <https://github.com/AtlassianPS/AtlassianPS.github.io/issues/new>     | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.github.io.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS.github.io/issues)         |
-| **BitbucketPS**               | <https://github.com/AtlassianPS/BitbucketPS/issues/new>               | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/BitbucketPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/BitbucketPS/issues)                             |
 | **ConfluencePS**              | <https://github.com/AtlassianPS/ConfluencePS/issues/new>              | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/ConfluencePS.svg?maxAge=2592000)](https://github.com/AtlassianPS/ConfluencePS/issues)                           |
-| **HipchatPS**                 | <https://github.com/AtlassianPS/HipchatPS/issues/new>                 | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/HipchatPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/HipchatPS/issues)                                 |
 | **JiraAgilePS**               | <https://github.com/AtlassianPS/JiraAgilePS/issues/new>               | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/JiraAgilePS.svg?maxAge=2592000)](https://github.com/AtlassianPS/JiraAgilePS/issues)                             |
 | **JiraPS**                    | <https://github.com/AtlassianPS/JiraPS/issues/new>                    | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/JiraPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/JiraPS/issues)                                       |
+
+Legacy modules such as `AtlassianPS`, `BitbucketPS`, and `HipChatPS` are not active documentation targets on this website.
+Use their GitHub repositories directly if you need historical source or issue context.
 
 Before creating a new issue, please search open issues first.
 If a similar issue already exists, add your details there.
@@ -74,7 +74,6 @@ clone the source code into a container volume, and spin up a dev container for u
 - [AtlassianPS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/atlassianps)
 - [AtlassianPS.Configuration](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/atlassianps.configuration)
 - [AtlassianPS.github.io](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/atlassianps.github.io)
-- [BitbucketPS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/bitbucketps)
 - [ConfluencePS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/confluenceps)
 - [JiraAgilePS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/jiraagileps)
 - [JiraPS](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/atlassianps/jiraps)
@@ -90,6 +89,13 @@ or by using the "Code" button in the repository itself, as shown below.
 ## 📏 Our Guidelines
 
 Please follow [Our Guidelines](our-guidelines.html) when contributing code or docs.
+
+## 📚 Module Documentation Publishing
+
+The website publishes module documentation from Git submodules.
+The main `/docs/<Module>/` pages should match the latest released module package, not unreleased branch content.
+
+See [Module Documentation Publishing](module-documentation.html) for the submodule policy and docs-only exception rules.
 
 ## 📚 Useful Material
 

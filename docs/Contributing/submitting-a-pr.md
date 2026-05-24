@@ -26,16 +26,14 @@ Use that flow as your baseline, then apply repo-specific setup and validation de
 
 | Project                       | Guide                                                                                       |
 | ----------------------------- | ------------------------------------------------------------------------------------------- |
-| **AtlassianPS**               | <https://github.com/AtlassianPS/AtlassianPS/blob/master/README.md>                         |
 | **AtlassianPS.Configuration** | <https://github.com/AtlassianPS/AtlassianPS.Configuration/blob/master/README.md>           |
 | **AtlassianPS.github.io**     | This docs section (you are here)                                                            |
-| **BitbucketPS**               | <https://github.com/AtlassianPS/BitbucketPS/blob/master/README.md>                         |
 | **ConfluencePS**              | <https://github.com/AtlassianPS/ConfluencePS/blob/master/README.md>                        |
-| **HipChatPS**                 | <https://github.com/AtlassianPS/HipChatPS/blob/master/README.md>                           |
 | **JiraAgilePS**               | <https://github.com/AtlassianPS/JiraAgilePS/blob/master/README.md>                         |
 | **JiraPS** ⭐                 | <https://github.com/AtlassianPS/JiraPS/blob/master/CONTRIBUTING.md>                        |
 
 As other modules adopt the JiraPS standard, their README links above will be replaced with `CONTRIBUTING.md`.
+Legacy modules such as `AtlassianPS`, `BitbucketPS`, and `HipChatPS` are not active documentation targets on this website.
 
 ## 🧰 Setup
 
