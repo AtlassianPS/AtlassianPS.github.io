@@ -9,7 +9,7 @@ permalink: /module/
 AtlassianPS maintains PowerShell modules for Atlassian products and shared AtlassianPS configuration.
 
 {% assign activeModules = site.data.modules | where: "status", "active" %}
-{% assign legacyModules = site.data.modules | where: "status", "legacy" %}
+{% assign otherRepositories = site.data.modules | where: "status", "repository" %}
 
 ## Active modules
 
@@ -35,12 +35,12 @@ AtlassianPS maintains PowerShell modules for Atlassian products and shared Atlas
 {% endfor %}
 </div>
 
-## Legacy modules
+## Other repositories
 
-These modules remain available for historical context, but they are not active documentation targets.
+These repositories are part of AtlassianPS, but they are not published modules on this website.
 
 <ul>
-{% for module in legacyModules %}
+{% for module in otherRepositories %}
     <li><a href="{{ module.github }}">{{ module.name }}</a>: {{ module.description }}</li>
 {% endfor %}
 </ul>
