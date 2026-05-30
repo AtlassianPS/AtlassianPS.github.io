@@ -3,17 +3,17 @@
 - id: modules
   name: Modules
   tpl: modules.html
-  preTitle: These are our
+  preTitle: PowerShell for Atlassian
   title: Modules
-  postTitle: 
+  postTitle: Choose the module for your workflow
   classes:
 
 - id: people
   name: People
   tpl: people.html
   preTitle: 
-  title: People
-  postTitle: Who built this
+  title: Maintainers
+  postTitle: Built by the community
   classes: 
 
 - id: posts

@@ -1,12 +1,9 @@
 <div class="row module-wrapper">
     {% assign activeModules = site.data.modules | where: "status", "active" %}
     {% for module in activeModules %}
-    <div
-        user="AtlassianPS"
-        repo="{{ module.name }}"
-        class="module item col-10 col-md-5 ml-auto mr-auto"
-    >
-        <div class="module-item">
+    <div class="module item col-10 col-md-5 ml-auto mr-auto">
+        <div class="module-item card h-100">
+            <div class="card-body">
             <a class="link" href="{{ module.path }}">
                 <img
                     src="/assets/img/{{ module.name }}.png"
@@ -21,42 +18,35 @@
                     target="_blank"
                     href="{{ module.github }}"
                     class="btn btn-xs btn-white html_url"
-                    alt="Repository"
+                    aria-label="{{ module.name }} repository"
                 >
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i> Source
                 </a>
                 <a
                     target="_blank"
                     href="{{ module.github }}/issues"
                     class="btn btn-xs btn-white repo"
-                    alt="Report Issue"
+                    aria-label="Report a {{ module.name }} issue"
                 >
-                    <i class="fas fa-bug"></i>
+                    <i class="fas fa-bug"></i> Issues
                 </a>
                 <br />
                 <a
                     target="_blank"
                     href="{{ module.gallery }}"
                     class="btn btn-xs btn-white gallery"
-                    alt="Gallery Downloads"
+                    aria-label="{{ module.name }} on PowerShell Gallery"
                 >
-                    <i class="fas fa-cloud-download-alt"></i> ...</a
+                    <i class="fas fa-cloud-download-alt"></i> Gallery</a
                 >
                 <a
-                    target="_blank"
-                    href="{{ module.github }}/stargazers"
+                    href="{{ module.docs }}"
                     class="btn btn-xs btn-white star"
                 >
-                    <i class="fas fa-star"></i> ...</a
-                >
-                <a
-                    target="_blank"
-                    href="{{ module.github }}/network"
-                    class="btn btn-xs btn-white fork"
-                >
-                    <i class="fas fa-code-branch"></i> ...</a
+                    <i class="fas fa-book"></i> Docs</a
                 >
                 <div style="height: 10px"></div>
+            </div>
             </div>
         </div>
     </div>

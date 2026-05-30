@@ -1,5 +1,6 @@
 <div class="row people-wrapper">
-    {% for person in site.data.index.people %}
+    {% assign maintainers = site.data.index.people | where: "role", "Maintainer" %}
+    {% for person in maintainers %}
     <script>
         $(document).ready(function() {
             if ("{{ person.gh_user }}" !== "") {
@@ -17,7 +18,7 @@
     </script>
     <div class="person item col-10 col-sm-5 col-md-4 col-lg-3 ml-auto mr-auto">
         <div class="person-item">
-            <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" class="rounded-circle img-md img-{{ forloop.index }}" alt="">
+            <img src="https://github.com/{{ person.gh_user }}.png?size=240" class="rounded-circle img-md img-{{ forloop.index }}" alt="{{ person.name }}">
             <h3 class="item-title">
                 <a class="link" href="https://github.com/{{ person.gh_user }}" target="_blank">{{ person.name }}</a>
             </h3>
@@ -26,4 +27,8 @@
         </div>
     </div>
     {% endfor %}
+    <div class="col-10 mx-auto text-center contributors-note">
+        <p>Dozens of contributors have helped shape AtlassianPS. See each module on GitHub for the full contributor history.</p>
+        <a class="btn btn-square btn-outline" href="https://github.com/AtlassianPS" role="button">View AtlassianPS on GitHub</a>
+    </div>
 </div>
