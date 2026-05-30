@@ -12,6 +12,8 @@
 - name: Documentation
   path: docs
   childs:
+    - name: Quick Start
+      path: docs/quick-start.html
     - name: Contributing
       path: docs/Contributing
       listChilds: true
