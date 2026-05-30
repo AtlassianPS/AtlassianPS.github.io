@@ -27,23 +27,23 @@
   gallery: https://www.powershellgallery.com/packages/AtlassianPS.Configuration
   status: active
 - name: AtlassianPS
-  description: Legacy metapackage; not an active documentation target.
+  description: Repository for cross-cutting AtlassianPS issues and coordination.
   github: https://github.com/AtlassianPS/AtlassianPS
   path: /module/AtlassianPS
   docs:
-  gallery: https://www.powershellgallery.com/packages/AtlassianPS
-  status: legacy
+  gallery:
+  status: repository
 - name: BitbucketPS
-  description: Legacy Bitbucket module; not an active documentation target.
+  description: Historical Bitbucket repository; not an active website documentation target.
   github: https://github.com/AtlassianPS/BitbucketPS
   path: /module/BitbucketPS
   docs:
-  gallery: https://www.powershellgallery.com/packages/BitbucketPS
-  status: legacy
+  gallery:
+  status: repository
 - name: HipChatPS
-  description: Legacy HipChat module; not an active documentation target.
+  description: Historical HipChat repository; not an active website documentation target.
   github: https://github.com/AtlassianPS/HipChatPS
   path: /module/HipChatPS
   docs:
-  gallery: https://www.powershellgallery.com/packages/HipChatPS
-  status: legacy
+  gallery:
+  status: repository
