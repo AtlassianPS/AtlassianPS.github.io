@@ -2,34 +2,48 @@
   description: A PowerShell module that interacts with Atlassian's Confluence wiki product.
   github: https://github.com/AtlassianPS/ConfluencePS
   path: /module/ConfluencePS
+  docs: /docs/ConfluencePS
+  gallery: https://www.powershellgallery.com/packages/ConfluencePS
   status: active
 - name: JiraAgilePS
   description: PowerShell module to interact with Jira's Agile plugin
   github: https://github.com/AtlassianPS/JiraAgilePS
   path: /module/JiraAgilePS
+  docs: /docs/JiraAgilePS
+  gallery: https://www.powershellgallery.com/packages/JiraAgilePS
   status: active
 - name: JiraPS
-  description: PowerShell module to interact with Atlassian JIRA
+  description: PowerShell module to interact with Atlassian Jira.
   github: https://github.com/AtlassianPS/JiraPS
   path: /module/JiraPS
+  docs: /docs/JiraPS
+  gallery: https://www.powershellgallery.com/packages/JiraPS
   status: active
 - name: AtlassianPS.Configuration
-  description: A module for AtlassianPS modules to use for managing connections
+  description: Shared connection and server configuration for AtlassianPS modules.
   github: https://github.com/AtlassianPS/AtlassianPS.Configuration
   path: /module/AtlassianPS.Configuration
+  docs: /docs/AtlassianPS.Configuration
+  gallery: https://www.powershellgallery.com/packages/AtlassianPS.Configuration
   status: active
 - name: AtlassianPS
   description: Legacy metapackage; not an active documentation target.
   github: https://github.com/AtlassianPS/AtlassianPS
   path: /module/AtlassianPS
+  docs:
+  gallery: https://www.powershellgallery.com/packages/AtlassianPS
   status: legacy
 - name: BitbucketPS
   description: Legacy Bitbucket module; not an active documentation target.
   github: https://github.com/AtlassianPS/BitbucketPS
   path: /module/BitbucketPS
+  docs:
+  gallery: https://www.powershellgallery.com/packages/BitbucketPS
   status: legacy
 - name: HipChatPS
   description: Legacy HipChat module; not an active documentation target.
   github: https://github.com/AtlassianPS/HipChatPS
   path: /module/HipChatPS
+  docs:
+  gallery: https://www.powershellgallery.com/packages/HipChatPS
   status: legacy

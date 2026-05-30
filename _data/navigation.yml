@@ -3,12 +3,8 @@
   childs:
     - name: AtlassianPS.Configuration
       path: module/AtlassianPS.Configuration
-    # - name: BitbucketPS
-    #   path: module/BitbucketPS
     - name: ConfluencePS
       path: module/ConfluencePS
-    # - name: HipChatPS
-    #   path: module/HipChatPS
     - name: JiraAgilePS
       path: module/JiraAgilePS
     - name: JiraPS
@@ -22,8 +18,6 @@
     - name: Gallery
       path: docs/Gallery
       listChilds: true
-    # - name: BitbucketPS
-    #   path: docs/BitbucketPS
     - name: AtlassianPS.Configuration
       path: docs/AtlassianPS.Configuration
       groups:
@@ -41,8 +35,6 @@
       groups:
         - About
         - Commands
-    # - name: HipChatPS
-    #   path: docs/HipChatPS
     - name: JiraPS
       path: docs/JiraPS
       groups:
