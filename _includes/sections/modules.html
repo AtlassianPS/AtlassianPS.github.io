@@ -1,12 +1,13 @@
 <div class="row module-wrapper">
-    {% for module in site.data.index.modules %}
+    {% assign activeModules = site.data.modules | where: "status", "active" %}
+    {% for module in activeModules %}
     <div
         user="AtlassianPS"
         repo="{{ module.name }}"
         class="module item col-10 col-md-5 ml-auto mr-auto"
     >
         <div class="module-item">
-            <a class="link" href="/module/{{ module.name }}">
+            <a class="link" href="{{ module.path }}">
                 <img
                     src="/assets/img/{{ module.name }}.png"
                     class="logo img-responsive"
@@ -14,11 +15,11 @@
                 />
                 <h3 class="item-title">{{ module.name }}</h3>
             </a>
-            <p class="item-description"></p>
+            <p class="item-description">{{ module.description }}</p>
             <div class="ghbtn">
                 <a
                     target="_blank"
-                    href="#"
+                    href="{{ module.github }}"
                     class="btn btn-xs btn-white html_url"
                     alt="Repository"
                 >
@@ -26,7 +27,7 @@
                 </a>
                 <a
                     target="_blank"
-                    href="https://github.com/AtlassianPS/{{ module.name }}/issues"
+                    href="{{ module.github }}/issues"
                     class="btn btn-xs btn-white repo"
                     alt="Report Issue"
                 >
@@ -35,7 +36,7 @@
                 <br />
                 <a
                     target="_blank"
-                    href="https://www.powershellgallery.com/packages/{{ module.name }}"
+                    href="{{ module.gallery }}"
                     class="btn btn-xs btn-white gallery"
                     alt="Gallery Downloads"
                 >
@@ -43,14 +44,14 @@
                 >
                 <a
                     target="_blank"
-                    href="https://github.com/AtlassianPS/{{ module.name }}/stargazers"
+                    href="{{ module.github }}/stargazers"
                     class="btn btn-xs btn-white star"
                 >
                     <i class="fas fa-star"></i> ...</a
                 >
                 <a
                     target="_blank"
-                    href="https://github.com/AtlassianPS/{{ module.name }}/network"
+                    href="{{ module.github }}/network"
                     class="btn btn-xs btn-white fork"
                 >
                     <i class="fas fa-code-branch"></i> ...</a
