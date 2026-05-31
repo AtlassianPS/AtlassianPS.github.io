@@ -38,10 +38,10 @@ Providing them with shared resources, such as:
 
 # Scope
 The modules we have in our portfolio are:
-* [BitbucketPS](/BitbucketPS)
-* [ConfluencePS](/ConfluencePS)
-* [HipChatPS](/HipChatPS)
-* [JiraPS](/JiraPS)
+* [BitbucketPS](https://github.com/AtlassianPS/BitbucketPS)
+* [ConfluencePS](/module/ConfluencePS)
+* [HipChatPS](https://github.com/AtlassianPS/HipChatPS)
+* [JiraPS](/module/JiraPS)
 
 # Changes
 Some changes to the existing modules had to be made:

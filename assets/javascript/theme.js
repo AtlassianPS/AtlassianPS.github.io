@@ -78,19 +78,19 @@ $(document).ready(function () {
         }, 350);
     });
 
-    $('pre code').parent().wrap('<div class="code_block"></div>').each(function (k, v) {
-        let language = "";
+    $('pre code').parent().not('.terminal-card pre').wrap('<div class="code_block"></div>').each(function (k, v) {
+        let language = "Code";
         if ($(v).children('code').hasClass('language-powershell')) {
             language = "PowerShell";
-
-            $(v).before(`
-                <div class="code_head">
-                    <span class="">${language}</span>
-                    <button class="action copy"><i class="far fa-clone"></i> Copy</button>
-                </div>
-            `);
             $(v).addClass('console');
         }
+
+        $(v).before(`
+            <div class="code_head">
+                <span class="">${language}</span>
+                <button class="action copy"><i class="far fa-clone"></i> Copy</button>
+            </div>
+        `);
     });
 
     $('button.action.copy').on('click', function () {
@@ -99,7 +99,7 @@ $(document).ready(function () {
     });
 
     /**
-     * Remove Powershell help specific dashes on H3 of examples
+     * Remove PowerShell help specific dashes on H3 of examples
      */
     $('h3').each(function () {
         let text = $(this).text();
@@ -117,12 +117,6 @@ $(document).ready(function () {
     //     event.preventDefault();
     //     $(this).parent().find('.nav.bd-sidenav').toggle();
     // })
-
-    $("#small-nav-dropdown").change(function () {
-        if ($(this).val() != '') {
-            window.location.href = $(this).val();
-        }
-    });
 
     $("ul.nav.toc").toc({
         content: "section.content",

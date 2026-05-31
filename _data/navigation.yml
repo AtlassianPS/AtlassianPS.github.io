@@ -12,6 +12,8 @@
 - name: Documentation
   path: docs
   childs:
+    - name: Quick Start
+      path: docs/quick-start
     - name: Contributing
       path: docs/Contributing
       listChilds: true
@@ -28,6 +30,7 @@
     - name: ConfluencePS
       path: docs/ConfluencePS
       groups:
+        - About
         - Commands
         - Classes
     - name: JiraAgilePS

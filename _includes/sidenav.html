@@ -1,101 +1,190 @@
 {% assign documentation = site.data.navigation | where: "name", "Documentation" %}
-<nav class="bd-links d-none d-md-block d-overflow" id="bd-docs-search">
+{% assign current_doc_name = "All docs" %}
+{% for module in documentation[0].childs %}
+    {% capture moduleUrl %}/{{ module.path }}{% endcapture %}
+    {% capture moduleUrlSlash %}{{ moduleUrl }}/{% endcapture %}
+    {% assign moduleActive = false %}
+    {% if page.url == moduleUrl or page.url == moduleUrlSlash or page.url contains moduleUrlSlash %}
+        {% assign moduleActive = true %}
+    {% endif %}
+    {% if moduleActive %}
+        {% assign current_doc_name = module.name %}
+    {% endif %}
+{% endfor %}
+<nav class="bd-links docs-desktop-nav d-overflow" id="bd-docs-search">
     <ul class="nav bd-sidenav bd-search">
         <li class="menu-item search">
             <input type="search" class="form-control searchbox" id="search-input" placeholder="Search..." aria-label="Search documentation" autocomplete="off">
         </li>
     </ul>
 </nav>
-<nav class="bd-links d-none d-md-block" id="bd-docs-nav">
+<nav class="bd-links docs-desktop-nav" id="bd-docs-nav">
+    <div class="docs-sidebar-section">
+        <span>Documentation</span>
 {% for module in documentation[0].childs %}
-    <a class="bd-toc-link" href="/{{ module.path }}"><h4 class="bd-toc-item">{{ module.name }}</h4></a>
+        {% capture moduleUrl %}/{{ module.path }}{% endcapture %}
+        {% capture moduleUrlSlash %}{{ moduleUrl }}/{% endcapture %}
+        {% assign moduleActive = false %}
+        {% if page.url == moduleUrl or page.url == moduleUrlSlash or page.url contains moduleUrlSlash %}
+            {% assign moduleActive = true %}
+        {% endif %}
+        <a class="bd-toc-link{% if moduleActive %} active{% endif %}" href="/{{ module.path }}">{{ module.name }}</a>
+{% endfor %}
+    </div>
 
-    {% if page.url contains module.path %}
+{% for module in documentation[0].childs %}
+    {% capture moduleUrl %}/{{ module.path }}{% endcapture %}
+    {% capture moduleUrlSlash %}{{ moduleUrl }}/{% endcapture %}
+    {% assign moduleActive = false %}
+    {% if page.url == moduleUrl or page.url == moduleUrlSlash or page.url contains moduleUrlSlash %}
+        {% assign moduleActive = true %}
+    {% endif %}
+    {% if moduleActive %}
+    <div class="docs-sidebar-section docs-sidebar-current">
+        <span>{{ module.name }}</span>
         {% if module.groups %}
             {% for group in module.groups %}
                 {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
                 {% if group == "About" %}
                     {% capture groupLink %}/{{ module.path }}{% endcapture %}
+                    {% capture aboutPath %}/{{ module.path }}/about{% endcapture %}
+                    {% capture groupLinkSlash %}{{ groupLink }}/{% endcapture %}
+                    {% assign groupActive = false %}
+                    {% capture aboutPathSlash %}{{ aboutPath }}/{% endcapture %}
+                    {% if page.url == groupLink or page.url == groupLinkSlash or page.url == aboutPath or page.url contains aboutPathSlash %}
+                        {% assign groupActive = true %}
+                    {% endif %}
                 {% else %}
                     {% capture groupLink %}{{ groupPath }}{% endcapture %}
+                    {% assign groupActive = false %}
+                    {% capture groupPathSlash %}{{ groupPath }}/{% endcapture %}
+                    {% if page.url == groupPath or page.url contains groupPathSlash %}
+                        {% assign groupActive = true %}
+                    {% endif %}
                 {% endif %}
-    <div class="bd-toc-item{% if page.url contains groupName %} active{% endif %}">
-        <a class="bd-toc-link" href="{{ groupLink }}">{{group}}</a>
-
+        <a class="bd-toc-link{% if groupActive %} active{% endif %}" href="{{ groupLink }}">{{ group }}</a>
+                {% if group == "About" %}
         <ul class="nav bd-sidenav">
-
-                {% for p in site.html_pages %}
-                    {% if p.url contains groupPath %}
-                        {% if p.hide != true %}
-            <li class="{% if page.url contains p.url %}active{% endif %}">
+                    {% for p in site.html_pages %}
+                        {% capture pUrlSlash %}{{ p.url | remove: '.html' }}/{% endcapture %}
+                        {% if p.url == aboutPath or p.url contains aboutPathSlash %}
+                            {% if p.hide != true %}
+            <li class="{% if page.url == p.url or page.url == pUrlSlash %}active{% endif %}">
                 <a href="{{ p.url }}">{{ p.title }}</a>
             </li>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
         </ul>
-    </div>
+                {% endif %}
             {% endfor %}
         {% elsif module.listChilds %}
-    <ul class="nav bd-sidenav">
             {% for p in site.html_pages %}
-                {% if p.url contains module.path %}
+                {% if p.url == moduleUrl or p.url contains moduleUrlSlash %}
                     {% if p.hide != true %}
-    <li class="{% if page.url contains p.url %}active{% endif %}">
-        <a class="bd-toc-link" href="{{ p.url }}">{{ p.title }}</a>
-    </li>
+                        {% capture pUrlSlash %}{{ p.url | remove: '.html' }}/{% endcapture %}
+        <a class="bd-toc-link{% if page.url == p.url or page.url == pUrlSlash %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
                     {% endif %}
                 {% endif %}
             {% endfor %}
-    </ul>
         {% endif %}
+    </div>
     {% endif %}
 {% endfor %}
 </nav>
-<nav class="bd-links d-block d-md-none text-center" id="small-nav">
-    <ul class="nav bd-sidenav bd-search">
-        <li class="menu-item search">
-            <input type="search" class="form-control searchbox" id="search-input-small" placeholder="Search..." aria-label="Search documentation" autocomplete="off">
-        </li>
-    </ul>
+<nav class="docs-mobile-nav" id="small-nav" aria-label="Documentation navigation">
+    <div class="docs-mobile-search">
+        <input type="search" class="form-control searchbox" id="search-input-small" placeholder="Search documentation" aria-label="Search documentation" autocomplete="off">
+    </div>
 
-    <h4 class="d-inline">Topics</h4>
-    <select id="small-nav-dropdown">
+    <details class="docs-mobile-menu">
+        <summary>
+            <span>Browse documentation</span>
+            <strong>{{ current_doc_name }}</strong>
+        </summary>
+        <div class="docs-mobile-menu-body">
+            <div class="docs-mobile-menu-section">
+                <span>Sections</span>
 {% for module in documentation[0].childs %}
-    {% if page.url contains module.path %}
-        <option class="font-weight-bold" value="/{{ module.path }}">{{ module.name }}</option>
+                {% capture moduleUrl %}/{{ module.path }}{% endcapture %}
+                {% capture moduleUrlSlash %}{{ moduleUrl }}/{% endcapture %}
+                {% assign moduleActive = false %}
+                {% if page.url == moduleUrl or page.url == moduleUrlSlash or page.url contains moduleUrlSlash %}
+                    {% assign moduleActive = true %}
+                {% endif %}
+                <a href="/{{ module.path }}" class="{% if moduleActive %}active{% endif %}">{{ module.name }}</a>
+{% endfor %}
+            </div>
+
+{% for module in documentation[0].childs %}
+    {% capture moduleUrl %}/{{ module.path }}{% endcapture %}
+    {% capture moduleUrlSlash %}{{ moduleUrl }}/{% endcapture %}
+    {% assign moduleActive = false %}
+    {% if page.url == moduleUrl or page.url == moduleUrlSlash or page.url contains moduleUrlSlash %}
+        {% assign moduleActive = true %}
+    {% endif %}
+    {% if moduleActive %}
+            <div class="docs-mobile-menu-section">
+                <span>{{ module.name }}</span>
         {% if module.groups %}
             {% for group in module.groups %}
                 {% capture groupPath %}/{{ module.path }}/{{ group | downcase }}{% endcapture%}
-        <optgroup label="{{ group }}">
-                {% for p in site.html_pages %}
-                    {% if p.url contains groupPath %}
-                        {% if p.hide != true %}
-            <option value="{{ p.url }}"{% if page.url contains p.url %}selected{% endif %}>{{ p.title }}</option>
-                        {% endif %}
+                {% if group == "About" %}
+                    {% capture groupLink %}/{{ module.path }}{% endcapture %}
+                    {% capture aboutPath %}/{{ module.path }}/about{% endcapture %}
+                    {% capture groupLinkSlash %}{{ groupLink }}/{% endcapture %}
+                    {% assign groupActive = false %}
+                    {% capture aboutPathSlash %}{{ aboutPath }}/{% endcapture %}
+                    {% if page.url == groupLink or page.url == groupLinkSlash or page.url == aboutPath or page.url contains aboutPathSlash %}
+                        {% assign groupActive = true %}
                     {% endif %}
-                {% endfor %}
-            </optgroup>
+                {% else %}
+                    {% capture groupLink %}{{ groupPath }}{% endcapture %}
+                    {% assign groupActive = false %}
+                    {% capture groupPathSlash %}{{ groupPath }}/{% endcapture %}
+                    {% if page.url == groupPath or page.url contains groupPathSlash %}
+                        {% assign groupActive = true %}
+                    {% endif %}
+                {% endif %}
+                <a href="{{ groupLink }}" class="{% if groupActive %}active{% endif %}">{{ group }}</a>
+                {% if group == "About" %}
+                    {% for p in site.html_pages %}
+                        {% capture pUrlSlash %}{{ p.url | remove: '.html' }}/{% endcapture %}
+                        {% if p.url == aboutPath or p.url contains aboutPathSlash %}
+                            {% if p.hide != true %}
+                <a href="{{ p.url }}" class="docs-mobile-subitem{% if page.url == p.url or page.url == pUrlSlash %} active{% endif %}">{{ p.title }}</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             {% endfor %}
         {% elsif module.listChilds %}
             {% for p in site.html_pages %}
-                {% if p.url contains module.path %}
+                {% if p.url == moduleUrl or p.url contains moduleUrlSlash %}
                     {% if p.hide != true %}
-        <option value="{{ p.url }}" {% if page.url contains p.url %}selected{% endif %}>{{ p.title }}</option>
+                        {% capture pUrlSlash %}{{ p.url | remove: '.html' }}/{% endcapture %}
+                <a href="{{ p.url }}" class="{% if page.url == p.url or page.url == pUrlSlash %}active{% endif %}">{{ p.title }}</a>
                     {% endif %}
                 {% endif %}
             {% endfor %}
         {% endif %}
+            </div>
     {% endif %}
 {% endfor %}
-    </select>
+        </div>
+    </details>
 </nav>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-<script type="text/javascript"> docsearch({
-    apiKey: '50f1199d6c47bdb6fe668f3b569453f0',
-    indexName: 'atlassianps',
-    inputSelector: '.searchbox',
-    debug: false
+<script type="text/javascript">
+['#search-input', '#search-input-small'].forEach(function (selector) {
+    if (document.querySelector(selector)) {
+        docsearch({
+            apiKey: '50f1199d6c47bdb6fe668f3b569453f0',
+            indexName: 'atlassianps',
+            inputSelector: selector,
+            debug: false
+        });
+    }
 });
 </script>
