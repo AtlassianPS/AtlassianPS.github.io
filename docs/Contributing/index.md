@@ -30,13 +30,33 @@ When you notice something that could be improved, tell us by creating an issue.
 
 Each of our projects has an _issue tracker_ where you can report your findings.
 
-| Project                       | Link                                                                  | # of open issues                                                                                                                                                                     |
-| ----------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **AtlassianPS.Configuration** | <https://github.com/AtlassianPS/AtlassianPS.Configuration/issues/new> | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.Configuration.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS.Configuration/issues) |
-| **AtlassianPS.github.io**     | <https://github.com/AtlassianPS/AtlassianPS.github.io/issues/new>     | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.github.io.svg?maxAge=2592000)](https://github.com/AtlassianPS/AtlassianPS.github.io/issues)         |
-| **ConfluencePS**              | <https://github.com/AtlassianPS/ConfluencePS/issues/new>              | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/ConfluencePS.svg?maxAge=2592000)](https://github.com/AtlassianPS/ConfluencePS/issues)                           |
-| **JiraAgilePS**               | <https://github.com/AtlassianPS/JiraAgilePS/issues/new>               | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/JiraAgilePS.svg?maxAge=2592000)](https://github.com/AtlassianPS/JiraAgilePS/issues)                             |
-| **JiraPS**                    | <https://github.com/AtlassianPS/JiraPS/issues/new>                    | [![Open Issues](https://img.shields.io/github/issues-raw/AtlassianPS/JiraPS.svg?maxAge=2592000)](https://github.com/AtlassianPS/JiraPS/issues)                                       |
+<div class="project-issue-list">
+    <article class="project-issue-card">
+        <h3>AtlassianPS.Configuration</h3>
+        <a href="https://github.com/AtlassianPS/AtlassianPS.Configuration/issues/new">Open a new issue</a>
+        <a href="https://github.com/AtlassianPS/AtlassianPS.Configuration/issues"><img src="https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.Configuration.svg?maxAge=2592000" alt="Open issues for AtlassianPS.Configuration"></a>
+    </article>
+    <article class="project-issue-card">
+        <h3>AtlassianPS.github.io</h3>
+        <a href="https://github.com/AtlassianPS/AtlassianPS.github.io/issues/new">Open a new issue</a>
+        <a href="https://github.com/AtlassianPS/AtlassianPS.github.io/issues"><img src="https://img.shields.io/github/issues-raw/AtlassianPS/AtlassianPS.github.io.svg?maxAge=2592000" alt="Open issues for AtlassianPS.github.io"></a>
+    </article>
+    <article class="project-issue-card">
+        <h3>ConfluencePS</h3>
+        <a href="https://github.com/AtlassianPS/ConfluencePS/issues/new">Open a new issue</a>
+        <a href="https://github.com/AtlassianPS/ConfluencePS/issues"><img src="https://img.shields.io/github/issues-raw/AtlassianPS/ConfluencePS.svg?maxAge=2592000" alt="Open issues for ConfluencePS"></a>
+    </article>
+    <article class="project-issue-card">
+        <h3>JiraAgilePS</h3>
+        <a href="https://github.com/AtlassianPS/JiraAgilePS/issues/new">Open a new issue</a>
+        <a href="https://github.com/AtlassianPS/JiraAgilePS/issues"><img src="https://img.shields.io/github/issues-raw/AtlassianPS/JiraAgilePS.svg?maxAge=2592000" alt="Open issues for JiraAgilePS"></a>
+    </article>
+    <article class="project-issue-card">
+        <h3>JiraPS</h3>
+        <a href="https://github.com/AtlassianPS/JiraPS/issues/new">Open a new issue</a>
+        <a href="https://github.com/AtlassianPS/JiraPS/issues"><img src="https://img.shields.io/github/issues-raw/AtlassianPS/JiraPS.svg?maxAge=2592000" alt="Open issues for JiraPS"></a>
+    </article>
+</div>
 
 Legacy modules such as `AtlassianPS`, `BitbucketPS`, and `HipChatPS` are not active documentation targets on this website.
 Use their GitHub repositories directly if you need historical source or issue context.

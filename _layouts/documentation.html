@@ -1,11 +1,14 @@
 {% for module in site.data.navigation %}
     {% if module.name == "Documentation" %}
         {% for child in module.childs %}
-            {% if page.url contains child.path %}
+            {% capture childUrl %}/{{ child.path }}{% endcapture %}
+            {% capture childUrlSlash %}{{ childUrl }}/{% endcapture %}
+            {% if page.url == childUrl or page.url == childUrlSlash or page.url contains childUrlSlash %}
                 {% capture bc_moduleName %}{{ child.name }}{% endcapture %}
                 {% for group in child.groups %}
-                    {% capture tempGroupName %}{{ child.path }}/{{ group | downcase }}{% endcapture %}
-                    {% if page.url contains tempGroupName %}
+                    {% capture tempGroupName %}/{{ child.path }}/{{ group | downcase }}{% endcapture %}
+                    {% capture tempGroupNameSlash %}{{ tempGroupName }}/{% endcapture %}
+                    {% if page.url == tempGroupName or page.url contains tempGroupNameSlash %}
                         {% capture cl_groupName %}{{ group | downcase }}{% endcapture %}
                         {% capture bc_groupName %}{{ group }}{% endcapture %}
                     {% endif %}
@@ -14,6 +17,10 @@
         {% endfor %}
     {% endif %}
 {% endfor %}
+{% assign doc_title = page.title %}
+{% if doc_title == nil or doc_title == empty %}
+    {% assign doc_title = page.name | remove: '.html' | remove: '.md' | replace: '_', ' ' | replace: '-', ' ' %}
+{% endif %}
 
 <!DOCTYPE html>
 <html {{ site.lang | default: "en-US" }}>
@@ -26,7 +33,7 @@
     <meta content="{{ site.description }}" name="description">
     <meta name="keywords" content="{{ site.keywords }}">
     <meta name="author" content="{{ site.author.name }}">
-    <title>{{ page.title }} - Docs | {{ site.title }}</title>
+    <title>{{ doc_title }} - Docs | {{ site.title }}</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
@@ -59,7 +66,7 @@
 
     <div class="documentation container-fluid page">
 
-        <div class="row flex-xl-nowrap">
+        <div class="row flex-docs-nowrap">
 
             <nav class="col-12 col-md-10 col-lg-8 ml-auto mr-auto breadcrumb">
                 <div class="btn-group btn-breadcrumb">
@@ -67,8 +74,6 @@
                     <a href="/docs" class="btn btn-default">Documentation</a>
                 {% if bc_moduleName %}
                     <a href="/docs/{{ bc_moduleName }}" class="btn btn-default" data-algolia="lvl0">{{ bc_moduleName }}</a>
-                {% else %}
-                    <a href="#" class="btn btn-default hide" data-algolia="lvl0">All Modules</a>
                 {% endif %}
                 {% if bc_groupName %}
                     {% if bc_groupName == "About" %}
@@ -76,36 +81,47 @@
                     {% else %}
                         <a href="/docs/{{ bc_moduleName }}/{{ cl_groupName }}" class="btn btn-default" data-algolia="lvl1">{{ bc_groupName }}</a>
                     {% endif %}
-                {% else %}
-                    <a href="#" class="btn btn-default hide" data-algolia="lvl1">Common</a>
                 {% endif %}
-                {% if bc_groupName != page.title and bc_moduleName != page.title and "Documentation" != page.title %}
-                    <span class="btn btn-default d-none d-lg-block">{{ page.title }}</span>
+                {% capture pageTitleDowncase %}{{ doc_title | slugify }}{% endcapture %}
+                {% assign pageTitleInUrl = false %}
+                {% capture pageTitleDowncaseSlash %}{{ pageTitleDowncase }}/{% endcapture %}
+                {% if page.url contains pageTitleDowncaseSlash or page.url contains pageTitleDowncase %}
+                    {% assign pageTitleInUrl = true %}
+                {% endif %}
+                {% assign pageIsGroupIndex = false %}
+                {% if bc_moduleName and cl_groupName %}
+                    {% capture groupIndexUrl %}/docs/{{ bc_moduleName }}/{{ cl_groupName }}/{% endcapture %}
+                    {% if page.url == groupIndexUrl %}
+                        {% assign pageIsGroupIndex = true %}
+                    {% endif %}
+                {% endif %}
+                {% if bc_groupName != doc_title and bc_moduleName != doc_title and "Documentation" != doc_title and pageTitleInUrl != true and pageIsGroupIndex != true %}
+                    <span class="btn btn-default d-none d-lg-block">{{ doc_title }}</span>
                 {% endif %}
                 </div>
             </nav>
 
         </div>
 
-        <div class="row flex-xl-nowrap">
+        <div class="row flex-docs-nowrap">
 
-            <div class="col-12 col-md-3 col-xl-2 ml-auto d-print-none bd-sidebar">
+            <div class="col-12 docs-sidebar-col d-print-none bd-sidebar">
 
                 {% include sidenav.html %}
 
             </div>
 
-            <div class="col-12 col-md-3 col-xl-2 mr-auto d-none d-lg-block d-print-none bd-toc">
-
-                {% include toc.html %}
-
-            </div>
-
-            <section class="col-12 col-md-9 col-lg-6 content">
+            <section class="col-12 docs-content-col content">
 
                 {{ content }}
 
             </section>
+
+            <div class="col-12 docs-toc-col d-print-none bd-toc">
+
+                {% include toc.html %}
+
+            </div>
 
         </div>
 

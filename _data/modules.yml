@@ -26,6 +26,7 @@
   docs: /docs/AtlassianPS.Configuration
   gallery: https://www.powershellgallery.com/packages/AtlassianPS.Configuration
   status: active
+  dependency: true
 - name: AtlassianPS
   description: Repository for cross-cutting AtlassianPS issues and coordination.
   github: https://github.com/AtlassianPS/AtlassianPS

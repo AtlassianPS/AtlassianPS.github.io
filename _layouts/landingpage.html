@@ -2,27 +2,103 @@
 layout: default
 ---
 
-<script src="{{ '/assets/javascript/github.js' | relative_url }}" async defer></script>
-<div class="landing-page">
+{% assign activeModules = site.data.modules | where: "status", "active" %}
 
-    {% include carousel.html %}
-
-    {% for section in site.data.landing %}
-        {% assign loopindex = forloop.index | modulo: 2 %}
-    <section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.classes }}">
+<main class="landing-page site-home">
+    <section class="hero-section">
         <div class="container">
-            <div class="row section-header">
-                <div class="col-xs-12 mx-auto text-center">
-                    <div class="navy-line"></div>
-                    <h2 class="section-title" id="{{ section.title }}">
-                        {% if section.preTitle %}<small>{{ section.preTitle }}<br/></small>{% endif %}
-                        <span class="text-uppercase">{{ section.title }}</span>
-                        {% if section.postTitle %}<small><br/>{{ section.postTitle }}</small>{% endif %}
-                    </h2>
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 hero-copy">
+                    <p class="eyebrow">AtlassianPS</p>
+                    <h1>PowerShell modules for Atlassian automation</h1>
+                    <p class="lead">Automate Jira, Confluence, and Atlassian workflows with practical PowerShell commands maintained by the community.</p>
+                    <div class="hero-actions">
+                        <a href="/docs" class="btn primary-action" role="button">Get Started</a>
+                        <a href="/module" class="btn secondary-action" role="button">Browse Modules</a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="terminal-card" aria-label="PowerShell quick start example">
+                        <div class="terminal-bar">
+                            <span></span><span></span><span></span>
+                            <strong>PowerShell</strong>
+                        </div>
+                        <pre><code>Install-Module JiraPS
+Import-Module JiraPS
+Set-JiraConfigServer -Server 'https://jira.example.com'
+Get-JiraIssue -Query 'project = OPS'</code></pre>
+                    </div>
                 </div>
             </div>
-            {% include sections/{{section.tpl}} %}
         </div>
     </section>
-    {% endfor %}
-</div>
+
+    <section class="modules-section" id="modules">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">Modules</p>
+                <h2>Pick the module for the job</h2>
+                <p>Each module keeps a focused surface area while sharing the same PowerShell-first conventions.</p>
+            </div>
+            <div class="row">
+                {% for module in activeModules %}
+                <div class="col-12 col-md-6 col-xl-3">
+                    <article class="module-card">
+                        <div class="module-card-header">
+                            <img src="/assets/img/{{ module.name }}.png" alt="{{ module.name }}" />
+                            <h3>{{ module.name }}</h3>
+                        </div>
+                        <p>{{ module.description }}</p>
+                        <div class="module-stats" aria-label="{{ module.name }} project statistics">
+                            <img src="https://img.shields.io/github/stars/AtlassianPS/{{ module.name }}?style=flat-square&label=Stars" alt="{{ module.name }} GitHub stars" />
+                            <img src="https://img.shields.io/powershellgallery/dt/{{ module.name }}?style=flat-square&label=Downloads" alt="{{ module.name }} PowerShell Gallery downloads" />
+                        </div>
+                        {% if module.dependency %}
+                        <code>Installed as a dependency</code>
+                        {% else %}
+                        <code>Install-Module {{ module.name }}</code>
+                        {% endif %}
+                        <div class="module-links">
+                            {% if module.docs %}<a href="{{ module.docs }}">Docs</a>{% endif %}
+                            <a href="{{ module.github }}">Source</a>
+                            {% if module.gallery %}<a href="{{ module.gallery }}">Gallery</a>{% endif %}
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="quickstart-section">
+        <div class="container">
+            <div class="quickstart-panel">
+                <div>
+                    <p class="eyebrow">Quick start</p>
+                    <h2>From install to first command in minutes</h2>
+                </div>
+                <ol>
+                    <li><strong>Install</strong><span>Install the module from the PowerShell Gallery.</span></li>
+                    <li><strong>Configure</strong><span>Set your Atlassian server URL and credentials.</span></li>
+                    <li><strong>Automate</strong><span>Run commands locally, in scripts, or in CI.</span></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-7">
+                    <p class="eyebrow">Community</p>
+                    <h2>Built by Atlassian and PowerShell users</h2>
+                    <p>AtlassianPS is maintained by volunteers. Join the community, report issues, improve docs, or contribute fixes.</p>
+                </div>
+                <div class="col-12 col-lg-5 community-actions">
+                    <a href="/contact" class="btn primary-action" role="button">Join the community</a>
+                    <a href="https://github.com/AtlassianPS" class="btn secondary-action" role="button">View GitHub org</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,14 +1,14 @@
 .bd-toc,
 .bd-sidebar {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1280px) {
         position: sticky;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1279px) {
         position: inherit;
     }
     top: 80px;
     border: 0;
-    z-index: 90;
+    z-index: 1;
     ul.bd-sidenav,
     ul.bd-sidenav li {
         margin: 0;
@@ -21,28 +21,6 @@
 }
 .d-overflow {
     overflow: visible;
-}
-
-#small-nav {
-    &>* {
-        display: inline-block;
-    }
-    .bd-search {
-        display: block !important;
-        width: 70%;
-        margin: 0 auto 10px;
-    }
-    h4 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        line-height: 1.1;
-        margin-right: 10px;
-    }
-    select {
-        vertical-align: baseline;
-        padding: 5px;
-    }
 }
 
 .bd-toc {

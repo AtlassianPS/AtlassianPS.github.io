@@ -10,9 +10,9 @@
     <article id="{{post.title}}" class="container post item col-10 ml-auto mr-auto">
         <div class="row">
             <div class="col-3 ml-auto article-thumb text-center">
-                <a href="#"> <!-- href="{{ categoryIcon.name | prepend: site.baseurl }}" -->
+                <span class="post-category-icon">
                     <i class="fa {{categoryIcon.icon}} fa-5x {{categoryIcon.class}}"></i>
-                </a>
+                </span>
             </div>
             <div class="col-7 mr-auto">
                 <div class="article-meta row">
@@ -37,4 +37,3 @@
         <a class="btn btn-square btn-outline" href="/archive/" role="button">All Articles</a>
     </div>
 </div>
-
