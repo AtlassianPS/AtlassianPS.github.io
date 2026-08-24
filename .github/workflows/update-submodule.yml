@@ -34,12 +34,15 @@ jobs:
         run: |
           MODULE="${{ github.event.client_payload.module || inputs.module }}"
           VERSION="${{ github.event.client_payload.version || inputs.version }}"
-          echo "module=$MODULE" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "module=$MODULE" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           
           cd "modules/$MODULE"
           git fetch origin --tags
-          git checkout "$VERSION"
+          # The runner checkout may normalize tracked files differently from the
+          # submodule commit. The worktree is disposable; always select the
+          # released tag instead of treating those generated changes as user work.
+          git checkout --force "$VERSION"
           cd ../..
           git add "modules/$MODULE"
 
