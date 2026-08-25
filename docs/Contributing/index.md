@@ -69,6 +69,7 @@ If a similar issue already exists, add your details there.
 No matter if you are fixing a typo or shipping a new feature, changes are submitted through a Pull Request.
 
 Start with **[Submitting A PR](submitting-a-pr.html)** for the full flow.
+The guide also explains the release and changelog labels required before a pull request can merge.
 
 ### 🧰 Development Container
 
