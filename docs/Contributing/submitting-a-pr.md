@@ -15,7 +15,8 @@ If this is your first PR, you are in the right place.
 3. Create a feature branch from `master`.
 4. Implement the change (code + tests + docs where needed).
 5. Run the repository validation steps.
-6. Open a Pull Request to `AtlassianPS/<repo>:master`.
+6. Declare the release and changelog intent.
+7. Open a Pull Request to `AtlassianPS/<repo>:master`.
 
 No stress if you do not get everything perfect on the first try. Reviews are collaborative.
 
@@ -67,6 +68,19 @@ Keep your branch focused on one change set. Small PRs are easier to review and m
 - Update docs for user-facing changes.
 - Keep commits scoped and readable.
 
+### Declaring release intent
+
+Every pull request must have exactly one release label:
+
+- `release:none` for internal work that should not independently publish a package;
+- `release:patch` for a backward-compatible fix;
+- `release:minor` for backward-compatible functionality; or
+- `release:major` for a breaking change.
+
+A patch, minor, or major change also needs one `changelog:*` label.
+Use a `.changelog/<pr-number>.<impact>.<type>.md` fragment instead when the public release note needs wording that differs from the pull request title.
+The `Release Intent` check explains missing or conflicting labels directly on the pull request.
+
 Additional references:
 
 - [How to write a function](writing-functions.html)
@@ -77,6 +91,13 @@ Additional references:
 Run the validation commands defined by the target repository before opening a PR.
 
 > **Important:** Always run the repository's validation commands before opening or updating your PR.
+
+PowerShell module repositories normally use:
+
+```powershell
+./Tools/setup.ps1
+Invoke-Build -Task Build, Test
+```
 
 For `AtlassianPS.github.io`, run:
 
