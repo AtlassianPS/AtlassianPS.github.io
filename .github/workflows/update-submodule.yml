@@ -14,12 +14,19 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: read
+
+concurrency:
+  group: update-submodule-${{ github.event.client_payload.module || inputs.module }}
+  cancel-in-progress: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           submodules: recursive
           token: ${{ secrets.PAT_TOKEN }}
@@ -31,30 +38,63 @@ jobs:
 
       - name: Update submodule
         id: update
+        env:
+          MODULE: ${{ github.event.client_payload.module || inputs.module }}
+          VERSION: ${{ github.event.client_payload.version || inputs.version }}
         run: |
-          MODULE="${{ github.event.client_payload.module || inputs.module }}"
-          VERSION="${{ github.event.client_payload.version || inputs.version }}"
+          case "$MODULE" in
+            AtlassianPS.Configuration|ConfluencePS|JiraAgilePS|JiraPS) ;;
+            *)
+              echo "::error::Unsupported module: $MODULE"
+              exit 1
+              ;;
+          esac
+
           echo "module=$MODULE" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          
+
+          current_commits=("$(git rev-parse "HEAD:modules/$MODULE")")
+          rolling_branch="update-$MODULE"
+          rolling_ref="refs/remotes/origin/$rolling_branch"
+
+          if git ls-remote --exit-code --heads origin "$rolling_branch" >/dev/null; then
+            git fetch --no-tags origin "refs/heads/$rolling_branch:$rolling_ref"
+            current_commits+=("$(git rev-parse "$rolling_ref:modules/$MODULE")")
+          fi
+
           cd "modules/$MODULE"
           git fetch origin --tags
+          tag_ref="refs/tags/$VERSION"
+          if ! git show-ref --verify --quiet "$tag_ref"; then
+            echo "::error::Release tag $VERSION does not exist for $MODULE."
+            exit 1
+          fi
+          target_commit=$(git rev-parse --verify "$tag_ref^{commit}")
+
+          for current_commit in "${current_commits[@]}"; do
+            if ! git merge-base --is-ancestor "$current_commit" "$target_commit"; then
+              echo "::error::Refusing to replace a current $MODULE release with older or unrelated tag $VERSION."
+              exit 1
+            fi
+          done
+
           # The runner checkout may normalize tracked files differently from the
           # submodule commit. The worktree is disposable; always select the
           # released tag instead of treating those generated changes as user work.
-          git checkout --force "$VERSION"
+          git checkout --force "$target_commit"
           cd ../..
           git add "modules/$MODULE"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           token: ${{ secrets.PAT_TOKEN }}
+          add-paths: "modules/${{ steps.update.outputs.module }}"
           commit-message: "Update ${{ steps.update.outputs.module }} to ${{ steps.update.outputs.version }}"
           title: "Update ${{ steps.update.outputs.module }} to ${{ steps.update.outputs.version }}"
           body: |
             Automated update of ${{ steps.update.outputs.module }} submodule to ${{ steps.update.outputs.version }}.
             
             Triggered by: ${{ github.event_name }}
-          branch: "update-${{ steps.update.outputs.module }}-${{ steps.update.outputs.version }}"
+          branch: "update-${{ steps.update.outputs.module }}"
           delete-branch: true
