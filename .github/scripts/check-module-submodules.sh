@@ -14,9 +14,7 @@ no_tag_baselines=(
 )
 
 # Keep docs-only exceptions narrow and remove them after the next module release.
-docs_only_exceptions=(
-  "AtlassianPS.Configuration:555e8a3300a12e03b1d9c494a874fe21fe9bbccf"
-)
+docs_only_exceptions=()
 
 has_no_tag_baseline() {
   local module="$1"

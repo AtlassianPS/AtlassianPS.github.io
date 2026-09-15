@@ -9,6 +9,8 @@ The public documentation under `/docs/<Module>/` should describe the module vers
 
 The website consumes module documentation through Git submodules in `modules/`.
 For normal updates, each module submodule should point at the latest released module tag.
+Automated releases reuse one `update-<Module>` branch and pull request per module.
+A later release refreshes that pull request instead of opening a version-specific stack.
 
 This keeps cmdlet documentation, examples, parameters, and behavior notes aligned with the package users get from `Install-Module`.
 The website must not publish documentation from a module branch that contains unreleased or breaking changes as the main module documentation.
