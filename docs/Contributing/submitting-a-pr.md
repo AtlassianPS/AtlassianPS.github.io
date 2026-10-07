@@ -34,7 +34,8 @@ Use that flow as your baseline, then apply repo-specific setup and validation de
 | **JiraPS** ⭐                 | <https://github.com/AtlassianPS/JiraPS/blob/master/CONTRIBUTING.md>                        |
 
 As other modules adopt the JiraPS standard, their README links above will be replaced with `CONTRIBUTING.md`.
-Legacy modules such as `AtlassianPS`, `BitbucketPS`, and `HipChatPS` are not active documentation targets on this website.
+BitbucketPS and HipChatPS are [archived modules](/module/#archived-modules) and no longer accept issues or pull requests.
+The `AtlassianPS` coordination repository is not an active module documentation target on this website.
 
 ## 🧰 Setup
 

@@ -35,16 +35,16 @@
   gallery:
   status: repository
 - name: BitbucketPS
-  description: Historical Bitbucket repository; not an active website documentation target.
+  description: Archived Bitbucket module. No longer maintained or supported.
   github: https://github.com/AtlassianPS/BitbucketPS
   path: /module/BitbucketPS
   docs:
   gallery:
-  status: repository
+  status: archived
 - name: HipChatPS
-  description: Historical HipChat repository; not an active website documentation target.
+  description: Archived HipChat module. No longer maintained or supported.
   github: https://github.com/AtlassianPS/HipChatPS
-  path: /module/HipChatPS
+  path: /module/HipchatPS
   docs:
   gallery:
-  status: repository
+  status: archived
