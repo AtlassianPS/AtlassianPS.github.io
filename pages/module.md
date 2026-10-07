@@ -11,6 +11,7 @@ AtlassianPS maintains PowerShell modules for Atlassian products and related repo
 
 {% assign activeModules = site.data.modules | where: "status", "active" %}
 {% assign otherRepositories = site.data.modules | where: "status", "repository" %}
+{% assign archivedModules = site.data.modules | where: "status", "archived" %}
 
 ## Active modules
 
@@ -56,5 +57,18 @@ These repositories are part of AtlassianPS, but they are not published modules o
 <ul class="repository-list">
 {% for module in otherRepositories %}
     <li><a href="{{ module.github }}">{{ module.name }}</a>: {{ module.description }}</li>
+{% endfor %}
+</ul>
+
+## Archived modules
+
+AtlassianPS retired BitbucketPS and HipChatPS on 7 October 2026.
+These modules no longer receive releases, bug fixes, security updates, or support.
+Their repositories are read-only and no longer accept issues or pull requests.
+Historical source and documentation remain available, and you can fork the repositories to continue development independently.
+
+<ul class="repository-list">
+{% for module in archivedModules %}
+    <li><a href="{{ module.path }}">{{ module.name }}</a>: {{ module.description }} <a href="{{ module.github }}">Archived source</a></li>
 {% endfor %}
 </ul>

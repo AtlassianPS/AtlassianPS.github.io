@@ -58,7 +58,8 @@ Each of our projects has an _issue tracker_ where you can report your findings.
     </article>
 </div>
 
-Legacy modules such as `AtlassianPS`, `BitbucketPS`, and `HipChatPS` are not active documentation targets on this website.
+BitbucketPS and HipChatPS are [archived modules](/module/#archived-modules) and no longer accept issues or pull requests.
+The `AtlassianPS` coordination repository is not an active module documentation target on this website.
 Use their GitHub repositories directly if you need historical source or issue context.
 
 Before creating a new issue, please search open issues first.
